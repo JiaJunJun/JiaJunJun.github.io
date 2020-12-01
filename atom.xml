@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-12-01T10:59:20.816Z</updated>
+  <updated>2020-12-01T12:52:12.257Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,18 +21,15 @@
     <link href="http://example.com/2020/12/01/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
     <id>http://example.com/2020/12/01/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/</id>
     <published>2020-12-01T02:58:16.985Z</published>
-    <updated>2020-12-01T10:59:20.816Z</updated>
+    <updated>2020-12-01T12:52:12.257Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;Understanding-Dropouts-in-MOOCs&quot;&gt;&lt;a href=&quot;#Understanding-Dropouts-in-MOOCs&quot; class=&quot;headerlink&quot; title=&quot;Understanding Dropouts in MOOCs&quot;&gt;&lt;/a&gt;Understanding Dropouts in MOOCs&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;font size=5&gt;&lt;strong&gt;数据集&lt;/strong&gt;&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;  KDDCUP、XuetangX&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;font size=5&gt;&lt;strong&gt;Insights&lt;/strong&gt;&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;   &lt;strong&gt;Temporal Code：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;  Suc:学生u和登记的课程c，时间代码是一个二值向量，每个值表示用户u在第k周是否访问课程c。&lt;br&gt;  Su:学生u的每一项课程在每周的访问情况&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;objective：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;　　MOOCs有极高的辍学率，完成率低于5% 。本文研究导致用户退出的主要因素，用户在MOOCs学习的主要动机。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;methods：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;　　将用户的学习行为分成几个不同的类别。揭示不同课程的辍学者之间的高度相关性以及朋友辍学行为之间的强烈影响。在此基础上，提出了一个上下文感知的特征交互网络(CFIN)来建模和预测用户的退出行为。CFIN利用上下文平滑技术平滑不同上下文的特征值，并利用注意机制将用户和课程信息结合到建模框架中。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;results：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;　　CFIN比现有的几种方法具有更好的性能。所提出的方法模型已经在实际系统上部署，以帮助提高用户保留率。&lt;/p&gt;</summary>
     
     
     
@@ -41,9 +38,7 @@
     
     <category term="教育数据挖掘" scheme="http://example.com/tags/%E6%95%99%E8%82%B2%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"/>
     
-    <category term="CFIN" scheme="http://example.com/tags/CFIN/"/>
-    
-    <category term="辍学率" scheme="http://example.com/tags/%E8%BE%8D%E5%AD%A6%E7%8E%87/"/>
+    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
