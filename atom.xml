@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-12-01T10:43:20.472Z</updated>
+  <updated>2020-12-01T10:59:20.816Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2020/12/01/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
     <id>http://example.com/2020/12/01/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/</id>
     <published>2020-12-01T02:58:16.985Z</published>
-    <updated>2020-12-01T10:43:20.472Z</updated>
+    <updated>2020-12-01T10:59:20.816Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;Understanding-Dropouts-in-MOOCs&quot;&gt;&lt;a href=&quot;#Understanding-Dropouts-in-MOOCs&quot; class=&quot;headerlink&quot; title=&quot;Understanding Dropouts in MOOCs&quot;&gt;&lt;/a&gt;Understanding Dropouts in MOOCs&lt;/h1&gt;&lt;ul&gt;
@@ -30,7 +30,9 @@
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;font size=5&gt;&lt;strong&gt;Insights&lt;/strong&gt;&lt;/font&gt;&lt;/p&gt;
 &lt;p&gt;   &lt;strong&gt;Temporal Code：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;  Suc:学生u和登记的课程c，时间代码是一个二值向量，每个值表示用户u在第k周是否访问课程c。&lt;br&gt;  Su:学生u的每一项课程在每周的访问情况&lt;/p&gt;</summary>
+&lt;p&gt;  Suc:学生u和登记的课程c，时间代码是一个二值向量，每个值表示用户u在第k周是否访问课程c。&lt;br&gt;  Su:学生u的每一项课程在每周的访问情况&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</summary>
     
     
     

@@ -10,7 +10,11 @@
 <li><p><font size=5><strong>Insights</strong></font></p>
 <p>   <strong>Temporal Code：</strong></p>
 <p>  Suc:学生u和登记的课程c，时间代码是一个二值向量，每个值表示用户u在第k周是否访问课程c。<br>  Su:学生u的每一项课程在每周的访问情况</p>
-<a id="more"></a></li>
+</li>
+</ul>
+<a id="more"></a>
+
+<ul>
 <li><p><font size=5><strong>聚类</strong></font></p>
 <p>  将所有用户时间编码的稀疏表示输入到K-means算法中。</p>
 <p>  通过Silhouette Analysis(1987)，集群的数量被设置为5。</p>
