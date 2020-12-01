@@ -18,4 +18,115 @@
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
+  <entry>
+    <title></title>
+    <url>/2020/12/01/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/</url>
+    <content><![CDATA[<h1 id="Understanding-Dropouts-in-MOOCs"><a href="#Understanding-Dropouts-in-MOOCs" class="headerlink" title="Understanding Dropouts in MOOCs"></a>Understanding Dropouts in MOOCs</h1><ul>
+<li><p><font size=5><strong>数据集</strong></font></p>
+<p>  KDDCUP、XuetangX</p>
+</li>
+<li><p><font size=5><strong>Insights</strong></font></p>
+<p>   <strong>Temporal Code：</strong></p>
+<p>  Suc:学生u和登记的课程c，时间代码是一个二值向量，每个值表示用户u在第k周是否访问课程c。<br>  Su:学生u的每一项课程在每周的访问情况</p>
+</li>
+<li><p><font size=5><strong>聚类</strong></font></p>
+<p>  将所有用户时间编码的稀疏表示输入到K-means算法中。</p>
+<p>  通过Silhouette Analysis(1987)，集群的数量被设置为5。</p>
+</li>
+<li><p><font size=5><strong>相关性</strong></font></p>
+<p>  <strong>课程之间的相关性（回归分析）：</strong></p>
+<p>  方法：用户在课程中的退学行为被编码为16-dim虚拟向量，每个元素表示用户在相应的一周内是否访问过该课程(因此16对应学习该课程的16周)。回归模型的输入和输出是两个虚拟向量，表示用户在同一学期中对两门不同课程的退学行为。</p>
+<p>  结果：同一类别的课程之间的相关性要高于不同类别的课程。一种可能的解释是，当用户学习MOOC的时间有限时，他们可能会首先放弃自己的课程，而选择补充知识领域的课程。</p>
+<p>  <strong>辍学朋友的影响（基于网络）：</strong></p>
+<p>  方法：建立用户-课程图，节点是用户和课程，边是代表参加了课程。用随机游走算法为图中的每个用户和每个课程进行低维表示。计算了选修同一门课程的用户间的余弦相似度。相似度大于0.8视为好友。<br>  结果结果表明用户的退学率很大程度上受到其朋友的退学行为的影响</p>
+</li>
+</ul>
+<p>##CFIN算法</p>
+<ul>
+<li><p><font size=5><strong>Formulation</strong></font></p>
+<p>  <strong>Enrollment Relation（登记关系）：</strong>U,C,E</p>
+<p>  <strong>Learning Activity（学习活动）：</strong>X（u,x）</p>
+<p>  <strong>Context Information（上下文信息）：</strong>Z（u,c）包括用户信息（性别，年龄，位置，学历信息，用户聚类）和课程信息（课程类别）</p>
+</li>
+<li><p><font size=5><strong>目标问题</strong></font></p>
+<p>  给定用户u在之前的关于课程c的学习活动<strong>X(u，c)**和上下文信息</strong>Z(u,c)**，判断用户在perdiction period是否有学习活动，用y(u,c)表示。</p>
+</li>
+</ul>
+<ul>
+<li><p><font size=5><strong>Context-aware Feature Interaction Network（感知上下文的特征交互网络）</strong></font></p>
+<p>  <strong><font size=4><em>Motivation</em>:</font></strong></p>
+<p>  上下文平滑：使用卷积神经网络(CNN)通过利用上下文统计来学习每个活动特征**xi(u, c)**的上下文感知表示</p>
+<p>  注意机制：通过将*<em>Z(u, c)**</em>纳入到退学预测中，来学习不同活动的重要性。</p>
+</li>
+</ul>
+<pre><code>**&lt;u&gt;&lt;font size=4&gt;_上下文平滑策略_:&lt;/font&gt;&lt;/u&gt;**
+
+三个步骤：特征增强、嵌入和特征融合。
+
+**特征增强：** **xi（u，c)**加上用户u对所有课程的统计信息，和课程在所有用户上的统计信息。
+
+**嵌入：****xi**通过嵌入层转化为稠密向量,乘以参数a表示嵌入向量。
+
+**特征融合：**将嵌入矩阵Egi通过CNN变成一个向量,Vgi=σ（Wδ(Egi)+b)
+
+**每个特征组Xgi都被一个稠密向量Vgi表示，它可以被看作是每个xi的上下文感知的表示，并集成了其上下文统计信息。**
+
+
+**&lt;u&gt;&lt;font size=4&gt;_注意机制_:&lt;/font&gt;&lt;/u&gt;**
+
+将Z的嵌入矩阵Ez输入到全连通层中，将Z转换为密集向量Vz：Vz=σ（Wδ(Ez)+b)
+
+使用Vz计算每个Vgi的注意力分数λi
+
+
+得到λi*Vgi的加权和Vg sum,作为X(u,c)的上下文感知表示
+
+将Vg sum放入l层的DNN中学习特征间的相互作用，最后用sigmoid函数预测</code></pre>
+<ul>
+<li><p><font size=5><strong>Model Ensemble（模型集成）</strong></font></p>
+<p>  <strong>xgboost结合CFIN</strong></p>
+</li>
+</ul>
+<p>##实验</p>
+<ul>
+<li><p><font size=5><strong>实现细节</strong></font></p>
+<p>  使用TensorFlow实现CFIN，采用Adam对模型进行优化。为了避免过拟合，对权值矩阵应用l2正则化。采用直线直线单元(Relu)作为激活函数。所有特性在输入到CFIN之前都经过了标准化。</p>
+<p>  在KDDCUP和XuetangX数据集上测试了CFIN的性能。对于KDDCUP数据集，比赛组织者将历史周期和预测周期分别设置为30天和10天。没有对该数据使用CFIN的注意机制，因为数据集中没有提供上下文信息。对于XuetangX数据集，历史周期设置为35天，预测周期设置为10天，即Dh=35, Dp=10</p>
+</li>
+<li><p><font size=5><strong>对比算法</strong></font></p>
+<ul>
+<li><p> LR</p>
+</li>
+<li><p> SVM</p>
+</li>
+<li><p> RF</p>
+</li>
+<li><p> GBDT</p>
+</li>
+<li><p> DNN</p>
+</li>
+<li><p> CFIN</p>
+</li>
+<li><p>CFIN-en</p>
+<p>基于网格搜索的5次交叉验证(CV)调整参数，并在所有实验中使用最优的参数组。评价指标包括 AUC和F1。</p>
+</li>
+</ul>
+</li>
+<li><p><font size=5><strong>实验结果</strong></font></p>
+<ul>
+<li><p>预测结果</p>
+<p>  CFIN-en在两个数据集上的表现都是最好的，在KDDCUP数据集上AUC得分达到90.93%，CFIN也表现出更好的性能。</p>
+</li>
+<li><p>特征贡献</p>
+<p>  对三个主要活动特征进行了特征消融实验，即视频活动、任务活动和论坛活动。具体来说，我们首先将所有特性输入到CFIN，然后逐个删除每种类型的活动特性，以观察性能的变化。</p>
+<p>  结果表示，这三种活动在这个任务中都是有用的。在KDDCUP上，作业是最重要的，而在XuetangX上，视频是最重要的。</p>
+</li>
+<li><p>不同用户组的不同特性的细粒度分析</p>
+<p>  五组群体的注意权重分布有很大的不同</p>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+  </entry>
 </search>
