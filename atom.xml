@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-10-26T12:15:18.596Z</updated>
+  <updated>2020-12-01T03:03:23.755Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>文献阅读：Understanding Dropouts in MOOCs</title>
     <link href="http://example.com/2020/12/01/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
     <id>http://example.com/2020/12/01/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/</id>
     <published>2020-12-01T02:58:16.985Z</published>
-    <updated>2020-10-26T12:15:18.596Z</updated>
+    <updated>2020-12-01T03:03:23.755Z</updated>
     
     
       
@@ -34,6 +34,14 @@
     
     
     
+    <category term="文献阅读" scheme="http://example.com/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="教育数据挖掘" scheme="http://example.com/tags/%E6%95%99%E8%82%B2%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"/>
+    
+    <category term="CFIN" scheme="http://example.com/tags/CFIN/"/>
+    
+    <category term="辍学率" scheme="http://example.com/tags/%E8%BE%8D%E5%AD%A6%E7%8E%87/"/>
     
   </entry>
   
