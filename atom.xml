@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-12-01T03:10:41.357Z</updated>
+  <updated>2020-12-01T10:43:20.472Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2020/12/01/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
     <id>http://example.com/2020/12/01/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/</id>
     <published>2020-12-01T02:58:16.985Z</published>
-    <updated>2020-12-01T03:10:41.357Z</updated>
+    <updated>2020-12-01T10:43:20.472Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;Understanding-Dropouts-in-MOOCs&quot;&gt;&lt;a href=&quot;#Understanding-Dropouts-in-MOOCs&quot; class=&quot;headerlink&quot; title=&quot;Understanding Dropouts in MOOCs&quot;&gt;&lt;/a&gt;Understanding Dropouts in MOOCs&lt;/h1&gt;&lt;ul&gt;
@@ -30,20 +30,7 @@
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;font size=5&gt;&lt;strong&gt;Insights&lt;/strong&gt;&lt;/font&gt;&lt;/p&gt;
 &lt;p&gt;   &lt;strong&gt;Temporal Code：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;  Suc:学生u和登记的课程c，时间代码是一个二值向量，每个值表示用户u在第k周是否访问课程c。&lt;br&gt;  Su:学生u的每一项课程在每周的访问情况&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;font size=5&gt;&lt;strong&gt;聚类&lt;/strong&gt;&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;  将所有用户时间编码的稀疏表示输入到K-means算法中。&lt;/p&gt;
-&lt;p&gt;  通过Silhouette Analysis(1987)，集群的数量被设置为5。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;font size=5&gt;&lt;strong&gt;相关性&lt;/strong&gt;&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;  &lt;strong&gt;课程之间的相关性（回归分析）：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;  方法：用户在课程中的退学行为被编码为16-dim虚拟向量，每个元素表示用户在相应的一周内是否访问过该课程(因此16对应学习该课程的16周)。回归模型的输入和输出是两个虚拟向量，表示用户在同一学期中对两门不同课程的退学行为。&lt;/p&gt;
-&lt;p&gt;  结果：同一类别的课程之间的相关性要高于不同类别的课程。一种可能的解释是，当用户学习MOOC的时间有限时，他们可能会首先放弃自己的课程，而选择补充知识领域的课程。&lt;/p&gt;
-&lt;p&gt;  &lt;strong&gt;辍学朋友的影响（基于网络）：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;  方法：建立用户-课程图，节点是用户和课程，边是代表参加了课程。用随机游走算法为图中的每个用户和每个课程进行低维表示。计算了选修同一门课程的用户间的余弦相似度。相似度大于0.8视为好友。&lt;br&gt;  结果结果表明用户的退学率很大程度上受到其朋友的退学行为的影响&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</summary>
+&lt;p&gt;  Suc:学生u和登记的课程c，时间代码是一个二值向量，每个值表示用户u在第k周是否访问课程c。&lt;br&gt;  Su:学生u的每一项课程在每周的访问情况&lt;/p&gt;</summary>
     
     
     
@@ -55,27 +42,6 @@
     <category term="CFIN" scheme="http://example.com/tags/CFIN/"/>
     
     <category term="辍学率" scheme="http://example.com/tags/%E8%BE%8D%E5%AD%A6%E7%8E%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://example.com/2020/11/30/hello-world/"/>
-    <id>http://example.com/2020/11/30/hello-world/</id>
-    <published>2020-11-30T13:00:31.585Z</published>
-    <updated>2020-11-30T13:00:31.585Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
-    
-    
-    
     
   </entry>
   

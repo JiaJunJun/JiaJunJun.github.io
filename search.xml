@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/11/30/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>文献阅读：Understanding Dropouts in MOOCs</title>
     <url>/2020/12/01/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/</url>
     <content><![CDATA[<h1 id="Understanding-Dropouts-in-MOOCs"><a href="#Understanding-Dropouts-in-MOOCs" class="headerlink" title="Understanding Dropouts in MOOCs"></a>Understanding Dropouts in MOOCs</h1><ul>
@@ -28,7 +10,7 @@
 <li><p><font size=5><strong>Insights</strong></font></p>
 <p>   <strong>Temporal Code：</strong></p>
 <p>  Suc:学生u和登记的课程c，时间代码是一个二值向量，每个值表示用户u在第k周是否访问课程c。<br>  Su:学生u的每一项课程在每周的访问情况</p>
-</li>
+<a id="more"></a></li>
 <li><p><font size=5><strong>聚类</strong></font></p>
 <p>  将所有用户时间编码的稀疏表示输入到K-means算法中。</p>
 <p>  通过Silhouette Analysis(1987)，集群的数量被设置为5。</p>
@@ -41,7 +23,6 @@
 <p>  方法：建立用户-课程图，节点是用户和课程，边是代表参加了课程。用随机游走算法为图中的每个用户和每个课程进行低维表示。计算了选修同一门课程的用户间的余弦相似度。相似度大于0.8视为好友。<br>  结果结果表明用户的退学率很大程度上受到其朋友的退学行为的影响</p>
 </li>
 </ul>
-<a id="more"></a>
 <p>##CFIN算法</p>
 <ul>
 <li><p><font size=5><strong>Formulation</strong></font></p>
