@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-12-02T08:53:29.263Z</updated>
+  <updated>2020-12-04T12:59:20.019Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Anaconda中为每个项目创建新环境</title>
+    <link href="http://example.com/2020/12/04/Anaconda%E4%B8%AD%E4%B8%BA%E6%AF%8F%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E6%96%B0%E7%8E%AF%E5%A2%83/"/>
+    <id>http://example.com/2020/12/04/Anaconda%E4%B8%AD%E4%B8%BA%E6%AF%8F%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E6%96%B0%E7%8E%AF%E5%A2%83/</id>
+    <published>2020-12-04T12:46:19.495Z</published>
+    <updated>2020-12-04T12:59:20.019Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;创建新环境&quot;&gt;&lt;a href=&quot;#创建新环境&quot; class=&quot;headerlink&quot; title=&quot;创建新环境&quot;&gt;&lt;/a&gt;创建新环境&lt;/h1&gt;&lt;p&gt;进入cmd，进入anaconda所在的文件夹位置（如：D:\Software\Anaconda\envs）&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="开发环境" scheme="http://example.com/categories/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    
+    
+    <category term="Anaconda" scheme="http://example.com/tags/Anaconda/"/>
+    
+  </entry>
   
   <entry>
     <title>在markdown中插入图片</title>
@@ -41,15 +60,11 @@
     <link href="http://example.com/2020/12/01/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
     <id>http://example.com/2020/12/01/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/</id>
     <published>2020-12-01T02:58:16.985Z</published>
-    <updated>2020-12-01T12:52:12.257Z</updated>
+    <updated>2020-12-04T13:02:15.311Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;objective：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;　　MOOCs有极高的辍学率，完成率低于5% 。本文研究导致用户退出的主要因素，用户在MOOCs学习的主要动机。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;methods：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;　　将用户的学习行为分成几个不同的类别。揭示不同课程的辍学者之间的高度相关性以及朋友辍学行为之间的强烈影响。在此基础上，提出了一个上下文感知的特征交互网络(CFIN)来建模和预测用户的退出行为。CFIN利用上下文平滑技术平滑不同上下文的特征值，并利用注意机制将用户和课程信息结合到建模框架中。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;results：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;　　CFIN比现有的几种方法具有更好的性能。所提出的方法模型已经在实际系统上部署，以帮助提高用户保留率。&lt;/p&gt;</summary>
+&lt;p&gt;　　MOOCs有极高的辍学率，完成率低于5% 。本文研究导致用户退出的主要因素，用户在MOOCs学习的主要动机。&lt;/p&gt;</summary>
     
     
     
