@@ -1,47 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>在markdown中插入图片</title>
-    <url>/2020/12/02/markdown%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
-    <content><![CDATA[<h1 id="在markdown文件中插入图片"><a href="#在markdown文件中插入图片" class="headerlink" title="在markdown文件中插入图片"></a>在markdown文件中插入图片</h1><p>　　这里选择采用将图片上传到GitHub上的方法进行图片的插入。具体步骤如下：</p>
-<p>　　<a id="more"></a></p>
-<p>　　1.登录GitHub,创建一个新仓库用来存放图片，如下图所示：<div align=center><img src="http://jiajunjun.top/md_picture/test_pic1.png" alt="图1"></div></p>
-<p>　　2.在本地磁盘中新建一个存放图片的文件夹，然后把需要插入的图片放入该文件夹中。</p>
-<p>　　3.在该文件夹下打开Git Bash。</p>
-<p>　　4.配置自己的身份：依次输入 </p>
-<p>　　<code>git config --global user.name &quot;Your name&quot;</code> </p>
-<p>　　<code>git config --global user.email &quot;Your email&quot;</code></p>
-<p>　　5.创建代码仓库：</p>
-<p>　　<code>git init</code>：此时本地仓库就有一个.git的隐藏文件夹</p>
-<p>　　6.提交本地代码：</p>
-<p>　　<code>git add .</code> ：把所有文件添加到仓库</p>
-<p>　　<code>git commit -m &quot;xxx&quot;</code>：把文件提交到仓库，xxx可以输入本次提交的说明</p>
-<p>　　如下图所示：<br>　　<br>　　<div align=center><img src="http://jiajunjun.top/md_picture/test_pic2.png" alt="图2"></div></p>
-<p>　　7.把本地仓库关联到GitHub上的远程库：</p>
-<p>　　<code>git remote add origin git@github.com:your username/repositories name.git</code>：注意要将your username改成你自己的GitHub账户名，repositories name改成仓库名。</p>
-<p>　　8.把本地库的内容推送到远程：</p>
-<p>　　<code>git push -u origin master</code></p>
-<p>　　此时本地库和远程库的内容就已经一样了。</p>
-<p>　　9.打开在GitHub上创建的仓库，进入Settings，下拉找到GitHub Pages，将Source中的None改为master，点击save保存。如下图所示：<div align=center><img src="http://jiajunjun.top/md_picture/test_pic3.png" alt="图3"></div></p>
-<p>　　10.此时图片在网络上的地址为GitHub项目地址加图片名，例如我这里的图片地址为：<a href="https://jiajunjun.github.io/md_picture/pic1.png">https://jiajunjun.github.io/md_picture/pic1.png</a></p>
-<p>　　11.在markdown文件中插入图片：</p>
-<p>　　<code>![图片名称](https://jiajunjun.top/md_picture/pic1.png)</code></p>
-<p>　　如果还不能显示，将https://改为http://即可</p>
-<p>　　<div align=center><img src="http://jiajunjun.top/md_picture/pic1.png" alt="pic1"></div></p>
-<p>　　12.之后如果想要再插入新的图片时，可以在本地库中添加图片，然后在本地库的文件夹下打开Git Bash，然后依次输入：</p>
-<p>　　<code>git add .</code></p>
-<p>　　<code>git commit -m &quot;xxxx&quot;</code></p>
-<p>　　<code>git push origin master</code></p>
-<p>　　之后按上述方法在markdown文件中插入图片即可。</p>
-]]></content>
-      <categories>
-        <category>TIPS</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Anaconda中为每个项目创建新环境</title>
     <url>/2020/12/04/Anaconda%E4%B8%AD%E4%B8%BA%E6%AF%8F%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E6%96%B0%E7%8E%AF%E5%A2%83/</url>
     <content><![CDATA[<h1 id="创建新环境"><a href="#创建新环境" class="headerlink" title="创建新环境"></a>创建新环境</h1><p>进入cmd，进入anaconda所在的文件夹位置（如：D:\Software\Anaconda\envs）</p>
@@ -160,6 +119,47 @@
       <tags>
         <tag>教育数据挖掘</tag>
         <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在markdown中插入图片</title>
+    <url>/2020/12/02/markdown%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<h1 id="在markdown文件中插入图片"><a href="#在markdown文件中插入图片" class="headerlink" title="在markdown文件中插入图片"></a>在markdown文件中插入图片</h1><p>　　这里选择采用将图片上传到GitHub上的方法进行图片的插入。具体步骤如下：</p>
+<p>　　<a id="more"></a></p>
+<p>　　1.登录GitHub,创建一个新仓库用来存放图片，如下图所示：<div align=center><img src="http://jiajunjun.top/md_picture/test_pic1.png" alt="图1"></div></p>
+<p>　　2.在本地磁盘中新建一个存放图片的文件夹，然后把需要插入的图片放入该文件夹中。</p>
+<p>　　3.在该文件夹下打开Git Bash。</p>
+<p>　　4.配置自己的身份：依次输入 </p>
+<p>　　<code>git config --global user.name &quot;Your name&quot;</code> </p>
+<p>　　<code>git config --global user.email &quot;Your email&quot;</code></p>
+<p>　　5.创建代码仓库：</p>
+<p>　　<code>git init</code>：此时本地仓库就有一个.git的隐藏文件夹</p>
+<p>　　6.提交本地代码：</p>
+<p>　　<code>git add .</code> ：把所有文件添加到仓库</p>
+<p>　　<code>git commit -m &quot;xxx&quot;</code>：把文件提交到仓库，xxx可以输入本次提交的说明</p>
+<p>　　如下图所示：<br>　　<br>　　<div align=center><img src="http://jiajunjun.top/md_picture/test_pic2.png" alt="图2"></div></p>
+<p>　　7.把本地仓库关联到GitHub上的远程库：</p>
+<p>　　<code>git remote add origin git@github.com:your username/repositories name.git</code>：注意要将your username改成你自己的GitHub账户名，repositories name改成仓库名。</p>
+<p>　　8.把本地库的内容推送到远程：</p>
+<p>　　<code>git push -u origin master</code></p>
+<p>　　此时本地库和远程库的内容就已经一样了。</p>
+<p>　　9.打开在GitHub上创建的仓库，进入Settings，下拉找到GitHub Pages，将Source中的None改为master，点击save保存。如下图所示：<div align=center><img src="http://jiajunjun.top/md_picture/test_pic3.png" alt="图3"></div></p>
+<p>　　10.此时图片在网络上的地址为GitHub项目地址加图片名，例如我这里的图片地址为：<a href="https://jiajunjun.github.io/md_picture/pic1.png">https://jiajunjun.github.io/md_picture/pic1.png</a></p>
+<p>　　11.在markdown文件中插入图片：</p>
+<p>　　<code>![图片名称](https://jiajunjun.top/md_picture/pic1.png)</code></p>
+<p>　　如果还不能显示，将https://改为http://即可</p>
+<p>　　<div align=center><img src="http://jiajunjun.top/md_picture/pic1.png" alt="pic1"></div></p>
+<p>　　12.之后如果想要再插入新的图片时，可以在本地库中添加图片，然后在本地库的文件夹下打开Git Bash，然后依次输入：</p>
+<p>　　<code>git add .</code></p>
+<p>　　<code>git commit -m &quot;xxxx&quot;</code></p>
+<p>　　<code>git push origin master</code></p>
+<p>　　之后按上述方法在markdown文件中插入图片即可。</p>
+]]></content>
+      <categories>
+        <category>TIPS</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
       </tags>
   </entry>
 </search>
