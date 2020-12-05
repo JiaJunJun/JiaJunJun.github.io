@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Anaconda中为每个项目创建新环境</title>
+    <url>/2020/12/04/Anaconda%E4%B8%AD%E4%B8%BA%E6%AF%8F%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E6%96%B0%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<h1 id="创建新环境"><a href="#创建新环境" class="headerlink" title="创建新环境"></a>创建新环境</h1><p>进入cmd，进入anaconda所在的文件夹位置（如：D:\Software\Anaconda\envs）</p>
+<a id="more"></a>
+
+<p>依次输入：</p>
+<p><code>conda create --name 项目名称 python=版本号</code></p>
+<p><code>activate</code></p>
+<p><code>conda activate 项目名称</code>   切换不同环境的时候也使用该语句</p>
+<p>然后使用pip install安装所需包即可。</p>
+<hr>
+<h1 id="查看环境"><a href="#查看环境" class="headerlink" title="查看环境"></a>查看环境</h1><ul>
+<li>查看目前已安装的环境：<code>conda info --envs</code></li>
+<li>查看环境下已安装的包：<code>pip list</code></li>
+</ul>
+]]></content>
+      <categories>
+        <category>开发环境</category>
+      </categories>
+      <tags>
+        <tag>Anaconda</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>在markdown中插入图片</title>
     <url>/2020/12/02/markdown%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
     <content><![CDATA[<h1 id="在markdown文件中插入图片"><a href="#在markdown文件中插入图片" class="headerlink" title="在markdown文件中插入图片"></a>在markdown文件中插入图片</h1><p>　　这里选择采用将图片上传到GitHub上的方法进行图片的插入。具体步骤如下：</p>
@@ -39,30 +63,6 @@
       </categories>
       <tags>
         <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Anaconda中为每个项目创建新环境</title>
-    <url>/2020/12/04/Anaconda%E4%B8%AD%E4%B8%BA%E6%AF%8F%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E6%96%B0%E7%8E%AF%E5%A2%83/</url>
-    <content><![CDATA[<h1 id="创建新环境"><a href="#创建新环境" class="headerlink" title="创建新环境"></a>创建新环境</h1><p>进入cmd，进入anaconda所在的文件夹位置（如：D:\Software\Anaconda\envs）</p>
-<a id="more"></a>
-
-<p>依次输入：</p>
-<p><code>conda create --name 项目名称 python=版本号</code></p>
-<p><code>activate</code></p>
-<p><code>conda activate 项目名称</code>   切换不同环境的时候也使用该语句</p>
-<p>然后使用pip install安装所需包即可。</p>
-<hr>
-<h1 id="查看环境"><a href="#查看环境" class="headerlink" title="查看环境"></a>查看环境</h1><ul>
-<li>查看目前已安装的环境：<code>conda info --envs</code></li>
-<li>查看环境下已安装的包：<code>pip list</code></li>
-</ul>
-]]></content>
-      <categories>
-        <category>开发环境</category>
-      </categories>
-      <tags>
-        <tag>Anaconda</tag>
       </tags>
   </entry>
   <entry>
