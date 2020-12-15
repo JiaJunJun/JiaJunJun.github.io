@@ -162,4 +162,101 @@
         <tag>算法</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Git的使用</title>
+    <url>/2020/12/15/git%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h1><ul>
+<li>创建空目录：<code>mkdir xxxxx（文件夹名）</code></li>
+<li>创建仓库：<code>git init</code></li>
+</ul>
+<p>　　使用Notepad++创建一个.txt文件并保存到刚刚文件夹下，如readme.txt</p>
+<a id="more"></a>
+
+<ul>
+<li>将文件添加到仓库：<code>git add readme.txt</code></li>
+<li>把文件提交到仓库：<code>git commit -m &quot;xxxxx&quot;</code>（-m后面输入的是本次提交的说明，这样就能从历史记录里方便地找到改动记录。）</li>
+</ul>
+<p>　　git commit命令执行成功后如下图：</p>
+<p><img src="http://jiajunjun.top/md_picture/usegit1.png" alt="git commit命令执行成功"></p>
+<p>　　(1 file changed：1个文件被改动（新添加的readme.txt文件）; 2 insertions：插入了两行内容（readme.txt有两行内容）)</p>
+<p>　　commit可以一次提交多个文件，所以可以多次add再commit。</p>
+<p><img src="http://jiajunjun.top/md_picture/usegit2.png" alt="git commit命令执行成功"></p>
+<ul>
+<li>查看仓库当前的状态：<code>git status</code></li>
+</ul>
+<p>　　例如：当对readme.txt进行修改后，输入git status。输出表明修改过但没提交。<br><img src="http://jiajunjun.top/md_picture/usegit3.png" alt="git commit命令执行成功"></p>
+<ul>
+<li><p>查看修改的内容：<code>git diff</code>。可以看到绿色字体与红色字体的对比，添加了distributed。<br><img src="http://jiajunjun.top/md_picture/usegit4.png" alt="git commit命令执行成功"></p>
+</li>
+<li><p>进行提交：<code>git add readme.txt</code></p>
+</li>
+<li><p><code>git commit -m &quot;add distributed&quot;</code></p>
+</li>
+<li><p>查看此时仓库的状态： <code>git status</code> (显示 nothing to commit,working tree clean，表明当前没有需要提交的修改，而且工作目录是干净的。)</p>
+</li>
+<li><p>查看提交日志：<code>git log(完整版）</code> (<code>git log --pretty=oneline</code>(精简版）)</p>
+</li>
+</ul>
+<h1 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h1><ul>
+<li><p>回退到上一个版本：<code>git reset --hard HEAD^</code> (文件已经被修改回上一个版本，若想回到上上个版本，用HEAD^^，若想回到往上100个版本，用HEAD~100)</p>
+</li>
+<li><p>又想回到刚刚最新的版本：git reset –hard 6d1fe (从命令行往上翻，找到最新版本前边的commit id，输入前几位就OK了，这里最新版本的commit id 是 6d1fe770…）</p>
+</li>
+<li><p>如果忘记commit id：git reflog（可以查看之前的每一次命令，可以找到每一次命令的commit id )</p>
+</li>
+</ul>
+<h1 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h1><p><img src="http://jiajunjun.top/md_picture/usegit5.png" alt="git commit命令执行成功"></p>
+<p>　　git add 实际上是把文件修改添加到暂存区（图中的stage)，git commit 实际上是把暂存区中的所有内容提交到当前分支（master是Git自动创建的第一个分支）。所以commit可以一次性提交多个文件。如果修改readme.txt文件，并且新建了一个LICENSE文件，此时若执行完git add readme.txt和git add LICENSE后，暂存区的状态如下图：</p>
+<p><img src="http://jiajunjun.top/md_picture/usegit6.png" alt="git commit命令执行成功"></p>
+<p>　　此时执行git commit后，就变成了下图，暂存区没有任何内容，commit将两个文件全部提交。</p>
+<p><img src="http://jiajunjun.top/md_picture/usegit7.png" alt="git commit命令执行成功"></p>
+<h1 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h1><ul>
+<li><p>文件提交前，可手动修改到之前的状态，也可使用 <code>git checkout -- readme.txt</code> ，将readme.txt文件在工作区的修改撤销，回退到最近一次 git commit 或 git add 的状态。</p>
+</li>
+<li><p>文件已经add，但未commit：<code>git reset HEAD readme.txt</code>，回退版本，把暂存区的修改退回到工作区。</p>
+</li>
+</ul>
+<h1 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h1><ul>
+<li><code>rm test.txt</code><ul>
+<li>确实要删除：<code>git rm test.txt</code><br>　<code>git commit -m &quot;xxxxx&quot;</code></li>
+<li>删错了：<code>git checkout -- test.txt</code>
+　　　　</li>
+</ul>
+</li>
+</ul>
+<h1 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h1><ul>
+<li><p>在GitHub中新建一个仓库后，在本地仓库下运行：<code>git remote add origin git@github.com:JiaJunJun/learngit.git</code></p>
+</li>
+<li><p>第一次推送master分支的所有内容：<code>git push -u origin master</code></p>
+</li>
+<li><p>之后提交：<code>git push origin master</code></p>
+</li>
+</ul>
+<p>　　本地仓库与远程仓库同步</p>
+<ul>
+<li>把远程仓库克隆到本地：github中新建仓库newlocal，在本地想要位置下输入命令：<code>git clone git@github.com:JiaJunJun/newlocal.git</code></li>
+</ul>
+<h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1><ul>
+<li><p>查看分支：<code>git branch</code></p>
+</li>
+<li><p>创建分支：<code>git branch &lt;name&gt;</code></p>
+</li>
+<li><p>切换分支：<code>git checkout &lt;name&gt;</code> 或 <code>git switch &lt;name&gt;</code></p>
+</li>
+<li><p>创建+切换分支：<code>git checkout -b &lt;name&gt;</code> 或 <code>git switch -c &lt;name&gt;</code></p>
+</li>
+<li><p>合并某分支到当前分支：<code>git merge &lt;name&gt;</code></p>
+</li>
+<li><p>删除分支：<code>git branch -d &lt;name&gt;</code></p>
+</li>
+</ul>
+<p>参考链接：<a href="https://www.liaoxuefeng.com/wiki/896043488029600">https://www.liaoxuefeng.com/wiki/896043488029600</a></p>
+]]></content>
+      <categories>
+        <category>开发环境</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
 </search>
