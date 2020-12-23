@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-12-15T11:42:24.882Z</updated>
+  <updated>2020-12-23T07:57:40.302Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,69 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>要提供可靠的传输要解决哪些问题，如何解决？</title>
+    <link href="http://example.com/2020/12/17/%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93/"/>
+    <id>http://example.com/2020/12/17/%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93/</id>
+    <published>2020-12-17T02:10:39.123Z</published>
+    <updated>2020-12-23T07:57:40.302Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;思考：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;TCP层实现可靠传输中面向连接和无连接各自的优点和缺点&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;什么是端到端的可靠传输&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="计算机网络" scheme="http://example.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="可靠传输" scheme="http://example.com/tags/%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IP地址不够用？</title>
+    <link href="http://example.com/2020/12/17/IP%E5%9C%B0%E5%9D%80%E4%B8%8D%E5%A4%9F%E7%94%A8/"/>
+    <id>http://example.com/2020/12/17/IP%E5%9C%B0%E5%9D%80%E4%B8%8D%E5%A4%9F%E7%94%A8/</id>
+    <published>2020-12-17T01:38:51.133Z</published>
+    <updated>2020-12-17T01:38:51.266Z</updated>
+    
+    
+    
+    
+    <category term="计算机网络" scheme="http://example.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从网络体系架构的角度分析，P2P技术的本质是什么？</title>
+    <link href="http://example.com/2020/12/16/P2P%E7%BD%91%E7%BB%9C%E7%9A%84%E6%9C%AC%E8%B4%A8/"/>
+    <id>http://example.com/2020/12/16/P2P%E7%BD%91%E7%BB%9C%E7%9A%84%E6%9C%AC%E8%B4%A8/</id>
+    <published>2020-12-16T13:40:44.351Z</published>
+    <updated>2020-12-23T07:57:10.103Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;　　P2P可以理解为对等计算或对等网络。国内一些媒体将P2P翻译成“点对点”或者“端对端”，学术界则统一称为对等网络（Peer-to-peer networking）或对等计算（Peer-to-peer computing），</summary>
+    
+    
+    
+    <category term="计算机网络" scheme="http://example.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="P2P" scheme="http://example.com/tags/P2P/"/>
+    
+  </entry>
   
   <entry>
     <title>Git的使用</title>
@@ -55,6 +118,71 @@
     
     
     <category term="Anaconda" scheme="http://example.com/tags/Anaconda/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从面向连接和无连接的角度分析，计算机网络为什么没有采用通信网络的方法和模式？</title>
+    <link href="http://example.com/2020/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%97%A0%E8%BF%9E%E6%8E%A5/"/>
+    <id>http://example.com/2020/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%97%A0%E8%BF%9E%E6%8E%A5/</id>
+    <published>2020-12-04T07:54:33.254Z</published>
+    <updated>2020-12-23T07:57:32.694Z</updated>
+    
+    
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;面向连接：在通信时事先建立好一条虚拟通信线路&lt;/li&gt;
+&lt;li&gt;无连接：不需事先建立线路，每个分组自主选择线路传输到目标地址</summary>
+    
+    
+    
+    <category term="计算机网络" scheme="http://example.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="面向连接和无连接" scheme="http://example.com/tags/%E9%9D%A2%E5%90%91%E8%BF%9E%E6%8E%A5%E5%92%8C%E6%97%A0%E8%BF%9E%E6%8E%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从1G到6G分别采用了哪种信道共享技术？</title>
+    <link href="http://example.com/2020/12/04/1G-6G/"/>
+    <id>http://example.com/2020/12/04/1G-6G/</id>
+    <published>2020-12-04T07:16:55.096Z</published>
+    <updated>2020-12-04T12:50:08.214Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;　　在计算机网络中使用的信道共享技术可以分为三种，即随机接入、受控接入和信道复用。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="计算机网络" scheme="http://example.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="1G,2G,3G,4G,5G,6G" scheme="http://example.com/tags/1G-2G-3G-4G-5G-6G/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>为什么要开发TCP/IP协议</title>
+    <link href="http://example.com/2020/12/04/TCPIP/"/>
+    <id>http://example.com/2020/12/04/TCPIP/</id>
+    <published>2020-12-04T06:48:44.582Z</published>
+    <updated>2020-12-23T07:57:11.222Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;TCP/IP协议的作用是使计算机实现互联共享。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="计算机网络" scheme="http://example.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="TCP/IP" scheme="http://example.com/tags/TCP-IP/"/>
     
   </entry>
   
