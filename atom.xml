@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-03-23T13:13:26.253Z</updated>
+  <updated>2021-03-23T13:20:47.663Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2021/03/23/Decoupling%20Representation%20and%20Classifier%20for%20Long-Tailed%20Recognition/"/>
     <id>http://example.com/2021/03/23/Decoupling%20Representation%20and%20Classifier%20for%20Long-Tailed%20Recognition/</id>
     <published>2021-03-23T03:21:27.136Z</published>
-    <updated>2021-03-23T13:13:26.253Z</updated>
+    <updated>2021-03-23T13:20:47.663Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;Decoupling-Representation-and-Classifier-for-Long-Tailed-Recognition&quot;&gt;&lt;a href=&quot;#Decoupling-Representation-and-Classifier-for-Long-Tailed-Recognition&quot; class=&quot;headerlink&quot; title=&quot;Decoupling Representation and Classifier for Long-Tailed Recognition&quot;&gt;&lt;/a&gt;Decoupling Representation and Classifier for Long-Tailed Recognition&lt;/h2&gt;&lt;h4 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h4&gt;&lt;p&gt;​    长尾分布的问题通常是由类平衡策略解决的。本文将学习过程分解为表征学习和分类两个部分，并系统地探讨了不同的平衡策略如何影响它们的长尾识别。&lt;/p&gt;</summary>
