@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-01-11T12:01:36.833Z</updated>
+  <updated>2021-03-23T11:53:35.529Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>文献阅读：Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces</title>
+    <link href="http://example.com/2021/03/21/Few-Shot%20and%20Zero-Shot%20Multi-Label%20Learning%20for%20Structured%20Label%20Spaces/"/>
+    <id>http://example.com/2021/03/21/Few-Shot%20and%20Zero-Shot%20Multi-Label%20Learning%20for%20Structured%20Label%20Spaces/</id>
+    <published>2021-03-21T12:47:06.170Z</published>
+    <updated>2021-03-23T11:53:35.529Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="文献阅读" scheme="http://example.com/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="Few-Shot Learning" scheme="http://example.com/tags/Few-Shot-Learning/"/>
+    
+  </entry>
   
   <entry>
     <title>案例实践1：手写数字识别</title>

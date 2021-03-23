@@ -466,4 +466,45 @@
         <tag>机器学习</tag>
       </tags>
   </entry>
+  <entry>
+    <title>文献阅读：Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces</title>
+    <url>/2021/03/21/Few-Shot%20and%20Zero-Shot%20Multi-Label%20Learning%20for%20Structured%20Label%20Spaces/</url>
+    <content><![CDATA[<h3 id="Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces"><a href="#Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces" class="headerlink" title="Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces"></a>Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces</h3><h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>​    对于文本分类问题，多标签的少样本或者无样本的标签预测很少被探索。在本文中，执行了一个细粒度的评估来理解最新的方法如何在不常见的标签上执行。此外，当标签空间上存在已知结构时，开发了多标签文本分类的少样本和无样本方法。</p>
+<h5 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h5><p>​    大规模多标签文本分类存在的两个问题：</p>
+<p>​    1.在大型文档中查找特定标签的相关信息很难；</p>
+<p>​    2.数据稀疏的问题，随着标签总数的增加，一些标签可能会频繁出现，但是大多数标签不会频繁出现。</p>
+<p>​    few-shot learning是指在训练数据集中每个标签只有几个例子（通常在1~5之间）可用的监督方法。</p>
+<p>​    zero-shot learning是指在测试时想要预测的标签在训练数据中没有可用的。</p>
+<p>​    本文提出并评估了一种神经网络结构，用于预测多标签集合中的少样本和零样本标签；针对频繁、少样本和零样本标签，通过使用扩展的广义零样本方法评估幂律数据集。</p>
+<h5 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h5><p><img src="http://jiajunjun.top/md_picture/FSL1/1.png" alt="图1"></p>
+<p>1.生成标签向量</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/2.png" alt="图2"></p>
+<p>2.为每一个标签生成特定的文本向量表示</p>
+<p>​    使用标签的注意力避免长文档中遇到的大海捞针的情况。首先通过一个前馈神经网络传递文本特征矩阵D:</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/3.png" alt="图3"></p>
+<p>​    生成label-wise注意力向量ai∈Rn-s+1，表示对于某个标签，每一个ngram的信息量。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/4.png" alt="图4"></p>
+<p>​    为每一个标签生成特定的文本向量表示ci∈Ru，D中所有行的加权平均。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/5.png" alt="图5"></p>
+<p>3..标签向量通过两层GCNN传递，包含关于标签空间的分层信息。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/6.png" alt="图6"></p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/7.png" alt="图7"></p>
+<p>​    然后将平均描述向量与GCNN标签向量连接起来</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/8.png" alt="图8"></p>
+<p>​    为了比较最终的标签向量v3和它的文档向量ci，我们将文档向量转换成</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/9.png" alt="图9"></p>
+<p>​    预测</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/10.png" alt="图10"></p>
+<p>4.训练</p>
+<p>使用多标签二元交叉熵损失来训练模型</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/11.png" alt="图11"></p>
+<p>参考文章：<a href="https://blog.csdn.net/Daffy10/article/details/109588275">https://blog.csdn.net/Daffy10/article/details/109588275</a></p>
+]]></content>
+      <categories>
+        <category>文献阅读</category>
+      </categories>
+      <tags>
+        <tag>Few-Shot Learning</tag>
+      </tags>
+  </entry>
 </search>
