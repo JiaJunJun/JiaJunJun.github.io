@@ -1,6 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>文献阅读：Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces</title>
+    <url>/2021/03/21/Few-Shot%20and%20Zero-Shot%20Multi-Label%20Learning%20for%20Structured%20Label%20Spaces/</url>
+    <content><![CDATA[<h3 id="Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces"><a href="#Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces" class="headerlink" title="Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces"></a>Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces</h3><h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>​    对于文本分类问题，多标签的少样本或者无样本的标签预测很少被探索。在本文中，执行了一个细粒度的评估来理解最新的方法如何在不常见的标签上执行。此外，当标签空间上存在已知结构时，开发了多标签文本分类的少样本和无样本方法。</p>
+<a id="more"></a>
+
+<h5 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h5><p>​    大规模多标签文本分类存在的两个问题：</p>
+<p>​    1.在大型文档中查找特定标签的相关信息很难；</p>
+<p>​    2.数据稀疏的问题，随着标签总数的增加，一些标签可能会频繁出现，但是大多数标签不会频繁出现。</p>
+<p>​    few-shot learning是指在训练数据集中每个标签只有几个例子（通常在1~5之间）可用的监督方法。</p>
+<p>​    zero-shot learning是指在测试时想要预测的标签在训练数据中没有可用的。</p>
+<p>​    本文提出并评估了一种神经网络结构，用于预测多标签集合中的少样本和零样本标签；针对频繁、少样本和零样本标签，通过使用扩展的广义零样本方法评估幂律数据集。</p>
+<h5 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h5><p><img src="http://jiajunjun.top/md_picture/FSL1/1.png" alt="图1"></p>
+<p>1.生成标签向量</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/2.png" alt="图2"></p>
+<p>2.为每一个标签生成特定的文本向量表示</p>
+<p>​    使用标签的注意力避免长文档中遇到的大海捞针的情况。首先通过一个前馈神经网络传递文本特征矩阵D:</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/3.png" alt="图3"></p>
+<p>​    生成label-wise注意力向量ai∈Rn-s+1，表示对于某个标签，每一个ngram的信息量。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/4.png" alt="图4"></p>
+<p>​    为每一个标签生成特定的文本向量表示ci∈Ru，D中所有行的加权平均。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/5.png" alt="图5"></p>
+<p>3..标签向量通过两层GCNN传递，包含关于标签空间的分层信息。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/6.png" alt="图6"></p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/7.png" alt="图7"></p>
+<p>​    然后将平均描述向量与GCNN标签向量连接起来</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/8.png" alt="图8"></p>
+<p>​    为了比较最终的标签向量v3和它的文档向量ci，我们将文档向量转换成</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/9.png" alt="图9"></p>
+<p>​    预测</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/10.png" alt="图10"></p>
+<p>4.训练</p>
+<p>使用多标签二元交叉熵损失来训练模型</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/11.png" alt="图11"></p>
+<p>参考文章：<a href="https://blog.csdn.net/Daffy10/article/details/109588275">https://blog.csdn.net/Daffy10/article/details/109588275</a></p>
+]]></content>
+      <categories>
+        <category>小样本学习</category>
+      </categories>
+      <tags>
+        <tag>Few-Shot Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Anaconda中为每个项目创建新环境</title>
+    <url>/2020/12/04/Anaconda%E4%B8%AD%E4%B8%BA%E6%AF%8F%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E6%96%B0%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<h1 id="创建新环境"><a href="#创建新环境" class="headerlink" title="创建新环境"></a>创建新环境</h1><p>进入cmd，进入anaconda所在的文件夹位置（如：D:\Software\Anaconda\envs）</p>
+<a id="more"></a>
+
+<p>依次输入：</p>
+<p><code>conda create --name 项目名称 python=版本号</code></p>
+<p><code>activate</code></p>
+<p><code>conda activate 项目名称</code>   切换不同环境的时候也使用该语句</p>
+<p>然后使用pip install安装所需包即可。</p>
+<hr>
+<h1 id="查看环境"><a href="#查看环境" class="headerlink" title="查看环境"></a>查看环境</h1><ul>
+<li>查看目前已安装的环境：<code>conda info --envs</code></li>
+<li>查看环境下已安装的包：<code>pip list</code></li>
+</ul>
+]]></content>
+      <categories>
+        <category>开发环境</category>
+      </categories>
+      <tags>
+        <tag>Anaconda</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>从1G到6G分别采用了哪种信道共享技术？</title>
     <url>/2020/12/04/1G-6G/</url>
     <content><![CDATA[<p>　　在计算机网络中使用的信道共享技术可以分为三种，即随机接入、受控接入和信道复用。</p>
@@ -35,64 +102,39 @@
       </tags>
   </entry>
   <entry>
-    <title>Anaconda中为每个项目创建新环境</title>
-    <url>/2020/12/04/Anaconda%E4%B8%AD%E4%B8%BA%E6%AF%8F%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E6%96%B0%E7%8E%AF%E5%A2%83/</url>
-    <content><![CDATA[<h1 id="创建新环境"><a href="#创建新环境" class="headerlink" title="创建新环境"></a>创建新环境</h1><p>进入cmd，进入anaconda所在的文件夹位置（如：D:\Software\Anaconda\envs）</p>
+    <title>文献阅读：Optimization as a model for few-shot learning</title>
+    <url>/2021/03/21/Optimization%20as%20a%20model%20for%20few-shot%20learning/</url>
+    <content><![CDATA[<h5 id="Optimization-as-a-model-for-few-shot-learning"><a href="#Optimization-as-a-model-for-few-shot-learning" class="headerlink" title="Optimization as a model for few-shot learning"></a>Optimization as a model for few-shot learning</h5><h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>​    提出基于LSTM的元学习者模型来学习精确的优化算法，用于训练另一个在少样本的情况下的学习者神经网络分类器。该模型能够学习适当的参数更新，还可以学习学习者网络的一般初始化，以便快速收敛训练。</p>
 <a id="more"></a>
 
-<p>依次输入：</p>
-<p><code>conda create --name 项目名称 python=版本号</code></p>
-<p><code>activate</code></p>
-<p><code>conda activate 项目名称</code>   切换不同环境的时候也使用该语句</p>
-<p>然后使用pip install安装所需包即可。</p>
-<hr>
-<h1 id="查看环境"><a href="#查看环境" class="headerlink" title="查看环境"></a>查看环境</h1><ul>
-<li>查看目前已安装的环境：<code>conda info --envs</code></li>
-<li>查看环境下已安装的包：<code>pip list</code></li>
-</ul>
+<h5 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h5><p>​    优化深度的、高容量的模型需要在许多标记的例子中进行多次迭代更新。但目前拥有的是一组数据集，每个数据集都有很少的带注释的实例。提出了一种基于LSTM的元学习者优化器，他经过训练来优化学习者神经网络分类器。元学习者既掌握任务中的短期知识，也掌握所有任务中普遍存在的长期知识。元学习者模型被训练为在每个任务上快速收敛学习者分类器到一个良好的解。此外，元学习者模型的形成允许它学习一个任务通用的初始化，它捕获所有任务之间共享的基本知识。</p>
+<p>​    基于梯度下降的优化算法在少样本问题上会导致失效，是由于基于梯度的下降算法都不是专门设计以用于少样本少量参数更新迭代的，还有就是对于分离的多个任务，网络参数通常会从一个随机的初始化参数开始训练，影响在少量参数更新迭代之后的表现。</p>
+<h5 id="Task-Description"><a href="#Task-Description" class="headerlink" title="Task Description"></a>Task Description</h5><p>​    机器学习中通常对一个数据集D进行划分，然后在训练集上优化参数，在测试集上评估泛化能力。但是在元学习中，处理的是包含多个正则数据集的元集D<del>,每个D∈D</del>都包含训练集和测试集。</p>
+<p>​    对于一个K-shot,N-class的分类任务，训练集由N个类组成，每个类包含K个带标签的例子，即训练集包含K*N个数据。</p>
+<p>​    在元学习中，有不同的元集用于元训练、元验证和元测试。在元训练中训练一个元学习者，它可以把其中一个训练集作为输入，生成一个在相应的测试集上获得高平均分类性能的分类器（学习者）。使用元验证集对元学习者进行超参数选择，并在元测试集上评价其泛化性能。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL3/1.png" alt="图1"></p>
+<h5 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h5><h6 id="Model-Description"><a href="#Model-Description" class="headerlink" title="Model Description"></a>Model Description</h6><p>常规的梯度下降优化方法是：</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL3/2.png" alt="image-20210321192958948"></p>
+<p>​    这与LSTM中的单元状态的更新很类似，</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL3/3.png" alt="image-20210321193052220"></p>
+<p>​    因此提出一个使用LSTM的元学习者来学习一个更新规则。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL3/4.png" alt="image-20210321193604250"></p>
+<p><img src="http://jiajunjun.top/md_picture/FSL3/5.png" alt="image-20210321193611574"></p>
+<p>​    通过上述式子决定学习率it可以控制任务学习者在少样本学习任务上快速学习同时避免发散。对于ft，需要收缩当前的参数并忘掉部分之前的参数来逃离当前的局部最优。</p>
+<p>​    这样不仅学习了一个新的优化过程，还学习了一个作为任务学习者的初始化参数，这个初始化参数可以作为一个最佳的训练起点，加速优化过程。</p>
+<h6 id="Parameter-sharing-amp-Preprocessing"><a href="#Parameter-sharing-amp-Preprocessing" class="headerlink" title="Parameter sharing &amp; Preprocessing"></a>Parameter sharing &amp; Preprocessing</h6><p>​    为了避免元学习者的参数爆炸，采用了在任务学习者的梯度坐标上共享参数。将输入作为一批梯度坐标和每个维度的损失输入。</p>
+<p>​    由于不同坐标的梯度和损失大小可能不同，所以进行了一个标准化。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL3/6.png" alt="image-20210321194635027"></p>
+<h6 id="Training"><a href="#Training" class="headerlink" title="Training"></a>Training</h6><p>​    在多个元训练集上进行训练，然后学习到所需要的更新规则和初始化，面对一个新的少样本任务是，在这个任务的support set上使用更新规则对这个初始化参数进行优化更新，在query set上进行性能评估。</p>
+<h5 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h5><p>数据集：MIMIC Ⅱ 和MIMIC Ⅲ（包含标注诊断和手术标签的出院总结），根据训练数据集中的频分为三组：频繁组（大于5），少样本组（1~5），零样本组。</p>
+<p>评估方法：同一个实例可以出现在所有的组中，多标签；采用R@k处理多个标签。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL3/7.png" alt="image-20210322093249973"></p>
 ]]></content>
       <categories>
-        <category>开发环境</category>
+        <category>小样本学习</category>
       </categories>
       <tags>
-        <tag>Anaconda</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>从网络体系架构的角度分析，P2P技术的本质是什么？</title>
-    <url>/2020/12/16/P2P%E7%BD%91%E7%BB%9C%E7%9A%84%E6%9C%AC%E8%B4%A8/</url>
-    <content><![CDATA[<p>　　P2P可以理解为对等计算或对等网络。国内一些媒体将P2P翻译成“点对点”或者“端对端”，学术界则统一称为对等网络（Peer-to-peer networking）或对等计算（Peer-to-peer computing），<a id="more"></a>其可以定义为：网络的参与者共享他们所拥有的一部分硬件资源（处理能力、存储能力、网络连接能力、打印机等），这些共享资源通过网络提供服务和内容，能被其它对等节点（Peer）直接访问而无需经过中间实体。在此网络中的参与者既是资源、服务和内容的提供者（Server），又是资源、服务和内容的获取者（Client）。</p>
-<p>　　目前主流的客户端/服务器（Client/Server）结构中，客户端和服务器之间的关系是主从关系。在C/S中，效率=服务器的数量/客户端的数量，随着客户端的数量的急速增长，效率越来越低。因此一种解决方法是将一部分客户端转变成服务器，这样效率就会增大。即若用户N1从服务器S下载10%的文件之后就可以作为服务器来供其他用户使用。因此，将C变成S就是P2P对等网络的本质。</p>
-]]></content>
-      <categories>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-        <tag>P2P</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>为什么要开发TCP/IP协议</title>
-    <url>/2020/12/04/TCPIP/</url>
-    <content><![CDATA[<p>TCP/IP协议的作用是使计算机实现互联共享。</p>
-<a id="more"></a>
-
-<p>　　世界上有很多台计算机，多台计算机之间需要进行通信，因此Internet可以将不同地区的计算机相互连接。但是每台计算机都使用不同的操作系统，为了使这些互连的计算机之间能够进行通信，他们必须使用同样的“语言”。就像世界各地的人都使用不同的语言，当他们需要进行交流的时候就需要一个共同的语言以便沟通，这个共同的“语言”就是协议。只要使用相同的协议便可以实现通信。</p>
-<p>　　因此，TCP/IP(Transmission Control Protocol/Internet Protocol)是指能够在多个不同的网络间实现传输的协议簇。也就是说，TCP/IP 是互联网相关各类协议族的总称。</p>
-<p>　　TCP/IP五层模型为：<img src="http://jiajunjun.top/md_picture/Tcpip.png" alt="图2"></p>
-<p>　　物理层：该层负责比特流在节点之间的传输，即负责物理传输。</p>
-<p>　　数据链路层：控制网络层与物理层之间的通信，主要功能是保证物理线路上进行可靠的数据传递。</p>
-<p>　　网络层：决定如何将数据从发送方路由到接收方。网络层通过综合考虑发送优先权，网络拥塞程度，服务质量以及可选路由的花费等来决定从网络中的A节点到B节点的最佳途径。即建立主机到主机的通信。</p>
-<p>　　传输层：该层为两台主机上的应用程序提供端到端的通信。</p>
-<p>　　应用层：应用程序收到传输层的数据后，接下来就要进行解读。解读必须事先规定好格式，而应用层就是规定应用程序的数据格式。主要的协议有：HTTP.FTP,Telent等。</p>
-]]></content>
-      <categories>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-        <tag>TCP/IP</tag>
+        <tag>Few-Shot Learning</tag>
       </tags>
   </entry>
   <entry>
@@ -147,6 +189,20 @@
       </tags>
   </entry>
   <entry>
+    <title>从网络体系架构的角度分析，P2P技术的本质是什么？</title>
+    <url>/2020/12/16/P2P%E7%BD%91%E7%BB%9C%E7%9A%84%E6%9C%AC%E8%B4%A8/</url>
+    <content><![CDATA[<p>　　P2P可以理解为对等计算或对等网络。国内一些媒体将P2P翻译成“点对点”或者“端对端”，学术界则统一称为对等网络（Peer-to-peer networking）或对等计算（Peer-to-peer computing），<a id="more"></a>其可以定义为：网络的参与者共享他们所拥有的一部分硬件资源（处理能力、存储能力、网络连接能力、打印机等），这些共享资源通过网络提供服务和内容，能被其它对等节点（Peer）直接访问而无需经过中间实体。在此网络中的参与者既是资源、服务和内容的提供者（Server），又是资源、服务和内容的获取者（Client）。</p>
+<p>　　目前主流的客户端/服务器（Client/Server）结构中，客户端和服务器之间的关系是主从关系。在C/S中，效率=服务器的数量/客户端的数量，随着客户端的数量的急速增长，效率越来越低。因此一种解决方法是将一部分客户端转变成服务器，这样效率就会增大。即若用户N1从服务器S下载10%的文件之后就可以作为服务器来供其他用户使用。因此，将C变成S就是P2P对等网络的本质。</p>
+]]></content>
+      <categories>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+        <tag>P2P</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>在markdown中插入图片</title>
     <url>/2020/12/02/markdown%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
     <content><![CDATA[<h1 id="在markdown文件中插入图片"><a href="#在markdown文件中插入图片" class="headerlink" title="在markdown文件中插入图片"></a>在markdown文件中插入图片</h1><p>　　这里选择采用将图片上传到GitHub上的方法进行图片的插入。具体步骤如下：</p>
@@ -188,100 +244,26 @@
       </tags>
   </entry>
   <entry>
-    <title>文献阅读：Understanding Dropouts in MOOCs</title>
-    <url>/2020/12/01/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p><strong>objective：</strong></p>
-<p>　　MOOCs有极高的辍学率，完成率低于5% 。本文研究导致用户退出的主要因素，用户在MOOCs学习的主要动机。</p>
+    <title>为什么要开发TCP/IP协议</title>
+    <url>/2020/12/04/TCPIP/</url>
+    <content><![CDATA[<p>TCP/IP协议的作用是使计算机实现互联共享。</p>
 <a id="more"></a>
 
-<p><strong>methods：</strong></p>
-<p>　　将用户的学习行为分成几个不同的类别。揭示不同课程的辍学者之间的高度相关性以及朋友辍学行为之间的强烈影响。在此基础上，提出了一个上下文感知的特征交互网络(CFIN)来建模和预测用户的退出行为。CFIN利用上下文平滑技术平滑不同上下文的特征值，并利用注意机制将用户和课程信息结合到建模框架中。</p>
-<p><strong>results：</strong></p>
-<p>　　CFIN比现有的几种方法具有更好的性能。所提出的方法模型已经在实际系统上部署，以帮助提高用户保留率。</p>
-<hr>
-<h1 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h1><p>　　KDDCUP、XuetangX</p>
-<hr>
-<h1 id="Insights"><a href="#Insights" class="headerlink" title="Insights"></a>Insights</h1><h2 id="Temporal-Code"><a href="#Temporal-Code" class="headerlink" title="Temporal Code"></a>Temporal Code</h2><p>　　Suc:学生u和登记的课程c，时间代码是一个二值向量，每个值表示用户u在第k周是否访问课程c。</p>
-<p>　　Su:学生u的每一项课程在每周的访问情况</p>
-<h2 id="聚类"><a href="#聚类" class="headerlink" title="聚类"></a>聚类</h2><p>　　将所有用户时间编码的稀疏表示输入到K-means算法中。</p>
-<p>　　通过Silhouette Analysis(1987)，集群的数量被设置为5。</p>
-<h2 id="相关性"><a href="#相关性" class="headerlink" title="相关性"></a>相关性</h2><ul>
-<li><strong>课程之间的相关性（回归分析）：</strong></li>
-</ul>
-<p>　　方法：用户在课程中的退学行为被编码为16-dim虚拟向量，每个元素表示用户在相应的一周内是否访问过该课程(因此16对应学习该课程的16周)。回归模型的输入和输出是两个虚拟向量，表示用户在同一学期中对两门不同课程的退学行为。</p>
-<p>　　结果：同一类别的课程之间的相关性要高于不同类别的课程。一种可能的解释是，当用户学习MOOC的时间有限时，他们可能会首先放弃自己的课程，而选择补充知识领域的课程。</p>
-<ul>
-<li><strong>辍学朋友的影响（基于网络）：</strong></li>
-</ul>
-<p>　　方法：建立用户-课程图，节点是用户和课程，边是代表参加了课程。用随机游走算法为图中的每个用户和每个课程进行低维表示。计算了选修同一门课程的用户间的余弦相似度。相似度大于0.8视为好友。</p>
-<p>　　结果:结果表明用户的退学率很大程度上受到其朋友的退学行为的影响</p>
-<hr>
-<h1 id="CFIN算法"><a href="#CFIN算法" class="headerlink" title="CFIN算法"></a>CFIN算法</h1><h2 id="Formulation"><a href="#Formulation" class="headerlink" title="Formulation"></a>Formulation</h2><ul>
-<li><p><strong>Enrollment Relation（登记关系）：</strong> U,C,E</p>
-</li>
-<li><p><strong>Learning Activity（学习活动）：</strong>X（u,x）</p>
-</li>
-<li><p><strong>Context Information（上下文信息）：</strong>Z（u,c）包括用户信息（性别，年龄，位置，学历信息，用户聚类）和课程信息（课程类别）</p>
-</li>
-</ul>
-<h2 id="目标问题"><a href="#目标问题" class="headerlink" title="目标问题"></a>目标问题</h2><p>　　给定用户u在之前的关于课程c的学习活动<strong>X(u，c)**和上下文信息</strong>Z(u,c)**，判断用户在perdiction period是否有学习活动，用y(u,c)表示。</p>
-<h2 id="Context-aware-Feature-Interaction-Network（感知上下文的特征交互网络）"><a href="#Context-aware-Feature-Interaction-Network（感知上下文的特征交互网络）" class="headerlink" title="Context-aware Feature Interaction Network（感知上下文的特征交互网络）"></a>Context-aware Feature Interaction Network（感知上下文的特征交互网络）</h2><ul>
-<li><strong><em>Motivation</em>:</strong></li>
-</ul>
-<p>　　上下文平滑：使用卷积神经网络(CNN)通过利用上下文统计来学习每个活动特征**xi(u, c)**的上下文感知表示</p>
-<p>　　注意机制：通过将*<em>Z(u, c)**</em>纳入到退学预测中，来学习不同活动的重要性。</p>
-<ul>
-<li><strong><em>上下文平滑策略</em>:</strong></li>
-</ul>
-<p>　　三个步骤：特征增强、嵌入和特征融合。</p>
-<pre><code>+ **特征增强：** **xi（u，c)**加上用户u对所有课程的统计信息，和课程在所有用户上的统计信息。
-
-+ **嵌入：****xi**通过嵌入层转化为稠密向量,乘以参数a表示嵌入向量。
-
-+ **特征融合：**将嵌入矩阵Egi通过CNN变成一个向量,Vgi=σ（Wδ(Egi)+b)
-
-**每个特征组Xgi都被一个稠密向量Vgi表示，它可以被看作是每个xi的上下文感知的表示，并集成了其上下文统计信息。**</code></pre>
-<ul>
-<li><strong><em>注意机制</em>:</strong></li>
-</ul>
-<p>　　将Z的嵌入矩阵Ez输入到全连通层中，将Z转换为密集向量Vz：Vz=σ（Wδ(Ez)+b)</p>
-<p>　　使用Vz计算每个Vgi的注意力分数λi</p>
-<p>　　得到λi*Vgi的加权和Vg sum,作为X(u,c)的上下文感知表示</p>
-<p>　　将Vg sum放入l层的DNN中学习特征间的相互作用，最后用sigmoid函数预测</p>
-<h2 id="Model-Ensemble（模型集成）"><a href="#Model-Ensemble（模型集成）" class="headerlink" title="Model Ensemble（模型集成）"></a>Model Ensemble（模型集成）</font></h2><p><strong>xgboost结合CFIN</strong></p>
-<hr>
-<h1 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h1><h2 id="实现细节"><a href="#实现细节" class="headerlink" title="实现细节"></a>实现细节</h2><p>　　使用TensorFlow实现CFIN，采用Adam对模型进行优化。为了避免过拟合，对权值矩阵应用l2正则化。采用直线直线单元(Relu)作为激活函数。所有特性在输入到CFIN之前都经过了标准化。</p>
-<p>　　在KDDCUP和XuetangX数据集上测试了CFIN的性能。对于KDDCUP数据集，比赛组织者将历史周期和预测周期分别设置为30天和10天。没有对该数据使用CFIN的注意机制，因为数据集中没有提供上下文信息。对于XuetangX数据集，历史周期设置为35天，预测周期设置为10天，即Dh=35, Dp=10</p>
-<h2 id="对比算法"><a href="#对比算法" class="headerlink" title="对比算法"></a>对比算法</h2><ul>
-<li> LR</li>
-<li> SVM</li>
-<li> RF</li>
-<li> GBDT</li>
-<li> DNN</li>
-<li> CFIN</li>
-<li> CFIN-en</li>
-</ul>
-<p>　　基于网格搜索的5次交叉验证(CV)调整参数，并在所有实验中使用最优的参数组。评价指标包括 AUC和F1。</p>
-<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><ul>
-<li>预测结果</li>
-</ul>
-<p>　　CFIN-en在两个数据集上的表现都是最好的，在KDDCUP数据集上AUC得分达到90.93%，CFIN也表现出更好的性能。</p>
-<ul>
-<li>特征贡献</li>
-</ul>
-<p>　　对三个主要活动特征进行了特征消融实验，即视频活动、任务活动和论坛活动。具体来说，我们首先将所有特性输入到CFIN，然后逐个删除每种类型的活动特性，以观察性能的变化。</p>
-<p>　　结果表示，这三种活动在这个任务中都是有用的。在KDDCUP上，作业是最重要的，而在XuetangX上，视频是最重要的。</p>
-<ul>
-<li>不同用户组的不同特性的细粒度分析</li>
-</ul>
-<p>　　五组群体的注意权重分布有很大的不同</p>
+<p>　　世界上有很多台计算机，多台计算机之间需要进行通信，因此Internet可以将不同地区的计算机相互连接。但是每台计算机都使用不同的操作系统，为了使这些互连的计算机之间能够进行通信，他们必须使用同样的“语言”。就像世界各地的人都使用不同的语言，当他们需要进行交流的时候就需要一个共同的语言以便沟通，这个共同的“语言”就是协议。只要使用相同的协议便可以实现通信。</p>
+<p>　　因此，TCP/IP(Transmission Control Protocol/Internet Protocol)是指能够在多个不同的网络间实现传输的协议簇。也就是说，TCP/IP 是互联网相关各类协议族的总称。</p>
+<p>　　TCP/IP五层模型为：<img src="http://jiajunjun.top/md_picture/Tcpip.png" alt="图2"></p>
+<p>　　物理层：该层负责比特流在节点之间的传输，即负责物理传输。</p>
+<p>　　数据链路层：控制网络层与物理层之间的通信，主要功能是保证物理线路上进行可靠的数据传递。</p>
+<p>　　网络层：决定如何将数据从发送方路由到接收方。网络层通过综合考虑发送优先权，网络拥塞程度，服务质量以及可选路由的花费等来决定从网络中的A节点到B节点的最佳途径。即建立主机到主机的通信。</p>
+<p>　　传输层：该层为两台主机上的应用程序提供端到端的通信。</p>
+<p>　　应用层：应用程序收到传输层的数据后，接下来就要进行解读。解读必须事先规定好格式，而应用层就是规定应用程序的数据格式。主要的协议有：HTTP.FTP,Telent等。</p>
 ]]></content>
       <categories>
-        <category>教育数据挖掘</category>
+        <category>计算机网络</category>
       </categories>
       <tags>
-        <tag>教育数据挖掘</tag>
-        <tag>算法</tag>
+        <tag>计算机网络</tag>
+        <tag>TCP/IP</tag>
       </tags>
   </entry>
   <entry>
@@ -430,6 +412,103 @@
       </tags>
   </entry>
   <entry>
+    <title>文献阅读：Understanding Dropouts in MOOCs</title>
+    <url>/2020/12/01/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p><strong>objective：</strong></p>
+<p>　　MOOCs有极高的辍学率，完成率低于5% 。本文研究导致用户退出的主要因素，用户在MOOCs学习的主要动机。</p>
+<a id="more"></a>
+
+<p><strong>methods：</strong></p>
+<p>　　将用户的学习行为分成几个不同的类别。揭示不同课程的辍学者之间的高度相关性以及朋友辍学行为之间的强烈影响。在此基础上，提出了一个上下文感知的特征交互网络(CFIN)来建模和预测用户的退出行为。CFIN利用上下文平滑技术平滑不同上下文的特征值，并利用注意机制将用户和课程信息结合到建模框架中。</p>
+<p><strong>results：</strong></p>
+<p>　　CFIN比现有的几种方法具有更好的性能。所提出的方法模型已经在实际系统上部署，以帮助提高用户保留率。</p>
+<hr>
+<h1 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h1><p>　　KDDCUP、XuetangX</p>
+<hr>
+<h1 id="Insights"><a href="#Insights" class="headerlink" title="Insights"></a>Insights</h1><h2 id="Temporal-Code"><a href="#Temporal-Code" class="headerlink" title="Temporal Code"></a>Temporal Code</h2><p>　　Suc:学生u和登记的课程c，时间代码是一个二值向量，每个值表示用户u在第k周是否访问课程c。</p>
+<p>　　Su:学生u的每一项课程在每周的访问情况</p>
+<h2 id="聚类"><a href="#聚类" class="headerlink" title="聚类"></a>聚类</h2><p>　　将所有用户时间编码的稀疏表示输入到K-means算法中。</p>
+<p>　　通过Silhouette Analysis(1987)，集群的数量被设置为5。</p>
+<h2 id="相关性"><a href="#相关性" class="headerlink" title="相关性"></a>相关性</h2><ul>
+<li><strong>课程之间的相关性（回归分析）：</strong></li>
+</ul>
+<p>　　方法：用户在课程中的退学行为被编码为16-dim虚拟向量，每个元素表示用户在相应的一周内是否访问过该课程(因此16对应学习该课程的16周)。回归模型的输入和输出是两个虚拟向量，表示用户在同一学期中对两门不同课程的退学行为。</p>
+<p>　　结果：同一类别的课程之间的相关性要高于不同类别的课程。一种可能的解释是，当用户学习MOOC的时间有限时，他们可能会首先放弃自己的课程，而选择补充知识领域的课程。</p>
+<ul>
+<li><strong>辍学朋友的影响（基于网络）：</strong></li>
+</ul>
+<p>　　方法：建立用户-课程图，节点是用户和课程，边是代表参加了课程。用随机游走算法为图中的每个用户和每个课程进行低维表示。计算了选修同一门课程的用户间的余弦相似度。相似度大于0.8视为好友。</p>
+<p>　　结果:结果表明用户的退学率很大程度上受到其朋友的退学行为的影响</p>
+<hr>
+<h1 id="CFIN算法"><a href="#CFIN算法" class="headerlink" title="CFIN算法"></a>CFIN算法</h1><h2 id="Formulation"><a href="#Formulation" class="headerlink" title="Formulation"></a>Formulation</h2><ul>
+<li><p><strong>Enrollment Relation（登记关系）：</strong> U,C,E</p>
+</li>
+<li><p><strong>Learning Activity（学习活动）：</strong>X（u,x）</p>
+</li>
+<li><p><strong>Context Information（上下文信息）：</strong>Z（u,c）包括用户信息（性别，年龄，位置，学历信息，用户聚类）和课程信息（课程类别）</p>
+</li>
+</ul>
+<h2 id="目标问题"><a href="#目标问题" class="headerlink" title="目标问题"></a>目标问题</h2><p>　　给定用户u在之前的关于课程c的学习活动<strong>X(u，c)**和上下文信息</strong>Z(u,c)**，判断用户在perdiction period是否有学习活动，用y(u,c)表示。</p>
+<h2 id="Context-aware-Feature-Interaction-Network（感知上下文的特征交互网络）"><a href="#Context-aware-Feature-Interaction-Network（感知上下文的特征交互网络）" class="headerlink" title="Context-aware Feature Interaction Network（感知上下文的特征交互网络）"></a>Context-aware Feature Interaction Network（感知上下文的特征交互网络）</h2><ul>
+<li><strong><em>Motivation</em>:</strong></li>
+</ul>
+<p>　　上下文平滑：使用卷积神经网络(CNN)通过利用上下文统计来学习每个活动特征**xi(u, c)**的上下文感知表示</p>
+<p>　　注意机制：通过将*<em>Z(u, c)**</em>纳入到退学预测中，来学习不同活动的重要性。</p>
+<ul>
+<li><strong><em>上下文平滑策略</em>:</strong></li>
+</ul>
+<p>　　三个步骤：特征增强、嵌入和特征融合。</p>
+<pre><code>+ **特征增强：** **xi（u，c)**加上用户u对所有课程的统计信息，和课程在所有用户上的统计信息。
+
++ **嵌入：****xi**通过嵌入层转化为稠密向量,乘以参数a表示嵌入向量。
+
++ **特征融合：**将嵌入矩阵Egi通过CNN变成一个向量,Vgi=σ（Wδ(Egi)+b)
+
+**每个特征组Xgi都被一个稠密向量Vgi表示，它可以被看作是每个xi的上下文感知的表示，并集成了其上下文统计信息。**</code></pre>
+<ul>
+<li><strong><em>注意机制</em>:</strong></li>
+</ul>
+<p>　　将Z的嵌入矩阵Ez输入到全连通层中，将Z转换为密集向量Vz：Vz=σ（Wδ(Ez)+b)</p>
+<p>　　使用Vz计算每个Vgi的注意力分数λi</p>
+<p>　　得到λi*Vgi的加权和Vg sum,作为X(u,c)的上下文感知表示</p>
+<p>　　将Vg sum放入l层的DNN中学习特征间的相互作用，最后用sigmoid函数预测</p>
+<h2 id="Model-Ensemble（模型集成）"><a href="#Model-Ensemble（模型集成）" class="headerlink" title="Model Ensemble（模型集成）"></a>Model Ensemble（模型集成）</font></h2><p><strong>xgboost结合CFIN</strong></p>
+<hr>
+<h1 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h1><h2 id="实现细节"><a href="#实现细节" class="headerlink" title="实现细节"></a>实现细节</h2><p>　　使用TensorFlow实现CFIN，采用Adam对模型进行优化。为了避免过拟合，对权值矩阵应用l2正则化。采用直线直线单元(Relu)作为激活函数。所有特性在输入到CFIN之前都经过了标准化。</p>
+<p>　　在KDDCUP和XuetangX数据集上测试了CFIN的性能。对于KDDCUP数据集，比赛组织者将历史周期和预测周期分别设置为30天和10天。没有对该数据使用CFIN的注意机制，因为数据集中没有提供上下文信息。对于XuetangX数据集，历史周期设置为35天，预测周期设置为10天，即Dh=35, Dp=10</p>
+<h2 id="对比算法"><a href="#对比算法" class="headerlink" title="对比算法"></a>对比算法</h2><ul>
+<li> LR</li>
+<li> SVM</li>
+<li> RF</li>
+<li> GBDT</li>
+<li> DNN</li>
+<li> CFIN</li>
+<li> CFIN-en</li>
+</ul>
+<p>　　基于网格搜索的5次交叉验证(CV)调整参数，并在所有实验中使用最优的参数组。评价指标包括 AUC和F1。</p>
+<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><ul>
+<li>预测结果</li>
+</ul>
+<p>　　CFIN-en在两个数据集上的表现都是最好的，在KDDCUP数据集上AUC得分达到90.93%，CFIN也表现出更好的性能。</p>
+<ul>
+<li>特征贡献</li>
+</ul>
+<p>　　对三个主要活动特征进行了特征消融实验，即视频活动、任务活动和论坛活动。具体来说，我们首先将所有特性输入到CFIN，然后逐个删除每种类型的活动特性，以观察性能的变化。</p>
+<p>　　结果表示，这三种活动在这个任务中都是有用的。在KDDCUP上，作业是最重要的，而在XuetangX上，视频是最重要的。</p>
+<ul>
+<li>不同用户组的不同特性的细粒度分析</li>
+</ul>
+<p>　　五组群体的注意权重分布有很大的不同</p>
+]]></content>
+      <categories>
+        <category>教育数据挖掘</category>
+      </categories>
+      <tags>
+        <tag>教育数据挖掘</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>案例学习1：基于图像的水质识别</title>
     <url>/2021/01/09/%E6%A1%88%E4%BE%8B%E5%AD%A6%E4%B9%A01%EF%BC%9A%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB/</url>
     <content><![CDATA[<h1 id="案例背景"><a href="#案例背景" class="headerlink" title="案例背景"></a>案例背景</h1><p>已有数据集根据专家经验将水质分为5个类别，要求根据水质图片能够实现水质的分类。</p>
@@ -469,6 +548,28 @@
       </tags>
   </entry>
   <entry>
+    <title>从面向连接和无连接的角度分析，计算机网络为什么没有采用通信网络的方法和模式？</title>
+    <url>/2020/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%97%A0%E8%BF%9E%E6%8E%A5/</url>
+    <content><![CDATA[<ul>
+<li>面向连接：在通信时事先建立好一条虚拟通信线路</li>
+<li>无连接：不需事先建立线路，每个分组自主选择线路传输到目标地址<a id="more"></a>
+　　通信网络采用面向连接的方式，使用电路交换，由核心网链接各种终端和设备，而计算机网络的可靠传输从核心网外移，在核心网中只提供互连的作用，因此可靠传输如何实现是计算机网络需要考虑的问题。计算机网络没有采用面向连接的原因有：</li>
+</ul>
+<p>　　1.二者终端设备的性能差别大</p>
+<p>　　通信网络的终端不具备差错处理和计算能力，需要采用面向连接来保证通信的质量。而计算机网络的终端是只能的主机，如果传输过程中出现了差错，终端也有办法实现可靠传输。</p>
+<p>　　2.即使网络传输正确，端到端的数据处理也有可能出现错误。在传输层中使用TCP面向连接的协议用来保障可靠传输。网络层使用无连接的方法。</p>
+<p>　　3.计算机网络的需求更多，如果采用面向连接的方法所需成本较高。</p>
+<p>　　这也是201电话比之前电话便宜一半的原因。</p>
+]]></content>
+      <categories>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+        <tag>面向连接和无连接</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>案例实践1：手写数字识别</title>
     <url>/2021/01/10/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/</url>
     <content><![CDATA[<h1 id="实践过程遇到的问题"><a href="#实践过程遇到的问题" class="headerlink" title="实践过程遇到的问题"></a>实践过程遇到的问题</h1><p>1.教程中图片读取使用的是cv2。cv2和pillow.Image的区别如下：</p>
@@ -493,28 +594,6 @@
         <tag>计算机视觉</tag>
         <tag>图像处理</tag>
         <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>从面向连接和无连接的角度分析，计算机网络为什么没有采用通信网络的方法和模式？</title>
-    <url>/2020/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%97%A0%E8%BF%9E%E6%8E%A5/</url>
-    <content><![CDATA[<ul>
-<li>面向连接：在通信时事先建立好一条虚拟通信线路</li>
-<li>无连接：不需事先建立线路，每个分组自主选择线路传输到目标地址<a id="more"></a>
-　　通信网络采用面向连接的方式，使用电路交换，由核心网链接各种终端和设备，而计算机网络的可靠传输从核心网外移，在核心网中只提供互连的作用，因此可靠传输如何实现是计算机网络需要考虑的问题。计算机网络没有采用面向连接的原因有：</li>
-</ul>
-<p>　　1.二者终端设备的性能差别大</p>
-<p>　　通信网络的终端不具备差错处理和计算能力，需要采用面向连接来保证通信的质量。而计算机网络的终端是只能的主机，如果传输过程中出现了差错，终端也有办法实现可靠传输。</p>
-<p>　　2.即使网络传输正确，端到端的数据处理也有可能出现错误。在传输层中使用TCP面向连接的协议用来保障可靠传输。网络层使用无连接的方法。</p>
-<p>　　3.计算机网络的需求更多，如果采用面向连接的方法所需成本较高。</p>
-<p>　　这也是201电话比之前电话便宜一半的原因。</p>
-]]></content>
-      <categories>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-        <tag>面向连接和无连接</tag>
       </tags>
   </entry>
 </search>

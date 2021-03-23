@@ -23,22 +23,29 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1}};
   </script>
-<meta name="description" content="在计算机网络中使用的信道共享技术可以分为三种，即随机接入、受控接入和信道复用。">
+<meta name="description" content="Optimization as a model for few-shot learningAbstract​    提出基于LSTM的元学习者模型来学习精确的优化算法，用于训练另一个在少样本的情况下的学习者神经网络分类器。该模型能够学习适当的参数更新，还可以学习学习者网络的一般初始化，以便快速收敛训练。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="从1G到6G分别采用了哪种信道共享技术？">
-<meta property="og:url" content="http://example.com/2020/12/04/1G-6G/index.html">
+<meta property="og:title" content="文献阅读：Optimization as a model for few-shot learning">
+<meta property="og:url" content="http://example.com/2021/03/21/Optimization%20as%20a%20model%20for%20few-shot%20learning/index.html">
 <meta property="og:site_name" content="JiaJun">
-<meta property="og:description" content="在计算机网络中使用的信道共享技术可以分为三种，即随机接入、受控接入和信道复用。">
+<meta property="og:description" content="Optimization as a model for few-shot learningAbstract​    提出基于LSTM的元学习者模型来学习精确的优化算法，用于训练另一个在少样本的情况下的学习者神经网络分类器。该模型能够学习适当的参数更新，还可以学习学习者网络的一般初始化，以便快速收敛训练。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-12-04T07:16:55.096Z">
-<meta property="article:modified_time" content="2020-12-04T12:50:08.214Z">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL3/1.png">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL3/2.png">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL3/3.png">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL3/4.png">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL3/5.png">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL3/6.png">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL3/7.png">
+<meta property="article:published_time" content="2021-03-21T12:01:20.188Z">
+<meta property="article:modified_time" content="2021-03-23T12:51:07.062Z">
 <meta property="article:author" content="Guo JiaJun">
-<meta property="article:tag" content="计算机网络">
-<meta property="article:tag" content="1G,2G,3G,4G,5G,6G">
+<meta property="article:tag" content="Few-Shot Learning">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jiajunjun.top/md_picture/FSL3/1.png">
 
 
-<link rel="canonical" href="http://example.com/2020/12/04/1G-6G/">
+<link rel="canonical" href="http://example.com/2021/03/21/Optimization%20as%20a%20model%20for%20few-shot%20learning/">
 
 
 <script class="page-configurations">
@@ -50,7 +57,7 @@
     lang   : 'zh-CN'
   };
 </script>
-<title>从1G到6G分别采用了哪种信道共享技术？ | JiaJun</title>
+<title>文献阅读：Optimization as a model for few-shot learning | JiaJun</title>
   
 
 
@@ -190,7 +197,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -203,6 +210,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#Optimization-as-a-model-for-few-shot-learning"><span class="nav-number">1.</span> <span class="nav-text">Optimization as a model for few-shot learning</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Abstract"><span class="nav-number">2.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Introduction"><span class="nav-number">3.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Task-Description"><span class="nav-number">4.</span> <span class="nav-text">Task Description</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Model"><span class="nav-number">5.</span> <span class="nav-text">Model</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Model-Description"><span class="nav-number">5.1.</span> <span class="nav-text">Model Description</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Parameter-sharing-amp-Preprocessing"><span class="nav-number">5.2.</span> <span class="nav-text">Parameter sharing &amp; Preprocessing</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Training"><span class="nav-number">5.3.</span> <span class="nav-text">Training</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Experiments"><span class="nav-number">6.</span> <span class="nav-text">Experiments</span></a></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -276,7 +284,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/04/1G-6G/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/21/Optimization%20as%20a%20model%20for%20few-shot%20learning/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -289,7 +297,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          从1G到6G分别采用了哪种信道共享技术？
+          文献阅读：Optimization as a model for few-shot learning
         </h1>
 
         <div class="post-meta-container">
@@ -299,17 +307,23 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2020-12-04 15:16:55 / 修改时间：20:50:08" itemprop="dateCreated datePublished" datetime="2020-12-04T15:16:55+08:00">2020-12-04</time>
+      <time title="创建时间：2021-03-21 20:01:20" itemprop="dateCreated datePublished" datetime="2021-03-21T20:01:20+08:00">2021-03-21</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-03-23 20:51:07" itemprop="dateModified" datetime="2021-03-23T20:51:07+08:00">2021-03-23</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">计算机网络</span></a>
+          <a href="/categories/%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">小样本学习</span></a>
         </span>
     </span>
 
@@ -330,28 +344,31 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>　　在计算机网络中使用的信道共享技术可以分为三种，即随机接入、受控接入和信道复用。</p>
+        <h5 id="Optimization-as-a-model-for-few-shot-learning"><a href="#Optimization-as-a-model-for-few-shot-learning" class="headerlink" title="Optimization as a model for few-shot learning"></a>Optimization as a model for few-shot learning</h5><h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>​    提出基于LSTM的元学习者模型来学习精确的优化算法，用于训练另一个在少样本的情况下的学习者神经网络分类器。该模型能够学习适当的参数更新，还可以学习学习者网络的一般初始化，以便快速收敛训练。</p>
 <a id="more"></a>
 
-<ul>
-<li><p>随机接入：所有的用户都可以根据自己的意愿随机地向信道上发送信息。当两个或两个以上的用户都在共享的信道上发送信息的时候，就产生了冲突，它导致用户的发送失败。随机接入技术主要就是研究解决冲突的网络协议。</p>
-</li>
-<li><p>受控接入：各个用户不能随意接入信道而必须服从一定的控制。分为集中式控制和分散式控制。集中式控制的主要方法是轮询技术，分散式控制的主要方法有令牌技术。</p>
-</li>
-<li><p>信道复用：信道复用主要用于将多个低速信号组合为一个混合的高速信号后，在高速信道上传输。分为频分复用，时分复用，波分复用，码分复用，空分复用，统计复用，极化波复用。</p>
-</li>
-</ul>
-<p>　　从1G到6G,手机通信系统需要解决的问题有：远距离传输、传输速度快、实现大量传输、保证传输的正确性、保证传输的安全性。</p>
-<ul>
-<li>为了使得传输距离更远，主要的问题就是解决干扰。干扰的存在导致距离不能传远，但是也不能不存在干扰，若无干扰则信号永远不会消失。原始的信号通常频率很低，在信道中传输损耗较大，因此不宜直接进行传输，所以需要进行信号调制。通过调制，将信号的通频带落到传输介质的通频带中，转换成适用于信道传输的信号。</li>
-<li>为了实现大量传输，则需要使用信道复用技术。有时分复用，空分复用，频分复用和码分复用。</li>
-</ul>
-<p>　　1G：1G时代仅限语音通话，此时是模拟通信，采用频分复用技术，将频率分割成多个片段。存在保密性差，信号不稳定，容易受噪声干扰且无法还原的问题。</p>
-<p>　　2G：2G可使用语音和文字，此时采用数字通信。若信号的频率为f，只要发送≥2f个点就可以将信号还原，抗干扰能力增强。采用频分复用和时分复用技术。</p>
-<p>　　3G：3G加入图像，音乐等媒体，采用码分复用技术。</p>
-<p>　　4G：采用码分复用，空分复用技术和长期演进技术。</p>
-<p>　　5G：采用频分复用、时分复用、空分复用、码分复用和Massive MIMO。</p>
-<p>　　6G：采用太赫兹技术。</p>
+<h5 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h5><p>​    优化深度的、高容量的模型需要在许多标记的例子中进行多次迭代更新。但目前拥有的是一组数据集，每个数据集都有很少的带注释的实例。提出了一种基于LSTM的元学习者优化器，他经过训练来优化学习者神经网络分类器。元学习者既掌握任务中的短期知识，也掌握所有任务中普遍存在的长期知识。元学习者模型被训练为在每个任务上快速收敛学习者分类器到一个良好的解。此外，元学习者模型的形成允许它学习一个任务通用的初始化，它捕获所有任务之间共享的基本知识。</p>
+<p>​    基于梯度下降的优化算法在少样本问题上会导致失效，是由于基于梯度的下降算法都不是专门设计以用于少样本少量参数更新迭代的，还有就是对于分离的多个任务，网络参数通常会从一个随机的初始化参数开始训练，影响在少量参数更新迭代之后的表现。</p>
+<h5 id="Task-Description"><a href="#Task-Description" class="headerlink" title="Task Description"></a>Task Description</h5><p>​    机器学习中通常对一个数据集D进行划分，然后在训练集上优化参数，在测试集上评估泛化能力。但是在元学习中，处理的是包含多个正则数据集的元集D<del>,每个D∈D</del>都包含训练集和测试集。</p>
+<p>​    对于一个K-shot,N-class的分类任务，训练集由N个类组成，每个类包含K个带标签的例子，即训练集包含K*N个数据。</p>
+<p>​    在元学习中，有不同的元集用于元训练、元验证和元测试。在元训练中训练一个元学习者，它可以把其中一个训练集作为输入，生成一个在相应的测试集上获得高平均分类性能的分类器（学习者）。使用元验证集对元学习者进行超参数选择，并在元测试集上评价其泛化性能。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL3/1.png" alt="图1"></p>
+<h5 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h5><h6 id="Model-Description"><a href="#Model-Description" class="headerlink" title="Model Description"></a>Model Description</h6><p>常规的梯度下降优化方法是：</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL3/2.png" alt="image-20210321192958948"></p>
+<p>​    这与LSTM中的单元状态的更新很类似，</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL3/3.png" alt="image-20210321193052220"></p>
+<p>​    因此提出一个使用LSTM的元学习者来学习一个更新规则。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL3/4.png" alt="image-20210321193604250"></p>
+<p><img src="http://jiajunjun.top/md_picture/FSL3/5.png" alt="image-20210321193611574"></p>
+<p>​    通过上述式子决定学习率it可以控制任务学习者在少样本学习任务上快速学习同时避免发散。对于ft，需要收缩当前的参数并忘掉部分之前的参数来逃离当前的局部最优。</p>
+<p>​    这样不仅学习了一个新的优化过程，还学习了一个作为任务学习者的初始化参数，这个初始化参数可以作为一个最佳的训练起点，加速优化过程。</p>
+<h6 id="Parameter-sharing-amp-Preprocessing"><a href="#Parameter-sharing-amp-Preprocessing" class="headerlink" title="Parameter sharing &amp; Preprocessing"></a>Parameter sharing &amp; Preprocessing</h6><p>​    为了避免元学习者的参数爆炸，采用了在任务学习者的梯度坐标上共享参数。将输入作为一批梯度坐标和每个维度的损失输入。</p>
+<p>​    由于不同坐标的梯度和损失大小可能不同，所以进行了一个标准化。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL3/6.png" alt="image-20210321194635027"></p>
+<h6 id="Training"><a href="#Training" class="headerlink" title="Training"></a>Training</h6><p>​    在多个元训练集上进行训练，然后学习到所需要的更新规则和初始化，面对一个新的少样本任务是，在这个任务的support set上使用更新规则对这个初始化参数进行优化更新，在query set上进行性能评估。</p>
+<h5 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h5><p>数据集：MIMIC Ⅱ 和MIMIC Ⅲ（包含标注诊断和手术标签的出院总结），根据训练数据集中的频分为三组：频繁组（大于5），少样本组（1~5），零样本组。</p>
+<p>评估方法：同一个实例可以出现在所有的组中，多标签；采用R@k处理多个标签。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL3/7.png" alt="image-20210322093249973"></p>
 
     </div>
 
@@ -361,21 +378,20 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag"># 计算机网络</a>
-              <a href="/tags/1G-2G-3G-4G-5G-6G/" rel="tag"># 1G,2G,3G,4G,5G,6G</a>
+              <a href="/tags/Few-Shot-Learning/" rel="tag"># Few-Shot Learning</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2020/12/04/TCPIP/" rel="prev" title="为什么要开发TCP/IP协议">
-                  <i class="fa fa-chevron-left"></i> 为什么要开发TCP/IP协议
+                <a href="/2021/01/10/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/" rel="prev" title="案例实践1：手写数字识别">
+                  <i class="fa fa-chevron-left"></i> 案例实践1：手写数字识别
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2020/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%97%A0%E8%BF%9E%E6%8E%A5/" rel="next" title="从面向连接和无连接的角度分析，计算机网络为什么没有采用通信网络的方法和模式？">
-                  从面向连接和无连接的角度分析，计算机网络为什么没有采用通信网络的方法和模式？ <i class="fa fa-chevron-right"></i>
+                <a href="/2021/03/21/Few-Shot%20and%20Zero-Shot%20Multi-Label%20Learning%20for%20Structured%20Label%20Spaces/" rel="next" title="文献阅读：Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces">
+                  文献阅读：Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
