@@ -23,33 +23,41 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1}};
   </script>
-<meta name="description" content="Few-Shot and Zero-Shot Multi-Label Learning for Structured Label SpacesAbstract​    对于文本分类问题，多标签的少样本或者无样本的标签预测很少被探索。在本文中，执行了一个细粒度的评估来理解最新的方法如何在不常见的标签上执行。此外，当标签空间上存在已知结构时，开发了多标签文本分类的少样本和无样本方法。">
+<meta name="description" content="Few-shot Learning​    在我们所熟知的深度学习领域，可以通过大量的训练集训练模型进行分类和回归。但当有标注的数据很少的时候该如何解决？Few-shot learning则是解决该问题的一个领域，就是用很少的样本进行分类或回归。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="文献阅读：Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces">
-<meta property="og:url" content="http://example.com/2021/03/21/Few-Shot%20and%20Zero-Shot%20Multi-Label%20Learning%20for%20Structured%20Label%20Spaces/index.html">
+<meta property="og:title" content="Few-Shot Learning">
+<meta property="og:url" content="http://example.com/2021/03/22/Few-shot%20Learning/index.html">
 <meta property="og:site_name" content="JiaJun">
-<meta property="og:description" content="Few-Shot and Zero-Shot Multi-Label Learning for Structured Label SpacesAbstract​    对于文本分类问题，多标签的少样本或者无样本的标签预测很少被探索。在本文中，执行了一个细粒度的评估来理解最新的方法如何在不常见的标签上执行。此外，当标签空间上存在已知结构时，开发了多标签文本分类的少样本和无样本方法。">
+<meta property="og:description" content="Few-shot Learning​    在我们所熟知的深度学习领域，可以通过大量的训练集训练模型进行分类和回归。但当有标注的数据很少的时候该如何解决？Few-shot learning则是解决该问题的一个领域，就是用很少的样本进行分类或回归。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL1/1.png">
-<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL1/2.png">
-<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL1/3.png">
-<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL1/4.png">
-<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL1/5.png">
-<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL1/6.png">
-<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL1/7.png">
-<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL1/8.png">
-<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL1/9.png">
-<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL1/10.png">
-<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL1/11.png">
-<meta property="article:published_time" content="2021-03-21T12:47:06.170Z">
-<meta property="article:modified_time" content="2021-03-23T12:26:45.591Z">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL/1.png">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL/2.png">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL/3.png">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL/4.png">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL/5.png">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL/6.png">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL/7.png">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL/8.png">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL/9.png">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL/10.png">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL/11.png">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL/12.png">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL/13.png">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL/14.png">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL/15.png">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL/16.png">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL/17.png">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL/18.png">
+<meta property="og:image" content="http://jiajunjun.top/md_picture/FSL/19.png">
+<meta property="article:published_time" content="2021-03-22T12:51:49.070Z">
+<meta property="article:modified_time" content="2021-03-23T12:26:40.512Z">
 <meta property="article:author" content="Guo JiaJun">
 <meta property="article:tag" content="Few-Shot Learning">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://jiajunjun.top/md_picture/FSL1/1.png">
+<meta name="twitter:image" content="http://jiajunjun.top/md_picture/FSL/1.png">
 
 
-<link rel="canonical" href="http://example.com/2021/03/21/Few-Shot%20and%20Zero-Shot%20Multi-Label%20Learning%20for%20Structured%20Label%20Spaces/">
+<link rel="canonical" href="http://example.com/2021/03/22/Few-shot%20Learning/">
 
 
 <script class="page-configurations">
@@ -61,7 +69,7 @@
     lang   : 'zh-CN'
   };
 </script>
-<title>文献阅读：Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces | JiaJun</title>
+<title>Few-Shot Learning | JiaJun</title>
   
 
 
@@ -214,7 +222,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces"><span class="nav-number">1.</span> <span class="nav-text">Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Abstract"><span class="nav-number">1.0.1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Introduction"><span class="nav-number">1.0.2.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Method"><span class="nav-number">1.0.3.</span> <span class="nav-text">Method</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Few-shot-Learning"><span class="nav-number">1.</span> <span class="nav-text">Few-shot Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%AA%E7%94%9F%E7%BD%91%E7%BB%9C%EF%BC%88siamese-network"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">孪生网络（siamese network)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Pretraining-%E5%92%8C-fine-tuning"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">Pretraining 和 fine tuning</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BD%99%E5%BC%A6%E7%9B%B8%E4%BC%BC%E5%BA%A6"><span class="nav-number">1.0.0.3.1.</span> <span class="nav-text">余弦相似度</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -288,7 +296,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/21/Few-Shot%20and%20Zero-Shot%20Multi-Label%20Learning%20for%20Structured%20Label%20Spaces/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/22/Few-shot%20Learning/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -301,7 +309,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          文献阅读：Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces
+          Few-Shot Learning
         </h1>
 
         <div class="post-meta-container">
@@ -312,14 +320,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-03-21 20:47:06" itemprop="dateCreated datePublished" datetime="2021-03-21T20:47:06+08:00">2021-03-21</time>
+      <time title="创建时间：2021-03-22 20:51:49" itemprop="dateCreated datePublished" datetime="2021-03-22T20:51:49+08:00">2021-03-22</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-23 20:26:45" itemprop="dateModified" datetime="2021-03-23T20:26:45+08:00">2021-03-23</time>
+        <time title="修改时间：2021-03-23 20:26:40" itemprop="dateModified" datetime="2021-03-23T20:26:40+08:00">2021-03-23</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -327,11 +335,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/" itemprop="url" rel="index"><span itemprop="name">文献阅读</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">小样本学习</span></a>
+          <a href="/categories/%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">小样本学习</span></a>
         </span>
     </span>
 
@@ -352,38 +356,46 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3 id="Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces"><a href="#Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces" class="headerlink" title="Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces"></a>Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces</h3><h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>​    对于文本分类问题，多标签的少样本或者无样本的标签预测很少被探索。在本文中，执行了一个细粒度的评估来理解最新的方法如何在不常见的标签上执行。此外，当标签空间上存在已知结构时，开发了多标签文本分类的少样本和无样本方法。</p>
+        <h1 id="Few-shot-Learning"><a href="#Few-shot-Learning" class="headerlink" title="Few-shot Learning"></a>Few-shot Learning</h1><p>​    在我们所熟知的深度学习领域，可以通过大量的训练集训练模型进行分类和回归。但当有标注的数据很少的时候该如何解决？Few-shot learning则是解决该问题的一个领域，就是用很少的样本进行分类或回归。</p>
 <a id="more"></a>
 
-<h5 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h5><p>​    大规模多标签文本分类存在的两个问题：</p>
-<p>​    1.在大型文档中查找特定标签的相关信息很难；</p>
-<p>​    2.数据稀疏的问题，随着标签总数的增加，一些标签可能会频繁出现，但是大多数标签不会频繁出现。</p>
-<p>​    few-shot learning是指在训练数据集中每个标签只有几个例子（通常在1~5之间）可用的监督方法。</p>
-<p>​    zero-shot learning是指在测试时想要预测的标签在训练数据中没有可用的。</p>
-<p>​    本文提出并评估了一种神经网络结构，用于预测多标签集合中的少样本和零样本标签；针对频繁、少样本和零样本标签，通过使用扩展的广义零样本方法评估幂律数据集。</p>
-<h5 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h5><p><img src="http://jiajunjun.top/md_picture/FSL1/1.png" alt="图1"></p>
-<p>1.生成标签向量</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/2.png" alt="图2"></p>
-<p>2.为每一个标签生成特定的文本向量表示</p>
-<p>​    使用标签的注意力避免长文档中遇到的大海捞针的情况。首先通过一个前馈神经网络传递文本特征矩阵D:</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/3.png" alt="图3"></p>
-<p>​    生成label-wise注意力向量ai∈Rn-s+1，表示对于某个标签，每一个ngram的信息量。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/4.png" alt="图4"></p>
-<p>​    为每一个标签生成特定的文本向量表示ci∈Ru，D中所有行的加权平均。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/5.png" alt="图5"></p>
-<p>3..标签向量通过两层GCNN传递，包含关于标签空间的分层信息。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/6.png" alt="图6"></p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/7.png" alt="图7"></p>
-<p>​    然后将平均描述向量与GCNN标签向量连接起来</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/8.png" alt="图8"></p>
-<p>​    为了比较最终的标签向量v3和它的文档向量ci，我们将文档向量转换成</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/9.png" alt="图9"></p>
-<p>​    预测</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/10.png" alt="图10"></p>
-<p>4.训练</p>
-<p>使用多标签二元交叉熵损失来训练模型</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/11.png" alt="图11"></p>
-<p>参考文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Daffy10/article/details/109588275">https://blog.csdn.net/Daffy10/article/details/109588275</a></p>
+<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>​    首先观察下边这幅图，左边是犰狳，右边是穿山甲。    </p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/1.png" alt="image-20210322194447292"></p>
+<p>​    现在给出一幅Query图片，判断这是犰狳还是穿山甲。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/2.png" alt="image-20210322194636385"></p>
+<p>​    我们可以很容易判断出上述图片是穿山甲。人类可以很容易的从少量样本中学习到信息，通过比对得出图片所属类别。Few-shot learning不是让机器识别训练集中的图片且泛化到测试集，而是学会如何学习。比如我们人类的思维是通过比较Query图片与上述Support set中的哪一类图片更相似从而得出正确的结论。所以类比到机器，只需要让机器learn to learn，然后判断下边的图片是不是同一类。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/3.png" alt="image-20210322195524598"></p>
+<p>​    当直接问神经网络下图中的Query是什么动物时，神经网络不能判别，但当给出下图的Support Set后再次让神经网络判断，得出Query是Otter.</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/4.png" alt="image-20210322195735615"></p>
+<p>​    让机器learn to learn 的过程就是meta learning。meta learning希望机器有自主学习的能力。就是即使没见过Query图片上的动物，但通过Support set上的动物便可以对所要分类的动物进行分辨的能力。</p>
+<p>​    few-shot learning中有两个常用的术语：k-way和n-shot。k-way指的是support set中有k个类，n-shot指的是每个类中含有n个样本。上图就是一个6 way 1 shot的例子。</p>
+<p>​    整个few-learning的过程如下，首先在一个大规模的数据集上学习辨别相似度的能力。然后使用学习到的相似度函数对图片进行预测。通过对Query和Support set中的图片一一对比，分别计算出相似度，从而进行判断，把相似度最高的作为图片的分类结果。</p>
+<h4 id="孪生网络（siamese-network"><a href="#孪生网络（siamese-network" class="headerlink" title="孪生网络（siamese network)"></a>孪生网络（siamese network)</h4><p>​    首先构建数据集，需要构造正样本和负样本。正样本使得神经网络辨别哪些东西属于同一类，负样本使得神经网络具有辨别差异的能力。正样本的选取是随机从数据集上选取一张图片，然后从该图片所属的类中随机抽取另一张，构成正样本，标签为1。负样本的选取是随机从数据集上选取一张图片，然后从除该图片所属类别外的其他类别随机抽取一张图片，构成负样本，标签为0。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/5.png" alt="image-20210322201253073"></p>
+<p>​    然后通过CNN提取图片的特征。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/6.png" alt="image-20210322201346084"></p>
+<p>​    现在开始训练神经网络，例如选出刚刚数据集中标签为1的数据，分别将两张图片放入同一个CNN中提取特征，之后判断相似度，图片中的Z=|h1- h2|,再用全连接层进行处理得到一个标量，最后使用sigmoid函数输出一个0到1之间的概率值，与其标签1进行比对，做损失函数预测标签和预测值的差别，然后反向更新全连接层和CNN的参数。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/7.png" alt="image-20210322201514340"></p>
+<p>​    类似的，训练标签为0的数据。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/8.png" alt="image-20210322201915752"></p>
+<p>​    训练完成后便可进行预测。给定一个Support set，support set中的所有类别都没有在训练集中出现过，现在确定Query中的图片属于Support set中的某一类，通过分别与Support set中的每一类计算相似度，最终得出Query与support set中的squirrel相似度最高，因此把它归为squirrel。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/9.png" alt="image-20210322202015460"></p>
+<p>​    除上述训练孪生网络的方法外，还有另一种方法，Triplet Loss。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/10.png" alt="image-20210322202439744"></p>
+<p>​    首先从数据集中任意选取一张图片做为anchor，从同一类中抽取一张图片作为正样本，从其他类中抽取一张图片作为负样本，然后通过同一个卷积神经网络提取特征，分别计算正样本与锚点之间的距离以及负样本与锚点之间的距离。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/11.png" alt="image-20210322202725837"></p>
+<p>​    我们的目标是使得d+尽可能小，d-尽可能大，因此如下图所示定义损失函数。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/12.png" alt="image-20210322202908782"></p>
+<p>​    然后比较Query与support set的每一类的距离得出结论。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/13.png" alt="image-20210322203025495"></p>
+<h4 id="Pretraining-和-fine-tuning"><a href="#Pretraining-和-fine-tuning" class="headerlink" title="Pretraining 和 fine tuning"></a>Pretraining 和 fine tuning</h4><h5 id="余弦相似度"><a href="#余弦相似度" class="headerlink" title="余弦相似度"></a>余弦相似度</h5><p>​    假设有两个单位向量，它们的夹角记为θ，此时余弦相似度为： <img src="http://jiajunjun.top/md_picture/FSL/14.png" alt="[公式]"> ，其实就是x在w方向上的投影长度，因此它的取值范围就是[-1,1]。如果两个向量不是单位向量，此时就需要对其进行归一化。此时计算余弦相似度的公式为： <img src="http://jiajunjun.top/md_picture/FSL/15.png" alt="[公式]"></p>
+<p>​    对于一个3-way,2-shot的例子，首先对于每个类别中的两个样本提取特征，然后将每个类别的两个特征求平均值和归一化，得到三个类别的表征：μ1，μ2，μ3。做分类的时候将Query的特征向量q与三个表征计算余弦相似度。使用P=Softmax(Mq)计算概率，其中M是三个表征向量μ1，μ2，μ3组成的矩阵。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/16.png" alt="image-20210322203735265"></p>
+<p>​    通常在第一步预训练和第二步进行预测的中间加一步，即为在小样本数据集上进行fine-tuning，我们之前预测的时候softmax函数中的权重W采用M，偏置b设为0，现在我们把support set中的所有数据输入训练参数W和b，通常加一个正则化防止过拟合。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/17.png" alt="image-20210322204534008"></p>
+<p>​    fine - tuning有三个技巧，一是初始化权重为M，二是正则化采用Entropy regularization，三是使用余弦距离和softmax分类器提高准确率。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/18.png" alt="image-20210322204735204"></p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/19.png" alt="image-20210322205108258"></p>
 
     </div>
 
@@ -400,14 +412,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/03/21/Optimization%20as%20a%20model%20for%20few-shot%20learning/" rel="prev" title="文献阅读：Optimization as a model for few-shot learning">
-                  <i class="fa fa-chevron-left"></i> 文献阅读：Optimization as a model for few-shot learning
+                <a href="/2021/03/21/Few-Shot%20and%20Zero-Shot%20Multi-Label%20Learning%20for%20Structured%20Label%20Spaces/" rel="prev" title="文献阅读：Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces">
+                  <i class="fa fa-chevron-left"></i> 文献阅读：Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/03/22/Few-shot%20Learning/" rel="next" title="Few-Shot Learning">
-                  Few-Shot Learning <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
