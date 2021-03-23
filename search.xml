@@ -35,6 +35,71 @@
       </tags>
   </entry>
   <entry>
+    <title>Anaconda中为每个项目创建新环境</title>
+    <url>/2020/12/04/Anaconda%E4%B8%AD%E4%B8%BA%E6%AF%8F%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E6%96%B0%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<h1 id="创建新环境"><a href="#创建新环境" class="headerlink" title="创建新环境"></a>创建新环境</h1><p>进入cmd，进入anaconda所在的文件夹位置（如：D:\Software\Anaconda\envs）</p>
+<a id="more"></a>
+
+<p>依次输入：</p>
+<p><code>conda create --name 项目名称 python=版本号</code></p>
+<p><code>activate</code></p>
+<p><code>conda activate 项目名称</code>   切换不同环境的时候也使用该语句</p>
+<p>然后使用pip install安装所需包即可。</p>
+<hr>
+<h1 id="查看环境"><a href="#查看环境" class="headerlink" title="查看环境"></a>查看环境</h1><ul>
+<li>查看目前已安装的环境：<code>conda info --envs</code></li>
+<li>查看环境下已安装的包：<code>pip list</code></li>
+</ul>
+]]></content>
+      <categories>
+        <category>开发环境</category>
+      </categories>
+      <tags>
+        <tag>Anaconda</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文献阅读：Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces</title>
+    <url>/2021/03/21/Few-Shot%20and%20Zero-Shot%20Multi-Label%20Learning%20for%20Structured%20Label%20Spaces/</url>
+    <content><![CDATA[<h3 id="Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces"><a href="#Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces" class="headerlink" title="Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces"></a>Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces</h3><h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>​    对于文本分类问题，多标签的少样本或者无样本的标签预测很少被探索。在本文中，执行了一个细粒度的评估来理解最新的方法如何在不常见的标签上执行。此外，当标签空间上存在已知结构时，开发了多标签文本分类的少样本和无样本方法。</p>
+<h5 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h5><p>​    大规模多标签文本分类存在的两个问题：</p>
+<p>​    1.在大型文档中查找特定标签的相关信息很难；</p>
+<p>​    2.数据稀疏的问题，随着标签总数的增加，一些标签可能会频繁出现，但是大多数标签不会频繁出现。</p>
+<p>​    few-shot learning是指在训练数据集中每个标签只有几个例子（通常在1~5之间）可用的监督方法。</p>
+<p>​    zero-shot learning是指在测试时想要预测的标签在训练数据中没有可用的。</p>
+<p>​    本文提出并评估了一种神经网络结构，用于预测多标签集合中的少样本和零样本标签；针对频繁、少样本和零样本标签，通过使用扩展的广义零样本方法评估幂律数据集。</p>
+<h5 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h5><p><img src="http://jiajunjun.top/md_picture/FSL1/1.png" alt="图1"></p>
+<p>1.生成标签向量</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/2.png" alt="图2"></p>
+<p>2.为每一个标签生成特定的文本向量表示</p>
+<p>​    使用标签的注意力避免长文档中遇到的大海捞针的情况。首先通过一个前馈神经网络传递文本特征矩阵D:</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/3.png" alt="图3"></p>
+<p>​    生成label-wise注意力向量ai∈Rn-s+1，表示对于某个标签，每一个ngram的信息量。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/4.png" alt="图4"></p>
+<p>​    为每一个标签生成特定的文本向量表示ci∈Ru，D中所有行的加权平均。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/5.png" alt="图5"></p>
+<p>3..标签向量通过两层GCNN传递，包含关于标签空间的分层信息。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/6.png" alt="图6"></p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/7.png" alt="图7"></p>
+<p>​    然后将平均描述向量与GCNN标签向量连接起来</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/8.png" alt="图8"></p>
+<p>​    为了比较最终的标签向量v3和它的文档向量ci，我们将文档向量转换成</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/9.png" alt="图9"></p>
+<p>​    预测</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/10.png" alt="图10"></p>
+<p>4.训练</p>
+<p>使用多标签二元交叉熵损失来训练模型</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/11.png" alt="图11"></p>
+<p>参考文章：<a href="https://blog.csdn.net/Daffy10/article/details/109588275">https://blog.csdn.net/Daffy10/article/details/109588275</a></p>
+]]></content>
+      <categories>
+        <category>文献阅读</category>
+      </categories>
+      <tags>
+        <tag>Few-Shot Learning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>从网络体系架构的角度分析，P2P技术的本质是什么？</title>
     <url>/2020/12/16/P2P%E7%BD%91%E7%BB%9C%E7%9A%84%E6%9C%AC%E8%B4%A8/</url>
     <content><![CDATA[<p>　　P2P可以理解为对等计算或对等网络。国内一些媒体将P2P翻译成“点对点”或者“端对端”，学术界则统一称为对等网络（Peer-to-peer networking）或对等计算（Peer-to-peer computing），<a id="more"></a>其可以定义为：网络的参与者共享他们所拥有的一部分硬件资源（处理能力、存储能力、网络连接能力、打印机等），这些共享资源通过网络提供服务和内容，能被其它对等节点（Peer）直接访问而无需经过中间实体。在此网络中的参与者既是资源、服务和内容的提供者（Server），又是资源、服务和内容的获取者（Client）。</p>
@@ -46,6 +111,29 @@
       <tags>
         <tag>计算机网络</tag>
         <tag>P2P</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为什么要开发TCP/IP协议</title>
+    <url>/2020/12/04/TCPIP/</url>
+    <content><![CDATA[<p>TCP/IP协议的作用是使计算机实现互联共享。</p>
+<a id="more"></a>
+
+<p>　　世界上有很多台计算机，多台计算机之间需要进行通信，因此Internet可以将不同地区的计算机相互连接。但是每台计算机都使用不同的操作系统，为了使这些互连的计算机之间能够进行通信，他们必须使用同样的“语言”。就像世界各地的人都使用不同的语言，当他们需要进行交流的时候就需要一个共同的语言以便沟通，这个共同的“语言”就是协议。只要使用相同的协议便可以实现通信。</p>
+<p>　　因此，TCP/IP(Transmission Control Protocol/Internet Protocol)是指能够在多个不同的网络间实现传输的协议簇。也就是说，TCP/IP 是互联网相关各类协议族的总称。</p>
+<p>　　TCP/IP五层模型为：<img src="http://jiajunjun.top/md_picture/Tcpip.png" alt="图2"></p>
+<p>　　物理层：该层负责比特流在节点之间的传输，即负责物理传输。</p>
+<p>　　数据链路层：控制网络层与物理层之间的通信，主要功能是保证物理线路上进行可靠的数据传递。</p>
+<p>　　网络层：决定如何将数据从发送方路由到接收方。网络层通过综合考虑发送优先权，网络拥塞程度，服务质量以及可选路由的花费等来决定从网络中的A节点到B节点的最佳途径。即建立主机到主机的通信。</p>
+<p>　　传输层：该层为两台主机上的应用程序提供端到端的通信。</p>
+<p>　　应用层：应用程序收到传输层的数据后，接下来就要进行解读。解读必须事先规定好格式，而应用层就是规定应用程序的数据格式。主要的协议有：HTTP.FTP,Telent等。</p>
+]]></content>
+      <categories>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+        <tag>TCP/IP</tag>
       </tags>
   </entry>
   <entry>
@@ -146,53 +234,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Anaconda中为每个项目创建新环境</title>
-    <url>/2020/12/04/Anaconda%E4%B8%AD%E4%B8%BA%E6%AF%8F%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E6%96%B0%E7%8E%AF%E5%A2%83/</url>
-    <content><![CDATA[<h1 id="创建新环境"><a href="#创建新环境" class="headerlink" title="创建新环境"></a>创建新环境</h1><p>进入cmd，进入anaconda所在的文件夹位置（如：D:\Software\Anaconda\envs）</p>
-<a id="more"></a>
-
-<p>依次输入：</p>
-<p><code>conda create --name 项目名称 python=版本号</code></p>
-<p><code>activate</code></p>
-<p><code>conda activate 项目名称</code>   切换不同环境的时候也使用该语句</p>
-<p>然后使用pip install安装所需包即可。</p>
-<hr>
-<h1 id="查看环境"><a href="#查看环境" class="headerlink" title="查看环境"></a>查看环境</h1><ul>
-<li>查看目前已安装的环境：<code>conda info --envs</code></li>
-<li>查看环境下已安装的包：<code>pip list</code></li>
-</ul>
-]]></content>
-      <categories>
-        <category>开发环境</category>
-      </categories>
-      <tags>
-        <tag>Anaconda</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>为什么要开发TCP/IP协议</title>
-    <url>/2020/12/04/TCPIP/</url>
-    <content><![CDATA[<p>TCP/IP协议的作用是使计算机实现互联共享。</p>
-<a id="more"></a>
-
-<p>　　世界上有很多台计算机，多台计算机之间需要进行通信，因此Internet可以将不同地区的计算机相互连接。但是每台计算机都使用不同的操作系统，为了使这些互连的计算机之间能够进行通信，他们必须使用同样的“语言”。就像世界各地的人都使用不同的语言，当他们需要进行交流的时候就需要一个共同的语言以便沟通，这个共同的“语言”就是协议。只要使用相同的协议便可以实现通信。</p>
-<p>　　因此，TCP/IP(Transmission Control Protocol/Internet Protocol)是指能够在多个不同的网络间实现传输的协议簇。也就是说，TCP/IP 是互联网相关各类协议族的总称。</p>
-<p>　　TCP/IP五层模型为：<img src="http://jiajunjun.top/md_picture/Tcpip.png" alt="图2"></p>
-<p>　　物理层：该层负责比特流在节点之间的传输，即负责物理传输。</p>
-<p>　　数据链路层：控制网络层与物理层之间的通信，主要功能是保证物理线路上进行可靠的数据传递。</p>
-<p>　　网络层：决定如何将数据从发送方路由到接收方。网络层通过综合考虑发送优先权，网络拥塞程度，服务质量以及可选路由的花费等来决定从网络中的A节点到B节点的最佳途径。即建立主机到主机的通信。</p>
-<p>　　传输层：该层为两台主机上的应用程序提供端到端的通信。</p>
-<p>　　应用层：应用程序收到传输层的数据后，接下来就要进行解读。解读必须事先规定好格式，而应用层就是规定应用程序的数据格式。主要的协议有：HTTP.FTP,Telent等。</p>
-]]></content>
-      <categories>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-        <tag>TCP/IP</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>在markdown中插入图片</title>
     <url>/2020/12/02/markdown%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
     <content><![CDATA[<h1 id="在markdown文件中插入图片"><a href="#在markdown文件中插入图片" class="headerlink" title="在markdown文件中插入图片"></a>在markdown文件中插入图片</h1><p>　　这里选择采用将图片上传到GitHub上的方法进行图片的插入。具体步骤如下：</p>
@@ -279,28 +320,6 @@
       <tags>
         <tag>计算机网络</tag>
         <tag>可靠传输</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>从面向连接和无连接的角度分析，计算机网络为什么没有采用通信网络的方法和模式？</title>
-    <url>/2020/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%97%A0%E8%BF%9E%E6%8E%A5/</url>
-    <content><![CDATA[<ul>
-<li>面向连接：在通信时事先建立好一条虚拟通信线路</li>
-<li>无连接：不需事先建立线路，每个分组自主选择线路传输到目标地址<a id="more"></a>
-　　通信网络采用面向连接的方式，使用电路交换，由核心网链接各种终端和设备，而计算机网络的可靠传输从核心网外移，在核心网中只提供互连的作用，因此可靠传输如何实现是计算机网络需要考虑的问题。计算机网络没有采用面向连接的原因有：</li>
-</ul>
-<p>　　1.二者终端设备的性能差别大</p>
-<p>　　通信网络的终端不具备差错处理和计算能力，需要采用面向连接来保证通信的质量。而计算机网络的终端是只能的主机，如果传输过程中出现了差错，终端也有办法实现可靠传输。</p>
-<p>　　2.即使网络传输正确，端到端的数据处理也有可能出现错误。在传输层中使用TCP面向连接的协议用来保障可靠传输。网络层使用无连接的方法。</p>
-<p>　　3.计算机网络的需求更多，如果采用面向连接的方法所需成本较高。</p>
-<p>　　这也是201电话比之前电话便宜一半的原因。</p>
-]]></content>
-      <categories>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-        <tag>面向连接和无连接</tag>
       </tags>
   </entry>
   <entry>
@@ -401,33 +420,6 @@
       </tags>
   </entry>
   <entry>
-    <title>案例实践1：手写数字识别</title>
-    <url>/2021/01/10/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/</url>
-    <content><![CDATA[<h1 id="实践过程遇到的问题"><a href="#实践过程遇到的问题" class="headerlink" title="实践过程遇到的问题"></a>实践过程遇到的问题</h1><p>1.教程中图片读取使用的是cv2。cv2和pillow.Image的区别如下：</p>
-<a id="more"></a>
-
-<ul>
-<li>打开：<code>cv2.imread()</code>（BGR） <code>Image.open()</code>（RGB)</li>
-<li>查看图片尺寸：<code>cv2.shape</code> <code>Image.size</code></li>
-<li>保存：<code>cv2.inwrite(path,img)</code> <code>Image.save(path)</code></li>
-</ul>
-<p>2.读取图片时需要注意一下图片的尺寸，由于输入模型要使用同样的尺寸，因此在本案例中需要对图片进行压缩以实现同样尺寸，使用cv2.resize。</p>
-<p>3.本例中对于RGB三个通道的区分意义不大，因为都是白纸黑字，只需要取其中一个通道的特征就好了。</p>
-<p>4.采用机器学习的决策树算法效果不好，可使用MLPClassfier，之后的学习中可采用CNN等其他神经网络。</p>
-<h1 id="个人代码"><a href="#个人代码" class="headerlink" title="个人代码"></a>个人代码</h1><p>my_data_process.py是看教程之前自己编写的数据处理程序，多是仿照上节课的案例进行实践，没有进行深入的思考，对于数据处理应当考虑不同案例的特殊性。例如RGB三通道的问题。</p>
-<p>my_main.py中只读取了测试数据和训练数据，由于找不到好的训练方法，故没有进一步编写。</p>
-<p>完整代码：<br><a href="https://github.com/JiaJunJun/case_study/tree/master/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB">https://github.com/JiaJunJun/case_study/tree/master/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB</a></p>
-]]></content>
-      <categories>
-        <category>案例实践</category>
-      </categories>
-      <tags>
-        <tag>计算机视觉</tag>
-        <tag>图像处理</tag>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>案例学习1：基于图像的水质识别</title>
     <url>/2021/01/09/%E6%A1%88%E4%BE%8B%E5%AD%A6%E4%B9%A01%EF%BC%9A%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB/</url>
     <content><![CDATA[<h1 id="案例背景"><a href="#案例背景" class="headerlink" title="案例背景"></a>案例背景</h1><p>已有数据集根据专家经验将水质分为5个类别，要求根据水质图片能够实现水质的分类。</p>
@@ -467,44 +459,52 @@
       </tags>
   </entry>
   <entry>
-    <title>文献阅读：Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces</title>
-    <url>/2021/03/21/Few-Shot%20and%20Zero-Shot%20Multi-Label%20Learning%20for%20Structured%20Label%20Spaces/</url>
-    <content><![CDATA[<h3 id="Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces"><a href="#Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces" class="headerlink" title="Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces"></a>Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces</h3><h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>​    对于文本分类问题，多标签的少样本或者无样本的标签预测很少被探索。在本文中，执行了一个细粒度的评估来理解最新的方法如何在不常见的标签上执行。此外，当标签空间上存在已知结构时，开发了多标签文本分类的少样本和无样本方法。</p>
-<h5 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h5><p>​    大规模多标签文本分类存在的两个问题：</p>
-<p>​    1.在大型文档中查找特定标签的相关信息很难；</p>
-<p>​    2.数据稀疏的问题，随着标签总数的增加，一些标签可能会频繁出现，但是大多数标签不会频繁出现。</p>
-<p>​    few-shot learning是指在训练数据集中每个标签只有几个例子（通常在1~5之间）可用的监督方法。</p>
-<p>​    zero-shot learning是指在测试时想要预测的标签在训练数据中没有可用的。</p>
-<p>​    本文提出并评估了一种神经网络结构，用于预测多标签集合中的少样本和零样本标签；针对频繁、少样本和零样本标签，通过使用扩展的广义零样本方法评估幂律数据集。</p>
-<h5 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h5><p><img src="http://jiajunjun.top/md_picture/FSL1/1.png" alt="图1"></p>
-<p>1.生成标签向量</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/2.png" alt="图2"></p>
-<p>2.为每一个标签生成特定的文本向量表示</p>
-<p>​    使用标签的注意力避免长文档中遇到的大海捞针的情况。首先通过一个前馈神经网络传递文本特征矩阵D:</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/3.png" alt="图3"></p>
-<p>​    生成label-wise注意力向量ai∈Rn-s+1，表示对于某个标签，每一个ngram的信息量。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/4.png" alt="图4"></p>
-<p>​    为每一个标签生成特定的文本向量表示ci∈Ru，D中所有行的加权平均。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/5.png" alt="图5"></p>
-<p>3..标签向量通过两层GCNN传递，包含关于标签空间的分层信息。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/6.png" alt="图6"></p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/7.png" alt="图7"></p>
-<p>​    然后将平均描述向量与GCNN标签向量连接起来</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/8.png" alt="图8"></p>
-<p>​    为了比较最终的标签向量v3和它的文档向量ci，我们将文档向量转换成</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/9.png" alt="图9"></p>
-<p>​    预测</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/10.png" alt="图10"></p>
-<p>4.训练</p>
-<p>使用多标签二元交叉熵损失来训练模型</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/11.png" alt="图11"></p>
-<p>参考文章：<a href="https://blog.csdn.net/Daffy10/article/details/109588275">https://blog.csdn.net/Daffy10/article/details/109588275</a></p>
+    <title>案例实践1：手写数字识别</title>
+    <url>/2021/01/10/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="实践过程遇到的问题"><a href="#实践过程遇到的问题" class="headerlink" title="实践过程遇到的问题"></a>实践过程遇到的问题</h1><p>1.教程中图片读取使用的是cv2。cv2和pillow.Image的区别如下：</p>
+<a id="more"></a>
+
+<ul>
+<li>打开：<code>cv2.imread()</code>（BGR） <code>Image.open()</code>（RGB)</li>
+<li>查看图片尺寸：<code>cv2.shape</code> <code>Image.size</code></li>
+<li>保存：<code>cv2.inwrite(path,img)</code> <code>Image.save(path)</code></li>
+</ul>
+<p>2.读取图片时需要注意一下图片的尺寸，由于输入模型要使用同样的尺寸，因此在本案例中需要对图片进行压缩以实现同样尺寸，使用cv2.resize。</p>
+<p>3.本例中对于RGB三个通道的区分意义不大，因为都是白纸黑字，只需要取其中一个通道的特征就好了。</p>
+<p>4.采用机器学习的决策树算法效果不好，可使用MLPClassfier，之后的学习中可采用CNN等其他神经网络。</p>
+<h1 id="个人代码"><a href="#个人代码" class="headerlink" title="个人代码"></a>个人代码</h1><p>my_data_process.py是看教程之前自己编写的数据处理程序，多是仿照上节课的案例进行实践，没有进行深入的思考，对于数据处理应当考虑不同案例的特殊性。例如RGB三通道的问题。</p>
+<p>my_main.py中只读取了测试数据和训练数据，由于找不到好的训练方法，故没有进一步编写。</p>
+<p>完整代码：<br><a href="https://github.com/JiaJunJun/case_study/tree/master/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB">https://github.com/JiaJunJun/case_study/tree/master/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB</a></p>
 ]]></content>
       <categories>
-        <category>文献阅读</category>
+        <category>案例实践</category>
       </categories>
       <tags>
-        <tag>Few-Shot Learning</tag>
+        <tag>计算机视觉</tag>
+        <tag>图像处理</tag>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从面向连接和无连接的角度分析，计算机网络为什么没有采用通信网络的方法和模式？</title>
+    <url>/2020/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%97%A0%E8%BF%9E%E6%8E%A5/</url>
+    <content><![CDATA[<ul>
+<li>面向连接：在通信时事先建立好一条虚拟通信线路</li>
+<li>无连接：不需事先建立线路，每个分组自主选择线路传输到目标地址<a id="more"></a>
+　　通信网络采用面向连接的方式，使用电路交换，由核心网链接各种终端和设备，而计算机网络的可靠传输从核心网外移，在核心网中只提供互连的作用，因此可靠传输如何实现是计算机网络需要考虑的问题。计算机网络没有采用面向连接的原因有：</li>
+</ul>
+<p>　　1.二者终端设备的性能差别大</p>
+<p>　　通信网络的终端不具备差错处理和计算能力，需要采用面向连接来保证通信的质量。而计算机网络的终端是只能的主机，如果传输过程中出现了差错，终端也有办法实现可靠传输。</p>
+<p>　　2.即使网络传输正确，端到端的数据处理也有可能出现错误。在传输层中使用TCP面向连接的协议用来保障可靠传输。网络层使用无连接的方法。</p>
+<p>　　3.计算机网络的需求更多，如果采用面向连接的方法所需成本较高。</p>
+<p>　　这也是201电话比之前电话便宜一半的原因。</p>
+]]></content>
+      <categories>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+        <tag>面向连接和无连接</tag>
       </tags>
   </entry>
 </search>
