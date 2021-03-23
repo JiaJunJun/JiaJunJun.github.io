@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Anaconda中为每个项目创建新环境</title>
+    <url>/2020/12/04/Anaconda%E4%B8%AD%E4%B8%BA%E6%AF%8F%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E6%96%B0%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<h1 id="创建新环境"><a href="#创建新环境" class="headerlink" title="创建新环境"></a>创建新环境</h1><p>进入cmd，进入anaconda所在的文件夹位置（如：D:\Software\Anaconda\envs）</p>
+<a id="more"></a>
+
+<p>依次输入：</p>
+<p><code>conda create --name 项目名称 python=版本号</code></p>
+<p><code>activate</code></p>
+<p><code>conda activate 项目名称</code>   切换不同环境的时候也使用该语句</p>
+<p>然后使用pip install安装所需包即可。</p>
+<hr>
+<h1 id="查看环境"><a href="#查看环境" class="headerlink" title="查看环境"></a>查看环境</h1><ul>
+<li>查看目前已安装的环境：<code>conda info --envs</code></li>
+<li>查看环境下已安装的包：<code>pip list</code></li>
+</ul>
+]]></content>
+      <categories>
+        <category>开发环境</category>
+      </categories>
+      <tags>
+        <tag>Anaconda</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>从1G到6G分别采用了哪种信道共享技术？</title>
     <url>/2020/12/04/1G-6G/</url>
     <content><![CDATA[<p>　　在计算机网络中使用的信道共享技术可以分为三种，即随机接入、受控接入和信道复用。</p>
@@ -35,27 +59,36 @@
       </tags>
   </entry>
   <entry>
-    <title>Anaconda中为每个项目创建新环境</title>
-    <url>/2020/12/04/Anaconda%E4%B8%AD%E4%B8%BA%E6%AF%8F%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E6%96%B0%E7%8E%AF%E5%A2%83/</url>
-    <content><![CDATA[<h1 id="创建新环境"><a href="#创建新环境" class="headerlink" title="创建新环境"></a>创建新环境</h1><p>进入cmd，进入anaconda所在的文件夹位置（如：D:\Software\Anaconda\envs）</p>
+    <title>文献阅读：Decoupling Representation and Classifier for Long-Tailed Recognition</title>
+    <url>/2021/03/23/Decoupling%20Representation%20and%20Classifier%20for%20Long-Tailed%20Recognition/</url>
+    <content><![CDATA[<h2 id="Decoupling-Representation-and-Classifier-for-Long-Tailed-Recognition"><a href="#Decoupling-Representation-and-Classifier-for-Long-Tailed-Recognition" class="headerlink" title="Decoupling Representation and Classifier for Long-Tailed Recognition"></a>Decoupling Representation and Classifier for Long-Tailed Recognition</h2><h4 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h4><p>​    长尾分布的问题通常是由类平衡策略解决的。本文将学习过程分解为表征学习和分类两个部分，并系统地探讨了不同的平衡策略如何影响它们的长尾识别。</p>
 <a id="more"></a>
 
-<p>依次输入：</p>
-<p><code>conda create --name 项目名称 python=版本号</code></p>
-<p><code>activate</code></p>
-<p><code>conda activate 项目名称</code>   切换不同环境的时候也使用该语句</p>
-<p>然后使用pip install安装所需包即可。</p>
-<hr>
-<h1 id="查看环境"><a href="#查看环境" class="headerlink" title="查看环境"></a>查看环境</h1><ul>
-<li>查看目前已安装的环境：<code>conda info --envs</code></li>
-<li>查看环境下已安装的包：<code>pip list</code></li>
-</ul>
+<h4 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h4><p>​    首先训练模型学习在不同采样策略下（基于实例的采样、类平衡采样、上述两种的混合）的表征，然后研究了三种不同的方法基于学习表征来获得具有平衡边界的分类器，分别是1)以类平衡的方式重新训练参数线性分类器(即，重新采样)；2)非参数最近类均值分类器，其基于来自训练集的最接近的类特定均值表示对数据进行分类；以及3)归一化分类器权重，这直接调整权重大小以更加平衡，添加温度以调节归一化过程。</p>
+<h4 id="Learning-representations-for-long-tailed-recognition"><a href="#Learning-representations-for-long-tailed-recognition" class="headerlink" title="Learning representations for long-tailed recognition"></a>Learning representations for long-tailed recognition</h4><p>​    把表征学习从分类器中分离出来。</p>
+<p>​    <u>采样策略</u>：从第j类数据点采样的概率为<img src="http://jiajunjun.top/md_picture/Decoupling/1.png" alt="image-20210323104809053"></p>
+<p>​    <strong>样本均衡采样</strong>：q=1,每个训练样本都有相同的概率被采样。</p>
+<p>​    <strong>类别均衡采样</strong>：q=0,每个类别有相同的概率被采样。首先先选择类，然后在对类里的实例进行采样。</p>
+<p>​    <strong>平方根采样</strong>：q=0.5。</p>
+<p>​    <strong>渐进均衡采样</strong>：根据训练epoch，结合样本均衡采样和类别均衡采样，赋予不同的权重决定采样的概率。</p>
+<p><img src="http://jiajunjun.top/md_picture/Decoupling/2.png" alt="image-20210323110122564"></p>
+<p>​    <u>损失重加权策略</u>：对不平衡数据的损失重新加权。</p>
+<h4 id="Classification-for-long-tailed-recognition"><a href="#Classification-for-long-tailed-recognition" class="headerlink" title="Classification for long-tailed recognition"></a>Classification for long-tailed recognition</h4><p>​    通过使用不同的采样策略或其他非参数方法(如最近类均值分类器)进行微调来校正头尾类的决策边界</p>
+<p>​    <strong>重训练分类器</strong>：用类别均衡采样重新训练分类器。保持表征固定，随机重新初始化优化分类器W和b。</p>
+<p>​    <strong>最近类均值分类器</strong>：首先计算训练集上每个类的平均特征表示，然后使用余弦相似性或在L2归一化平均特征上计算的欧几里德距离来执行最近邻搜索判断。</p>
+<p>​    <strong>τ-归一化分类器</strong>：通过以下τ-归一化过程直接调整分类器权重范数来纠正决策边界的不平衡。当τ = 1时，它简化为标准L2归一化，当τ = 0时，不施加缩放。丢弃偏置项b。</p>
+<p><img src="http://jiajunjun.top/md_picture/Decoupling/3.png" alt="image-20210323111247999"></p>
+<p>​    <strong>可学习的权重比例</strong>：解释τ-归一化的另一种方法是将其视为每个分类器大小的重新缩放，同时保持方向不变。</p>
+<p><img src="http://jiajunjun.top/md_picture/Decoupling/4.png" alt="image-20210323111539498"></p>
+<h4 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h4><p>数据集：Places-LT，ImageNet-LT ，iNaturalist 2018 </p>
+<p><img src="http://jiajunjun.top/md_picture/Decoupling/5.png" alt="image-20210323111836493"></p>
 ]]></content>
       <categories>
-        <category>开发环境</category>
+        <category>长尾分布</category>
       </categories>
       <tags>
-        <tag>Anaconda</tag>
+        <tag>Few-Shot Learning</tag>
+        <tag>Long-Tailed</tag>
       </tags>
   </entry>
   <entry>
@@ -138,6 +171,29 @@
       </tags>
   </entry>
   <entry>
+    <title>为什么要开发TCP/IP协议</title>
+    <url>/2020/12/04/TCPIP/</url>
+    <content><![CDATA[<p>TCP/IP协议的作用是使计算机实现互联共享。</p>
+<a id="more"></a>
+
+<p>　　世界上有很多台计算机，多台计算机之间需要进行通信，因此Internet可以将不同地区的计算机相互连接。但是每台计算机都使用不同的操作系统，为了使这些互连的计算机之间能够进行通信，他们必须使用同样的“语言”。就像世界各地的人都使用不同的语言，当他们需要进行交流的时候就需要一个共同的语言以便沟通，这个共同的“语言”就是协议。只要使用相同的协议便可以实现通信。</p>
+<p>　　因此，TCP/IP(Transmission Control Protocol/Internet Protocol)是指能够在多个不同的网络间实现传输的协议簇。也就是说，TCP/IP 是互联网相关各类协议族的总称。</p>
+<p>　　TCP/IP五层模型为：<img src="http://jiajunjun.top/md_picture/Tcpip.png" alt="图2"></p>
+<p>　　物理层：该层负责比特流在节点之间的传输，即负责物理传输。</p>
+<p>　　数据链路层：控制网络层与物理层之间的通信，主要功能是保证物理线路上进行可靠的数据传递。</p>
+<p>　　网络层：决定如何将数据从发送方路由到接收方。网络层通过综合考虑发送优先权，网络拥塞程度，服务质量以及可选路由的花费等来决定从网络中的A节点到B节点的最佳途径。即建立主机到主机的通信。</p>
+<p>　　传输层：该层为两台主机上的应用程序提供端到端的通信。</p>
+<p>　　应用层：应用程序收到传输层的数据后，接下来就要进行解读。解读必须事先规定好格式，而应用层就是规定应用程序的数据格式。主要的协议有：HTTP.FTP,Telent等。</p>
+]]></content>
+      <categories>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+        <tag>TCP/IP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Few-Shot Learning</title>
     <url>/2021/03/22/Few-shot%20Learning/</url>
     <content><![CDATA[<h1 id="Few-shot-Learning"><a href="#Few-shot-Learning" class="headerlink" title="Few-shot Learning"></a>Few-shot Learning</h1><p>​    在我们所熟知的深度学习领域，可以通过大量的训练集训练模型进行分类和回归。但当有标注的数据很少的时候该如何解决？Few-shot learning则是解决该问题的一个领域，就是用很少的样本进行分类或回归。</p>
@@ -203,26 +259,44 @@
       </tags>
   </entry>
   <entry>
-    <title>为什么要开发TCP/IP协议</title>
-    <url>/2020/12/04/TCPIP/</url>
-    <content><![CDATA[<p>TCP/IP协议的作用是使计算机实现互联共享。</p>
-<a id="more"></a>
-
-<p>　　世界上有很多台计算机，多台计算机之间需要进行通信，因此Internet可以将不同地区的计算机相互连接。但是每台计算机都使用不同的操作系统，为了使这些互连的计算机之间能够进行通信，他们必须使用同样的“语言”。就像世界各地的人都使用不同的语言，当他们需要进行交流的时候就需要一个共同的语言以便沟通，这个共同的“语言”就是协议。只要使用相同的协议便可以实现通信。</p>
-<p>　　因此，TCP/IP(Transmission Control Protocol/Internet Protocol)是指能够在多个不同的网络间实现传输的协议簇。也就是说，TCP/IP 是互联网相关各类协议族的总称。</p>
-<p>　　TCP/IP五层模型为：<img src="http://jiajunjun.top/md_picture/Tcpip.png" alt="图2"></p>
-<p>　　物理层：该层负责比特流在节点之间的传输，即负责物理传输。</p>
-<p>　　数据链路层：控制网络层与物理层之间的通信，主要功能是保证物理线路上进行可靠的数据传递。</p>
-<p>　　网络层：决定如何将数据从发送方路由到接收方。网络层通过综合考虑发送优先权，网络拥塞程度，服务质量以及可选路由的花费等来决定从网络中的A节点到B节点的最佳途径。即建立主机到主机的通信。</p>
-<p>　　传输层：该层为两台主机上的应用程序提供端到端的通信。</p>
-<p>　　应用层：应用程序收到传输层的数据后，接下来就要进行解读。解读必须事先规定好格式，而应用层就是规定应用程序的数据格式。主要的协议有：HTTP.FTP,Telent等。</p>
+    <title>在markdown中插入图片</title>
+    <url>/2020/12/02/markdown%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<h1 id="在markdown文件中插入图片"><a href="#在markdown文件中插入图片" class="headerlink" title="在markdown文件中插入图片"></a>在markdown文件中插入图片</h1><p>　　这里选择采用将图片上传到GitHub上的方法进行图片的插入。具体步骤如下：</p>
+<p>　　<a id="more"></a></p>
+<p>　　1.登录GitHub,创建一个新仓库用来存放图片，如下图所示：<div align=center><img src="http://jiajunjun.top/md_picture/test_pic1.png" alt="图1"></div></p>
+<p>　　2.在本地磁盘中新建一个存放图片的文件夹，然后把需要插入的图片放入该文件夹中。</p>
+<p>　　3.在该文件夹下打开Git Bash。</p>
+<p>　　4.配置自己的身份：依次输入 </p>
+<p>　　<code>git config --global user.name &quot;Your name&quot;</code> </p>
+<p>　　<code>git config --global user.email &quot;Your email&quot;</code></p>
+<p>　　5.创建代码仓库：</p>
+<p>　　<code>git init</code>：此时本地仓库就有一个.git的隐藏文件夹</p>
+<p>　　6.提交本地代码：</p>
+<p>　　<code>git add .</code> ：把所有文件添加到仓库</p>
+<p>　　<code>git commit -m &quot;xxx&quot;</code>：把文件提交到仓库，xxx可以输入本次提交的说明</p>
+<p>　　如下图所示：<br>　　<br>　　<div align=center><img src="http://jiajunjun.top/md_picture/test_pic2.png" alt="图2"></div></p>
+<p>　　7.把本地仓库关联到GitHub上的远程库：</p>
+<p>　　<code>git remote add origin git@github.com:your username/repositories name.git</code>：注意要将your username改成你自己的GitHub账户名，repositories name改成仓库名。</p>
+<p>　　8.把本地库的内容推送到远程：</p>
+<p>　　<code>git push -u origin master</code></p>
+<p>　　此时本地库和远程库的内容就已经一样了。</p>
+<p>　　9.打开在GitHub上创建的仓库，进入Settings，下拉找到GitHub Pages，将Source中的None改为master，点击save保存。如下图所示：<div align=center><img src="http://jiajunjun.top/md_picture/test_pic3.png" alt="图3"></div></p>
+<p>　　10.此时图片在网络上的地址为GitHub项目地址加图片名，例如我这里的图片地址为：<a href="https://jiajunjun.github.io/md_picture/pic1.png">https://jiajunjun.github.io/md_picture/pic1.png</a></p>
+<p>　　11.在markdown文件中插入图片：</p>
+<p>　　<code>![图片名称](https://jiajunjun.top/md_picture/pic1.png)</code></p>
+<p>　　如果还不能显示，将https://改为http://即可</p>
+<p>　　<div align=center><img src="http://jiajunjun.top/md_picture/pic1.png" alt="pic1"></div></p>
+<p>　　12.之后如果想要再插入新的图片时，可以在本地库中添加图片，然后在本地库的文件夹下打开Git Bash，然后依次输入：</p>
+<p>　　<code>git add .</code></p>
+<p>　　<code>git commit -m &quot;xxxx&quot;</code></p>
+<p>　　<code>git push origin master</code></p>
+<p>　　之后按上述方法在markdown文件中插入图片即可。</p>
 ]]></content>
       <categories>
-        <category>计算机网络</category>
+        <category>TIPS</category>
       </categories>
       <tags>
-        <tag>计算机网络</tag>
-        <tag>TCP/IP</tag>
+        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -323,44 +397,42 @@
       </tags>
   </entry>
   <entry>
-    <title>在markdown中插入图片</title>
-    <url>/2020/12/02/markdown%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
-    <content><![CDATA[<h1 id="在markdown文件中插入图片"><a href="#在markdown文件中插入图片" class="headerlink" title="在markdown文件中插入图片"></a>在markdown文件中插入图片</h1><p>　　这里选择采用将图片上传到GitHub上的方法进行图片的插入。具体步骤如下：</p>
-<p>　　<a id="more"></a></p>
-<p>　　1.登录GitHub,创建一个新仓库用来存放图片，如下图所示：<div align=center><img src="http://jiajunjun.top/md_picture/test_pic1.png" alt="图1"></div></p>
-<p>　　2.在本地磁盘中新建一个存放图片的文件夹，然后把需要插入的图片放入该文件夹中。</p>
-<p>　　3.在该文件夹下打开Git Bash。</p>
-<p>　　4.配置自己的身份：依次输入 </p>
-<p>　　<code>git config --global user.name &quot;Your name&quot;</code> </p>
-<p>　　<code>git config --global user.email &quot;Your email&quot;</code></p>
-<p>　　5.创建代码仓库：</p>
-<p>　　<code>git init</code>：此时本地仓库就有一个.git的隐藏文件夹</p>
-<p>　　6.提交本地代码：</p>
-<p>　　<code>git add .</code> ：把所有文件添加到仓库</p>
-<p>　　<code>git commit -m &quot;xxx&quot;</code>：把文件提交到仓库，xxx可以输入本次提交的说明</p>
-<p>　　如下图所示：<br>　　<br>　　<div align=center><img src="http://jiajunjun.top/md_picture/test_pic2.png" alt="图2"></div></p>
-<p>　　7.把本地仓库关联到GitHub上的远程库：</p>
-<p>　　<code>git remote add origin git@github.com:your username/repositories name.git</code>：注意要将your username改成你自己的GitHub账户名，repositories name改成仓库名。</p>
-<p>　　8.把本地库的内容推送到远程：</p>
-<p>　　<code>git push -u origin master</code></p>
-<p>　　此时本地库和远程库的内容就已经一样了。</p>
-<p>　　9.打开在GitHub上创建的仓库，进入Settings，下拉找到GitHub Pages，将Source中的None改为master，点击save保存。如下图所示：<div align=center><img src="http://jiajunjun.top/md_picture/test_pic3.png" alt="图3"></div></p>
-<p>　　10.此时图片在网络上的地址为GitHub项目地址加图片名，例如我这里的图片地址为：<a href="https://jiajunjun.github.io/md_picture/pic1.png">https://jiajunjun.github.io/md_picture/pic1.png</a></p>
-<p>　　11.在markdown文件中插入图片：</p>
-<p>　　<code>![图片名称](https://jiajunjun.top/md_picture/pic1.png)</code></p>
-<p>　　如果还不能显示，将https://改为http://即可</p>
-<p>　　<div align=center><img src="http://jiajunjun.top/md_picture/pic1.png" alt="pic1"></div></p>
-<p>　　12.之后如果想要再插入新的图片时，可以在本地库中添加图片，然后在本地库的文件夹下打开Git Bash，然后依次输入：</p>
-<p>　　<code>git add .</code></p>
-<p>　　<code>git commit -m &quot;xxxx&quot;</code></p>
-<p>　　<code>git push origin master</code></p>
-<p>　　之后按上述方法在markdown文件中插入图片即可。</p>
+    <title>案例学习1：基于图像的水质识别</title>
+    <url>/2021/01/09/%E6%A1%88%E4%BE%8B%E5%AD%A6%E4%B9%A01%EF%BC%9A%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="案例背景"><a href="#案例背景" class="headerlink" title="案例背景"></a>案例背景</h1><p>已有数据集根据专家经验将水质分为5个类别，要求根据水质图片能够实现水质的分类。</p>
+<p>案例与教程来源：人邮教师学院大数据（python方向）教学能力提升训练营（第2期）</p>
+<a id="more"></a>
+
+<h1 id="求解思路"><a href="#求解思路" class="headerlink" title="求解思路"></a>求解思路</h1><ul>
+<li>读取图片数据</li>
+<li>截取图片中心区域</li>
+<li>提取颜色特征</li>
+<li>模型构建与评估</li>
+</ul>
+<h1 id="过程要点"><a href="#过程要点" class="headerlink" title="过程要点"></a>过程要点</h1><p><strong>图像的读取</strong></p>
+<p><code>from PIL import Image</code><br><code>path = &#39;...&#39;</code><br><code>img = Image.open(path)</code></p>
+<p>上述代码可以读取一张图片，若要读取文件夹内所有图片，则可以使用循环。path赋值为图片的公共路径，即所在的文件夹的路径，之后每幅图片用“path+img_names[i]”表示，其中img_names中保存所有图片的名称。通过使用正则化提取所有图片的名称，并添加到img_names列表中。</p>
+<p><strong>截取图片中心区域</strong></p>
+<p>使用<code>img.crop((左上点横坐标，左上点纵坐标，右下角横坐标，右下角纵坐标))</code>截取某一区域</p>
+<p><strong>读取图像的颜色特征</strong></p>
+<p>颜色特征采用颜色矩的方法，颜色矩包括各个颜色通道的一阶矩，二阶矩和三阶矩，因此一个RGB的图像共有9个特征分量。</p>
+<p><img src="http://jiajunjun.top/md_picture/renyoucase/color_moment.png" alt="图1"></p>
+<p><code>r, g, b = img.split()</code>(分成三个颜色通道）</p>
+<p><code>rd = np.asarray(r)</code><br><code>gd = np.asarray(g)</code><br><code>bd = np.asarray(b)</code>(取出各通道的像素值）</p>
+<p><code>rd.mean()</code>（一阶矩）</p>
+<p><code>rd.std()</code>(二阶矩)</p>
+<p><code>mid = np.mean((rd-rd.mean())**3)</code>  <code>np.sign(mid)*abs(mid)**(1/3)</code>（三阶矩的计算方法）</p>
+<p>其中需要使用np.sign(mid)用来表示mid的符号，取值为-1,0,1。否则开三次根的时候，若为负数会出错。</p>
+<p>完整代码：</p>
+<p><a href="https://github.com/JiaJunJun/case_study/tree/master/%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB">https://github.com/JiaJunJun/case_study/tree/master/%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB</a></p>
 ]]></content>
       <categories>
-        <category>TIPS</category>
+        <category>案例学习</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
+        <tag>计算机视觉</tag>
+        <tag>图像处理</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -412,42 +484,25 @@
       </tags>
   </entry>
   <entry>
-    <title>案例学习1：基于图像的水质识别</title>
-    <url>/2021/01/09/%E6%A1%88%E4%BE%8B%E5%AD%A6%E4%B9%A01%EF%BC%9A%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB/</url>
-    <content><![CDATA[<h1 id="案例背景"><a href="#案例背景" class="headerlink" title="案例背景"></a>案例背景</h1><p>已有数据集根据专家经验将水质分为5个类别，要求根据水质图片能够实现水质的分类。</p>
-<p>案例与教程来源：人邮教师学院大数据（python方向）教学能力提升训练营（第2期）</p>
-<a id="more"></a>
-
-<h1 id="求解思路"><a href="#求解思路" class="headerlink" title="求解思路"></a>求解思路</h1><ul>
-<li>读取图片数据</li>
-<li>截取图片中心区域</li>
-<li>提取颜色特征</li>
-<li>模型构建与评估</li>
+    <title>从面向连接和无连接的角度分析，计算机网络为什么没有采用通信网络的方法和模式？</title>
+    <url>/2020/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%97%A0%E8%BF%9E%E6%8E%A5/</url>
+    <content><![CDATA[<ul>
+<li>面向连接：在通信时事先建立好一条虚拟通信线路</li>
+<li>无连接：不需事先建立线路，每个分组自主选择线路传输到目标地址<a id="more"></a>
+　　通信网络采用面向连接的方式，使用电路交换，由核心网链接各种终端和设备，而计算机网络的可靠传输从核心网外移，在核心网中只提供互连的作用，因此可靠传输如何实现是计算机网络需要考虑的问题。计算机网络没有采用面向连接的原因有：</li>
 </ul>
-<h1 id="过程要点"><a href="#过程要点" class="headerlink" title="过程要点"></a>过程要点</h1><p><strong>图像的读取</strong></p>
-<p><code>from PIL import Image</code><br><code>path = &#39;...&#39;</code><br><code>img = Image.open(path)</code></p>
-<p>上述代码可以读取一张图片，若要读取文件夹内所有图片，则可以使用循环。path赋值为图片的公共路径，即所在的文件夹的路径，之后每幅图片用“path+img_names[i]”表示，其中img_names中保存所有图片的名称。通过使用正则化提取所有图片的名称，并添加到img_names列表中。</p>
-<p><strong>截取图片中心区域</strong></p>
-<p>使用<code>img.crop((左上点横坐标，左上点纵坐标，右下角横坐标，右下角纵坐标))</code>截取某一区域</p>
-<p><strong>读取图像的颜色特征</strong></p>
-<p>颜色特征采用颜色矩的方法，颜色矩包括各个颜色通道的一阶矩，二阶矩和三阶矩，因此一个RGB的图像共有9个特征分量。</p>
-<p><img src="http://jiajunjun.top/md_picture/renyoucase/color_moment.png" alt="图1"></p>
-<p><code>r, g, b = img.split()</code>(分成三个颜色通道）</p>
-<p><code>rd = np.asarray(r)</code><br><code>gd = np.asarray(g)</code><br><code>bd = np.asarray(b)</code>(取出各通道的像素值）</p>
-<p><code>rd.mean()</code>（一阶矩）</p>
-<p><code>rd.std()</code>(二阶矩)</p>
-<p><code>mid = np.mean((rd-rd.mean())**3)</code>  <code>np.sign(mid)*abs(mid)**(1/3)</code>（三阶矩的计算方法）</p>
-<p>其中需要使用np.sign(mid)用来表示mid的符号，取值为-1,0,1。否则开三次根的时候，若为负数会出错。</p>
-<p>完整代码：</p>
-<p><a href="https://github.com/JiaJunJun/case_study/tree/master/%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB">https://github.com/JiaJunJun/case_study/tree/master/%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB</a></p>
+<p>　　1.二者终端设备的性能差别大</p>
+<p>　　通信网络的终端不具备差错处理和计算能力，需要采用面向连接来保证通信的质量。而计算机网络的终端是只能的主机，如果传输过程中出现了差错，终端也有办法实现可靠传输。</p>
+<p>　　2.即使网络传输正确，端到端的数据处理也有可能出现错误。在传输层中使用TCP面向连接的协议用来保障可靠传输。网络层使用无连接的方法。</p>
+<p>　　3.计算机网络的需求更多，如果采用面向连接的方法所需成本较高。</p>
+<p>　　这也是201电话比之前电话便宜一半的原因。</p>
 ]]></content>
       <categories>
-        <category>案例学习</category>
+        <category>计算机网络</category>
       </categories>
       <tags>
-        <tag>计算机视觉</tag>
-        <tag>图像处理</tag>
-        <tag>机器学习</tag>
+        <tag>计算机网络</tag>
+        <tag>面向连接和无连接</tag>
       </tags>
   </entry>
   <entry>
@@ -548,28 +603,6 @@
       </tags>
   </entry>
   <entry>
-    <title>从面向连接和无连接的角度分析，计算机网络为什么没有采用通信网络的方法和模式？</title>
-    <url>/2020/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%97%A0%E8%BF%9E%E6%8E%A5/</url>
-    <content><![CDATA[<ul>
-<li>面向连接：在通信时事先建立好一条虚拟通信线路</li>
-<li>无连接：不需事先建立线路，每个分组自主选择线路传输到目标地址<a id="more"></a>
-　　通信网络采用面向连接的方式，使用电路交换，由核心网链接各种终端和设备，而计算机网络的可靠传输从核心网外移，在核心网中只提供互连的作用，因此可靠传输如何实现是计算机网络需要考虑的问题。计算机网络没有采用面向连接的原因有：</li>
-</ul>
-<p>　　1.二者终端设备的性能差别大</p>
-<p>　　通信网络的终端不具备差错处理和计算能力，需要采用面向连接来保证通信的质量。而计算机网络的终端是只能的主机，如果传输过程中出现了差错，终端也有办法实现可靠传输。</p>
-<p>　　2.即使网络传输正确，端到端的数据处理也有可能出现错误。在传输层中使用TCP面向连接的协议用来保障可靠传输。网络层使用无连接的方法。</p>
-<p>　　3.计算机网络的需求更多，如果采用面向连接的方法所需成本较高。</p>
-<p>　　这也是201电话比之前电话便宜一半的原因。</p>
-]]></content>
-      <categories>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-        <tag>面向连接和无连接</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>案例实践1：手写数字识别</title>
     <url>/2021/01/10/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/</url>
     <content><![CDATA[<h1 id="实践过程遇到的问题"><a href="#实践过程遇到的问题" class="headerlink" title="实践过程遇到的问题"></a>实践过程遇到的问题</h1><p>1.教程中图片读取使用的是cv2。cv2和pillow.Image的区别如下：</p>
@@ -594,39 +627,6 @@
         <tag>计算机视觉</tag>
         <tag>图像处理</tag>
         <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>文献阅读：Decoupling Representation and Classifier for Long-Tailed Recognition</title>
-    <url>/2021/03/23/Decoupling%20Representation%20and%20Classifier%20for%20Long-Tailed%20Recognition/</url>
-    <content><![CDATA[<h2 id="Decoupling-Representation-and-Classifier-for-Long-Tailed-Recognition"><a href="#Decoupling-Representation-and-Classifier-for-Long-Tailed-Recognition" class="headerlink" title="Decoupling Representation and Classifier for Long-Tailed Recognition"></a>Decoupling Representation and Classifier for Long-Tailed Recognition</h2><h4 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h4><p>​    长尾分布的问题通常是由类平衡策略解决的。本文将学习过程分解为表征学习和分类两个部分，并系统地探讨了不同的平衡策略如何影响它们的长尾识别。</p>
-<a id="more"></a>
-
-<h4 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h4><p>​    首先训练模型学习在不同采样策略下（基于实例的采样、类平衡采样、上述两种的混合）的表征，然后研究了三种不同的方法基于学习表征来获得具有平衡边界的分类器，分别是1)以类平衡的方式重新训练参数线性分类器(即，重新采样)；2)非参数最近类均值分类器，其基于来自训练集的最接近的类特定均值表示对数据进行分类；以及3)归一化分类器权重，这直接调整权重大小以更加平衡，添加温度以调节归一化过程。</p>
-<h4 id="Learning-representations-for-long-tailed-recognition"><a href="#Learning-representations-for-long-tailed-recognition" class="headerlink" title="Learning representations for long-tailed recognition"></a>Learning representations for long-tailed recognition</h4><p>​    把表征学习从分类器中分离出来。</p>
-<p>​    <u>采样策略</u>：从第j类数据点采样的概率为<img src="http://jiajunjun.top/md_picture/Decoupling/1.png" alt="image-20210323104809053"></p>
-<p>​    <strong>样本均衡采样</strong>：q=1,每个训练样本都有相同的概率被采样。</p>
-<p>​    <strong>类别均衡采样</strong>：q=0,每个类别有相同的概率被采样。首先先选择类，然后在对类里的实例进行采样。</p>
-<p>​    <strong>平方根采样</strong>：q=0.5。</p>
-<p>​    <strong>渐进均衡采样</strong>：根据训练epoch，结合样本均衡采样和类别均衡采样，赋予不同的权重决定采样的概率。</p>
-<p><img src="http://jiajunjun.top/md_picture/Decoupling/2.png" alt="image-20210323110122564"></p>
-<p>​    <u>损失重加权策略</u>：对不平衡数据的损失重新加权。</p>
-<h4 id="Classification-for-long-tailed-recognition"><a href="#Classification-for-long-tailed-recognition" class="headerlink" title="Classification for long-tailed recognition"></a>Classification for long-tailed recognition</h4><p>​    通过使用不同的采样策略或其他非参数方法(如最近类均值分类器)进行微调来校正头尾类的决策边界</p>
-<p>​    <strong>重训练分类器</strong>：用类别均衡采样重新训练分类器。保持表征固定，随机重新初始化优化分类器W和b。</p>
-<p>​    <strong>最近类均值分类器</strong>：首先计算训练集上每个类的平均特征表示，然后使用余弦相似性或在L2归一化平均特征上计算的欧几里德距离来执行最近邻搜索判断。</p>
-<p>​    <strong>τ-归一化分类器</strong>：通过以下τ-归一化过程直接调整分类器权重范数来纠正决策边界的不平衡。当τ = 1时，它简化为标准L2归一化，当τ = 0时，不施加缩放。丢弃偏置项b。</p>
-<p><img src="http://jiajunjun.top/md_picture/Decoupling/3.png" alt="image-20210323111247999"></p>
-<p>​    <strong>可学习的权重比例</strong>：解释τ-归一化的另一种方法是将其视为每个分类器大小的重新缩放，同时保持方向不变。</p>
-<p><img src="http://jiajunjun.top/md_picture/Decoupling/4.png" alt="image-20210323111539498"></p>
-<h4 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h4><p>数据集：Places-LT，ImageNet-LT ，iNaturalist 2018 </p>
-<p><img src="http://jiajunjun.top/md_picture/Decoupling/5.png" alt="image-20210323111836493"></p>
-]]></content>
-      <categories>
-        <category>长尾分布</category>
-      </categories>
-      <tags>
-        <tag>Few-Shot Learning</tag>
-        <tag>Long-Tailed</tag>
       </tags>
   </entry>
 </search>
