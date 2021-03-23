@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>文献阅读：Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces</title>
+    <url>/2021/03/21/Few-Shot%20and%20Zero-Shot%20Multi-Label%20Learning%20for%20Structured%20Label%20Spaces/</url>
+    <content><![CDATA[<h3 id="Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces"><a href="#Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces" class="headerlink" title="Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces"></a>Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces</h3><h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>​    对于文本分类问题，多标签的少样本或者无样本的标签预测很少被探索。在本文中，执行了一个细粒度的评估来理解最新的方法如何在不常见的标签上执行。此外，当标签空间上存在已知结构时，开发了多标签文本分类的少样本和无样本方法。</p>
+<a id="more"></a>
+
+<h5 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h5><p>​    大规模多标签文本分类存在的两个问题：</p>
+<p>​    1.在大型文档中查找特定标签的相关信息很难；</p>
+<p>​    2.数据稀疏的问题，随着标签总数的增加，一些标签可能会频繁出现，但是大多数标签不会频繁出现。</p>
+<p>​    few-shot learning是指在训练数据集中每个标签只有几个例子（通常在1~5之间）可用的监督方法。</p>
+<p>​    zero-shot learning是指在测试时想要预测的标签在训练数据中没有可用的。</p>
+<p>​    本文提出并评估了一种神经网络结构，用于预测多标签集合中的少样本和零样本标签；针对频繁、少样本和零样本标签，通过使用扩展的广义零样本方法评估幂律数据集。</p>
+<h5 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h5><p><img src="http://jiajunjun.top/md_picture/FSL1/1.png" alt="图1"></p>
+<p>1.生成标签向量</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/2.png" alt="图2"></p>
+<p>2.为每一个标签生成特定的文本向量表示</p>
+<p>​    使用标签的注意力避免长文档中遇到的大海捞针的情况。首先通过一个前馈神经网络传递文本特征矩阵D:</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/3.png" alt="图3"></p>
+<p>​    生成label-wise注意力向量ai∈Rn-s+1，表示对于某个标签，每一个ngram的信息量。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/4.png" alt="图4"></p>
+<p>​    为每一个标签生成特定的文本向量表示ci∈Ru，D中所有行的加权平均。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/5.png" alt="图5"></p>
+<p>3..标签向量通过两层GCNN传递，包含关于标签空间的分层信息。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/6.png" alt="图6"></p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/7.png" alt="图7"></p>
+<p>​    然后将平均描述向量与GCNN标签向量连接起来</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/8.png" alt="图8"></p>
+<p>​    为了比较最终的标签向量v3和它的文档向量ci，我们将文档向量转换成</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/9.png" alt="图9"></p>
+<p>​    预测</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/10.png" alt="图10"></p>
+<p>4.训练</p>
+<p>使用多标签二元交叉熵损失来训练模型</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/11.png" alt="图11"></p>
+<p>参考文章：<a href="https://blog.csdn.net/Daffy10/article/details/109588275">https://blog.csdn.net/Daffy10/article/details/109588275</a></p>
+]]></content>
+      <categories>
+        <category>文献阅读</category>
+        <category>小样本学习</category>
+      </categories>
+      <tags>
+        <tag>Few-Shot Learning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Anaconda中为每个项目创建新环境</title>
     <url>/2020/12/04/Anaconda%E4%B8%AD%E4%B8%BA%E6%AF%8F%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E6%96%B0%E7%8E%AF%E5%A2%83/</url>
     <content><![CDATA[<h1 id="创建新环境"><a href="#创建新环境" class="headerlink" title="创建新环境"></a>创建新环境</h1><p>进入cmd，进入anaconda所在的文件夹位置（如：D:\Software\Anaconda\envs）</p>
@@ -59,50 +103,6 @@
       </tags>
   </entry>
   <entry>
-    <title>文献阅读：Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces</title>
-    <url>/2021/03/21/Few-Shot%20and%20Zero-Shot%20Multi-Label%20Learning%20for%20Structured%20Label%20Spaces/</url>
-    <content><![CDATA[<h3 id="Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces"><a href="#Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces" class="headerlink" title="Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces"></a>Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces</h3><h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>​    对于文本分类问题，多标签的少样本或者无样本的标签预测很少被探索。在本文中，执行了一个细粒度的评估来理解最新的方法如何在不常见的标签上执行。此外，当标签空间上存在已知结构时，开发了多标签文本分类的少样本和无样本方法。</p>
-<a id="more"></a>
-
-<h5 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h5><p>​    大规模多标签文本分类存在的两个问题：</p>
-<p>​    1.在大型文档中查找特定标签的相关信息很难；</p>
-<p>​    2.数据稀疏的问题，随着标签总数的增加，一些标签可能会频繁出现，但是大多数标签不会频繁出现。</p>
-<p>​    few-shot learning是指在训练数据集中每个标签只有几个例子（通常在1~5之间）可用的监督方法。</p>
-<p>​    zero-shot learning是指在测试时想要预测的标签在训练数据中没有可用的。</p>
-<p>​    本文提出并评估了一种神经网络结构，用于预测多标签集合中的少样本和零样本标签；针对频繁、少样本和零样本标签，通过使用扩展的广义零样本方法评估幂律数据集。</p>
-<h5 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h5><p><img src="http://jiajunjun.top/md_picture/FSL1/1.png" alt="图1"></p>
-<p>1.生成标签向量</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/2.png" alt="图2"></p>
-<p>2.为每一个标签生成特定的文本向量表示</p>
-<p>​    使用标签的注意力避免长文档中遇到的大海捞针的情况。首先通过一个前馈神经网络传递文本特征矩阵D:</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/3.png" alt="图3"></p>
-<p>​    生成label-wise注意力向量ai∈Rn-s+1，表示对于某个标签，每一个ngram的信息量。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/4.png" alt="图4"></p>
-<p>​    为每一个标签生成特定的文本向量表示ci∈Ru，D中所有行的加权平均。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/5.png" alt="图5"></p>
-<p>3..标签向量通过两层GCNN传递，包含关于标签空间的分层信息。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/6.png" alt="图6"></p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/7.png" alt="图7"></p>
-<p>​    然后将平均描述向量与GCNN标签向量连接起来</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/8.png" alt="图8"></p>
-<p>​    为了比较最终的标签向量v3和它的文档向量ci，我们将文档向量转换成</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/9.png" alt="图9"></p>
-<p>​    预测</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/10.png" alt="图10"></p>
-<p>4.训练</p>
-<p>使用多标签二元交叉熵损失来训练模型</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/11.png" alt="图11"></p>
-<p>参考文章：<a href="https://blog.csdn.net/Daffy10/article/details/109588275">https://blog.csdn.net/Daffy10/article/details/109588275</a></p>
-]]></content>
-      <categories>
-        <category>文献阅读</category>
-        <category>小样本学习</category>
-      </categories>
-      <tags>
-        <tag>Few-Shot Learning</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Few-Shot Learning</title>
     <url>/2021/03/22/Few-shot%20Learning/</url>
     <content><![CDATA[<h1 id="Few-shot-Learning"><a href="#Few-shot-Learning" class="headerlink" title="Few-shot Learning"></a>Few-shot Learning</h1><p>​    在我们所熟知的深度学习领域，可以通过大量的训练集训练模型进行分类和回归。但当有标注的数据很少的时候该如何解决？Few-shot learning则是解决该问题的一个领域，就是用很少的样本进行分类或回归。</p>
@@ -154,6 +154,20 @@
       </tags>
   </entry>
   <entry>
+    <title>从网络体系架构的角度分析，P2P技术的本质是什么？</title>
+    <url>/2020/12/16/P2P%E7%BD%91%E7%BB%9C%E7%9A%84%E6%9C%AC%E8%B4%A8/</url>
+    <content><![CDATA[<p>　　P2P可以理解为对等计算或对等网络。国内一些媒体将P2P翻译成“点对点”或者“端对端”，学术界则统一称为对等网络（Peer-to-peer networking）或对等计算（Peer-to-peer computing），<a id="more"></a>其可以定义为：网络的参与者共享他们所拥有的一部分硬件资源（处理能力、存储能力、网络连接能力、打印机等），这些共享资源通过网络提供服务和内容，能被其它对等节点（Peer）直接访问而无需经过中间实体。在此网络中的参与者既是资源、服务和内容的提供者（Server），又是资源、服务和内容的获取者（Client）。</p>
+<p>　　目前主流的客户端/服务器（Client/Server）结构中，客户端和服务器之间的关系是主从关系。在C/S中，效率=服务器的数量/客户端的数量，随着客户端的数量的急速增长，效率越来越低。因此一种解决方法是将一部分客户端转变成服务器，这样效率就会增大。即若用户N1从服务器S下载10%的文件之后就可以作为服务器来供其他用户使用。因此，将C变成S就是P2P对等网络的本质。</p>
+]]></content>
+      <categories>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+        <tag>P2P</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>文献阅读：Optimization as a model for few-shot learning</title>
     <url>/2021/03/21/Optimization%20as%20a%20model%20for%20few-shot%20learning/</url>
     <content><![CDATA[<h5 id="Optimization-as-a-model-for-few-shot-learning"><a href="#Optimization-as-a-model-for-few-shot-learning" class="headerlink" title="Optimization as a model for few-shot learning"></a>Optimization as a model for few-shot learning</h5><h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>​    提出基于LSTM的元学习者模型来学习精确的优化算法，用于训练另一个在少样本的情况下的学习者神经网络分类器。该模型能够学习适当的参数更新，还可以学习学习者网络的一般初始化，以便快速收敛训练。</p>
@@ -191,20 +205,6 @@
       </tags>
   </entry>
   <entry>
-    <title>从网络体系架构的角度分析，P2P技术的本质是什么？</title>
-    <url>/2020/12/16/P2P%E7%BD%91%E7%BB%9C%E7%9A%84%E6%9C%AC%E8%B4%A8/</url>
-    <content><![CDATA[<p>　　P2P可以理解为对等计算或对等网络。国内一些媒体将P2P翻译成“点对点”或者“端对端”，学术界则统一称为对等网络（Peer-to-peer networking）或对等计算（Peer-to-peer computing），<a id="more"></a>其可以定义为：网络的参与者共享他们所拥有的一部分硬件资源（处理能力、存储能力、网络连接能力、打印机等），这些共享资源通过网络提供服务和内容，能被其它对等节点（Peer）直接访问而无需经过中间实体。在此网络中的参与者既是资源、服务和内容的提供者（Server），又是资源、服务和内容的获取者（Client）。</p>
-<p>　　目前主流的客户端/服务器（Client/Server）结构中，客户端和服务器之间的关系是主从关系。在C/S中，效率=服务器的数量/客户端的数量，随着客户端的数量的急速增长，效率越来越低。因此一种解决方法是将一部分客户端转变成服务器，这样效率就会增大。即若用户N1从服务器S下载10%的文件之后就可以作为服务器来供其他用户使用。因此，将C变成S就是P2P对等网络的本质。</p>
-]]></content>
-      <categories>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-        <tag>P2P</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>为什么要开发TCP/IP协议</title>
     <url>/2020/12/04/TCPIP/</url>
     <content><![CDATA[<p>TCP/IP协议的作用是使计算机实现互联共享。</p>
@@ -225,6 +225,54 @@
       <tags>
         <tag>计算机网络</tag>
         <tag>TCP/IP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>要提供可靠的传输要解决哪些问题，如何解决？</title>
+    <url>/2020/12/17/%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93/</url>
+    <content><![CDATA[<p>思考：</p>
+<ul>
+<li><p>TCP层实现可靠传输中面向连接和无连接各自的优点和缺点</p>
+</li>
+<li><p>什么是端到端的可靠传输</p>
+<a id="more"></a></li>
+<li><p>数据链路层和TCP层解决可靠传输的区别</p>
+<ul>
+<li>TCP层解决端到端的可靠传输，而DLL层解决一跳内的可靠传输。</li>
+</ul>
+</li>
+</ul>
+<p>　　计算机网络的可靠传输从核心网外移，在端系统解决。不可靠的传输可能会出现：1.传输错误的信息；2.重复信息；3.信息丢失；4.超时。针对上述问题，有以下解决方法：</p>
+<ul>
+<li>1.解决信息错误：</li>
+</ul>
+<p>　　解决信息错误包括两个部分：检错和纠错。</p>
+<p>　　检错：发送方除了发送所需的信息外，还需要额外发送一部分用来检错，例如奇偶校验法。在最后添加一位检错位（0或1），最终使得整条数据的1的个数为偶（或奇）。</p>
+<p>　　纠错：</p>
+<p>　　1.重传：依赖于发送方的配合，简单易于实现，但耗费时间长。</p>
+<p>　　2.前向纠错（FEC)：无时延，依赖复杂的编码技术，开销大。（前向纠错是一种差错控制方式，它是指信号在被送入传输信道之前预先按一定的算法进行编码处理，加入带有信号本身特征的冗码，在接收端按照相应算法对接收到的信号进行解码，从而找出在传输过程中产生的错误码并将其纠正的技术）</p>
+<p>　　3.第一种和第二种方法结合（混合技术）</p>
+<ul>
+<li>2.解决重复信息：</li>
+</ul>
+<p>　　为每组信息加上编号，信息重复则编号重复，编号重复的信息直接丢弃。</p>
+<ul>
+<li>3.解决信息丢失：</li>
+</ul>
+<p>　　有了编号后就可以通过编号的顺序判断数据的丢失情况。</p>
+<ul>
+<li>4.解决超时的问题：</li>
+</ul>
+<p>　　信息传输过程中需要等待对方的确认信息，互相等待会导致死锁。解决方法是使用定时器，若超过预定时间，将进行重传。此为停止等待协议，但该协议存在的问题是大部分的时间都用来等待，信道的利用率低，因此可以采用流水线机制，发送方不停地发数据，接收方的接受能力要与发送方的发送能力匹配，需要进行流量控制和拥塞控制。</p>
+<p>　　流量控制：滑动窗口，连续ARQ协议。</p>
+<p>　　拥塞控制：产生拥塞的原因是对资源的需求总和&gt;可用资源。拥塞控制方法有：慢开始和拥塞避免、快重传和快恢复。</p>
+]]></content>
+      <categories>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+        <tag>可靠传输</tag>
       </tags>
   </entry>
   <entry>
@@ -325,122 +373,6 @@
       </tags>
   </entry>
   <entry>
-    <title>在markdown中插入图片</title>
-    <url>/2020/12/02/markdown%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
-    <content><![CDATA[<h1 id="在markdown文件中插入图片"><a href="#在markdown文件中插入图片" class="headerlink" title="在markdown文件中插入图片"></a>在markdown文件中插入图片</h1><p>　　这里选择采用将图片上传到GitHub上的方法进行图片的插入。具体步骤如下：</p>
-<p>　　<a id="more"></a></p>
-<p>　　1.登录GitHub,创建一个新仓库用来存放图片，如下图所示：<div align=center><img src="http://jiajunjun.top/md_picture/test_pic1.png" alt="图1"></div></p>
-<p>　　2.在本地磁盘中新建一个存放图片的文件夹，然后把需要插入的图片放入该文件夹中。</p>
-<p>　　3.在该文件夹下打开Git Bash。</p>
-<p>　　4.配置自己的身份：依次输入 </p>
-<p>　　<code>git config --global user.name &quot;Your name&quot;</code> </p>
-<p>　　<code>git config --global user.email &quot;Your email&quot;</code></p>
-<p>　　5.创建代码仓库：</p>
-<p>　　<code>git init</code>：此时本地仓库就有一个.git的隐藏文件夹</p>
-<p>　　6.提交本地代码：</p>
-<p>　　<code>git add .</code> ：把所有文件添加到仓库</p>
-<p>　　<code>git commit -m &quot;xxx&quot;</code>：把文件提交到仓库，xxx可以输入本次提交的说明</p>
-<p>　　如下图所示：<br>　　<br>　　<div align=center><img src="http://jiajunjun.top/md_picture/test_pic2.png" alt="图2"></div></p>
-<p>　　7.把本地仓库关联到GitHub上的远程库：</p>
-<p>　　<code>git remote add origin git@github.com:your username/repositories name.git</code>：注意要将your username改成你自己的GitHub账户名，repositories name改成仓库名。</p>
-<p>　　8.把本地库的内容推送到远程：</p>
-<p>　　<code>git push -u origin master</code></p>
-<p>　　此时本地库和远程库的内容就已经一样了。</p>
-<p>　　9.打开在GitHub上创建的仓库，进入Settings，下拉找到GitHub Pages，将Source中的None改为master，点击save保存。如下图所示：<div align=center><img src="http://jiajunjun.top/md_picture/test_pic3.png" alt="图3"></div></p>
-<p>　　10.此时图片在网络上的地址为GitHub项目地址加图片名，例如我这里的图片地址为：<a href="https://jiajunjun.github.io/md_picture/pic1.png">https://jiajunjun.github.io/md_picture/pic1.png</a></p>
-<p>　　11.在markdown文件中插入图片：</p>
-<p>　　<code>![图片名称](https://jiajunjun.top/md_picture/pic1.png)</code></p>
-<p>　　如果还不能显示，将https://改为http://即可</p>
-<p>　　<div align=center><img src="http://jiajunjun.top/md_picture/pic1.png" alt="pic1"></div></p>
-<p>　　12.之后如果想要再插入新的图片时，可以在本地库中添加图片，然后在本地库的文件夹下打开Git Bash，然后依次输入：</p>
-<p>　　<code>git add .</code></p>
-<p>　　<code>git commit -m &quot;xxxx&quot;</code></p>
-<p>　　<code>git push origin master</code></p>
-<p>　　之后按上述方法在markdown文件中插入图片即可。</p>
-]]></content>
-      <categories>
-        <category>TIPS</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>要提供可靠的传输要解决哪些问题，如何解决？</title>
-    <url>/2020/12/17/%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93/</url>
-    <content><![CDATA[<p>思考：</p>
-<ul>
-<li><p>TCP层实现可靠传输中面向连接和无连接各自的优点和缺点</p>
-</li>
-<li><p>什么是端到端的可靠传输</p>
-<a id="more"></a></li>
-<li><p>数据链路层和TCP层解决可靠传输的区别</p>
-<ul>
-<li>TCP层解决端到端的可靠传输，而DLL层解决一跳内的可靠传输。</li>
-</ul>
-</li>
-</ul>
-<p>　　计算机网络的可靠传输从核心网外移，在端系统解决。不可靠的传输可能会出现：1.传输错误的信息；2.重复信息；3.信息丢失；4.超时。针对上述问题，有以下解决方法：</p>
-<ul>
-<li>1.解决信息错误：</li>
-</ul>
-<p>　　解决信息错误包括两个部分：检错和纠错。</p>
-<p>　　检错：发送方除了发送所需的信息外，还需要额外发送一部分用来检错，例如奇偶校验法。在最后添加一位检错位（0或1），最终使得整条数据的1的个数为偶（或奇）。</p>
-<p>　　纠错：</p>
-<p>　　1.重传：依赖于发送方的配合，简单易于实现，但耗费时间长。</p>
-<p>　　2.前向纠错（FEC)：无时延，依赖复杂的编码技术，开销大。（前向纠错是一种差错控制方式，它是指信号在被送入传输信道之前预先按一定的算法进行编码处理，加入带有信号本身特征的冗码，在接收端按照相应算法对接收到的信号进行解码，从而找出在传输过程中产生的错误码并将其纠正的技术）</p>
-<p>　　3.第一种和第二种方法结合（混合技术）</p>
-<ul>
-<li>2.解决重复信息：</li>
-</ul>
-<p>　　为每组信息加上编号，信息重复则编号重复，编号重复的信息直接丢弃。</p>
-<ul>
-<li>3.解决信息丢失：</li>
-</ul>
-<p>　　有了编号后就可以通过编号的顺序判断数据的丢失情况。</p>
-<ul>
-<li>4.解决超时的问题：</li>
-</ul>
-<p>　　信息传输过程中需要等待对方的确认信息，互相等待会导致死锁。解决方法是使用定时器，若超过预定时间，将进行重传。此为停止等待协议，但该协议存在的问题是大部分的时间都用来等待，信道的利用率低，因此可以采用流水线机制，发送方不停地发数据，接收方的接受能力要与发送方的发送能力匹配，需要进行流量控制和拥塞控制。</p>
-<p>　　流量控制：滑动窗口，连续ARQ协议。</p>
-<p>　　拥塞控制：产生拥塞的原因是对资源的需求总和&gt;可用资源。拥塞控制方法有：慢开始和拥塞避免、快重传和快恢复。</p>
-]]></content>
-      <categories>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-        <tag>可靠传输</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>案例实践1：手写数字识别</title>
-    <url>/2021/01/10/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/</url>
-    <content><![CDATA[<h1 id="实践过程遇到的问题"><a href="#实践过程遇到的问题" class="headerlink" title="实践过程遇到的问题"></a>实践过程遇到的问题</h1><p>1.教程中图片读取使用的是cv2。cv2和pillow.Image的区别如下：</p>
-<a id="more"></a>
-
-<ul>
-<li>打开：<code>cv2.imread()</code>（BGR） <code>Image.open()</code>（RGB)</li>
-<li>查看图片尺寸：<code>cv2.shape</code> <code>Image.size</code></li>
-<li>保存：<code>cv2.inwrite(path,img)</code> <code>Image.save(path)</code></li>
-</ul>
-<p>2.读取图片时需要注意一下图片的尺寸，由于输入模型要使用同样的尺寸，因此在本案例中需要对图片进行压缩以实现同样尺寸，使用cv2.resize。</p>
-<p>3.本例中对于RGB三个通道的区分意义不大，因为都是白纸黑字，只需要取其中一个通道的特征就好了。</p>
-<p>4.采用机器学习的决策树算法效果不好，可使用MLPClassfier，之后的学习中可采用CNN等其他神经网络。</p>
-<h1 id="个人代码"><a href="#个人代码" class="headerlink" title="个人代码"></a>个人代码</h1><p>my_data_process.py是看教程之前自己编写的数据处理程序，多是仿照上节课的案例进行实践，没有进行深入的思考，对于数据处理应当考虑不同案例的特殊性。例如RGB三通道的问题。</p>
-<p>my_main.py中只读取了测试数据和训练数据，由于找不到好的训练方法，故没有进一步编写。</p>
-<p>完整代码：<br><a href="https://github.com/JiaJunJun/case_study/tree/master/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB">https://github.com/JiaJunJun/case_study/tree/master/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB</a></p>
-]]></content>
-      <categories>
-        <category>案例实践</category>
-      </categories>
-      <tags>
-        <tag>计算机视觉</tag>
-        <tag>图像处理</tag>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>案例学习1：基于图像的水质识别</title>
     <url>/2021/01/09/%E6%A1%88%E4%BE%8B%E5%AD%A6%E4%B9%A01%EF%BC%9A%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB/</url>
     <content><![CDATA[<h1 id="案例背景"><a href="#案例背景" class="headerlink" title="案例背景"></a>案例背景</h1><p>已有数据集根据专家经验将水质分为5个类别，要求根据水质图片能够实现水质的分类。</p>
@@ -480,25 +412,44 @@
       </tags>
   </entry>
   <entry>
-    <title>从面向连接和无连接的角度分析，计算机网络为什么没有采用通信网络的方法和模式？</title>
-    <url>/2020/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%97%A0%E8%BF%9E%E6%8E%A5/</url>
-    <content><![CDATA[<ul>
-<li>面向连接：在通信时事先建立好一条虚拟通信线路</li>
-<li>无连接：不需事先建立线路，每个分组自主选择线路传输到目标地址<a id="more"></a>
-　　通信网络采用面向连接的方式，使用电路交换，由核心网链接各种终端和设备，而计算机网络的可靠传输从核心网外移，在核心网中只提供互连的作用，因此可靠传输如何实现是计算机网络需要考虑的问题。计算机网络没有采用面向连接的原因有：</li>
-</ul>
-<p>　　1.二者终端设备的性能差别大</p>
-<p>　　通信网络的终端不具备差错处理和计算能力，需要采用面向连接来保证通信的质量。而计算机网络的终端是只能的主机，如果传输过程中出现了差错，终端也有办法实现可靠传输。</p>
-<p>　　2.即使网络传输正确，端到端的数据处理也有可能出现错误。在传输层中使用TCP面向连接的协议用来保障可靠传输。网络层使用无连接的方法。</p>
-<p>　　3.计算机网络的需求更多，如果采用面向连接的方法所需成本较高。</p>
-<p>　　这也是201电话比之前电话便宜一半的原因。</p>
+    <title>在markdown中插入图片</title>
+    <url>/2020/12/02/markdown%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<h1 id="在markdown文件中插入图片"><a href="#在markdown文件中插入图片" class="headerlink" title="在markdown文件中插入图片"></a>在markdown文件中插入图片</h1><p>　　这里选择采用将图片上传到GitHub上的方法进行图片的插入。具体步骤如下：</p>
+<p>　　<a id="more"></a></p>
+<p>　　1.登录GitHub,创建一个新仓库用来存放图片，如下图所示：<div align=center><img src="http://jiajunjun.top/md_picture/test_pic1.png" alt="图1"></div></p>
+<p>　　2.在本地磁盘中新建一个存放图片的文件夹，然后把需要插入的图片放入该文件夹中。</p>
+<p>　　3.在该文件夹下打开Git Bash。</p>
+<p>　　4.配置自己的身份：依次输入 </p>
+<p>　　<code>git config --global user.name &quot;Your name&quot;</code> </p>
+<p>　　<code>git config --global user.email &quot;Your email&quot;</code></p>
+<p>　　5.创建代码仓库：</p>
+<p>　　<code>git init</code>：此时本地仓库就有一个.git的隐藏文件夹</p>
+<p>　　6.提交本地代码：</p>
+<p>　　<code>git add .</code> ：把所有文件添加到仓库</p>
+<p>　　<code>git commit -m &quot;xxx&quot;</code>：把文件提交到仓库，xxx可以输入本次提交的说明</p>
+<p>　　如下图所示：<br>　　<br>　　<div align=center><img src="http://jiajunjun.top/md_picture/test_pic2.png" alt="图2"></div></p>
+<p>　　7.把本地仓库关联到GitHub上的远程库：</p>
+<p>　　<code>git remote add origin git@github.com:your username/repositories name.git</code>：注意要将your username改成你自己的GitHub账户名，repositories name改成仓库名。</p>
+<p>　　8.把本地库的内容推送到远程：</p>
+<p>　　<code>git push -u origin master</code></p>
+<p>　　此时本地库和远程库的内容就已经一样了。</p>
+<p>　　9.打开在GitHub上创建的仓库，进入Settings，下拉找到GitHub Pages，将Source中的None改为master，点击save保存。如下图所示：<div align=center><img src="http://jiajunjun.top/md_picture/test_pic3.png" alt="图3"></div></p>
+<p>　　10.此时图片在网络上的地址为GitHub项目地址加图片名，例如我这里的图片地址为：<a href="https://jiajunjun.github.io/md_picture/pic1.png">https://jiajunjun.github.io/md_picture/pic1.png</a></p>
+<p>　　11.在markdown文件中插入图片：</p>
+<p>　　<code>![图片名称](https://jiajunjun.top/md_picture/pic1.png)</code></p>
+<p>　　如果还不能显示，将https://改为http://即可</p>
+<p>　　<div align=center><img src="http://jiajunjun.top/md_picture/pic1.png" alt="pic1"></div></p>
+<p>　　12.之后如果想要再插入新的图片时，可以在本地库中添加图片，然后在本地库的文件夹下打开Git Bash，然后依次输入：</p>
+<p>　　<code>git add .</code></p>
+<p>　　<code>git commit -m &quot;xxxx&quot;</code></p>
+<p>　　<code>git push origin master</code></p>
+<p>　　之后按上述方法在markdown文件中插入图片即可。</p>
 ]]></content>
       <categories>
-        <category>计算机网络</category>
+        <category>TIPS</category>
       </categories>
       <tags>
-        <tag>计算机网络</tag>
-        <tag>面向连接和无连接</tag>
+        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -596,6 +547,55 @@
       <tags>
         <tag>教育数据挖掘</tag>
         <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从面向连接和无连接的角度分析，计算机网络为什么没有采用通信网络的方法和模式？</title>
+    <url>/2020/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%97%A0%E8%BF%9E%E6%8E%A5/</url>
+    <content><![CDATA[<ul>
+<li>面向连接：在通信时事先建立好一条虚拟通信线路</li>
+<li>无连接：不需事先建立线路，每个分组自主选择线路传输到目标地址<a id="more"></a>
+　　通信网络采用面向连接的方式，使用电路交换，由核心网链接各种终端和设备，而计算机网络的可靠传输从核心网外移，在核心网中只提供互连的作用，因此可靠传输如何实现是计算机网络需要考虑的问题。计算机网络没有采用面向连接的原因有：</li>
+</ul>
+<p>　　1.二者终端设备的性能差别大</p>
+<p>　　通信网络的终端不具备差错处理和计算能力，需要采用面向连接来保证通信的质量。而计算机网络的终端是只能的主机，如果传输过程中出现了差错，终端也有办法实现可靠传输。</p>
+<p>　　2.即使网络传输正确，端到端的数据处理也有可能出现错误。在传输层中使用TCP面向连接的协议用来保障可靠传输。网络层使用无连接的方法。</p>
+<p>　　3.计算机网络的需求更多，如果采用面向连接的方法所需成本较高。</p>
+<p>　　这也是201电话比之前电话便宜一半的原因。</p>
+]]></content>
+      <categories>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+        <tag>面向连接和无连接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>案例实践1：手写数字识别</title>
+    <url>/2021/01/10/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="实践过程遇到的问题"><a href="#实践过程遇到的问题" class="headerlink" title="实践过程遇到的问题"></a>实践过程遇到的问题</h1><p>1.教程中图片读取使用的是cv2。cv2和pillow.Image的区别如下：</p>
+<a id="more"></a>
+
+<ul>
+<li>打开：<code>cv2.imread()</code>（BGR） <code>Image.open()</code>（RGB)</li>
+<li>查看图片尺寸：<code>cv2.shape</code> <code>Image.size</code></li>
+<li>保存：<code>cv2.inwrite(path,img)</code> <code>Image.save(path)</code></li>
+</ul>
+<p>2.读取图片时需要注意一下图片的尺寸，由于输入模型要使用同样的尺寸，因此在本案例中需要对图片进行压缩以实现同样尺寸，使用cv2.resize。</p>
+<p>3.本例中对于RGB三个通道的区分意义不大，因为都是白纸黑字，只需要取其中一个通道的特征就好了。</p>
+<p>4.采用机器学习的决策树算法效果不好，可使用MLPClassfier，之后的学习中可采用CNN等其他神经网络。</p>
+<h1 id="个人代码"><a href="#个人代码" class="headerlink" title="个人代码"></a>个人代码</h1><p>my_data_process.py是看教程之前自己编写的数据处理程序，多是仿照上节课的案例进行实践，没有进行深入的思考，对于数据处理应当考虑不同案例的特殊性。例如RGB三通道的问题。</p>
+<p>my_main.py中只读取了测试数据和训练数据，由于找不到好的训练方法，故没有进一步编写。</p>
+<p>完整代码：<br><a href="https://github.com/JiaJunJun/case_study/tree/master/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB">https://github.com/JiaJunJun/case_study/tree/master/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB</a></p>
+]]></content>
+      <categories>
+        <category>案例实践</category>
+      </categories>
+      <tags>
+        <tag>计算机视觉</tag>
+        <tag>图像处理</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
 </search>
