@@ -1,74 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>文献阅读：Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces</title>
-    <url>/2021/03/21/Few-Shot%20and%20Zero-Shot%20Multi-Label%20Learning%20for%20Structured%20Label%20Spaces/</url>
-    <content><![CDATA[<h3 id="Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces"><a href="#Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces" class="headerlink" title="Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces"></a>Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces</h3><h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>​    对于文本分类问题，多标签的少样本或者无样本的标签预测很少被探索。在本文中，执行了一个细粒度的评估来理解最新的方法如何在不常见的标签上执行。此外，当标签空间上存在已知结构时，开发了多标签文本分类的少样本和无样本方法。</p>
-<a id="more"></a>
-
-<h5 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h5><p>​    大规模多标签文本分类存在的两个问题：</p>
-<p>​    1.在大型文档中查找特定标签的相关信息很难；</p>
-<p>​    2.数据稀疏的问题，随着标签总数的增加，一些标签可能会频繁出现，但是大多数标签不会频繁出现。</p>
-<p>​    few-shot learning是指在训练数据集中每个标签只有几个例子（通常在1~5之间）可用的监督方法。</p>
-<p>​    zero-shot learning是指在测试时想要预测的标签在训练数据中没有可用的。</p>
-<p>​    本文提出并评估了一种神经网络结构，用于预测多标签集合中的少样本和零样本标签；针对频繁、少样本和零样本标签，通过使用扩展的广义零样本方法评估幂律数据集。</p>
-<h5 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h5><p><img src="http://jiajunjun.top/md_picture/FSL1/1.png" alt="图1"></p>
-<p>1.生成标签向量</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/2.png" alt="图2"></p>
-<p>2.为每一个标签生成特定的文本向量表示</p>
-<p>​    使用标签的注意力避免长文档中遇到的大海捞针的情况。首先通过一个前馈神经网络传递文本特征矩阵D:</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/3.png" alt="图3"></p>
-<p>​    生成label-wise注意力向量ai∈Rn-s+1，表示对于某个标签，每一个ngram的信息量。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/4.png" alt="图4"></p>
-<p>​    为每一个标签生成特定的文本向量表示ci∈Ru，D中所有行的加权平均。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/5.png" alt="图5"></p>
-<p>3..标签向量通过两层GCNN传递，包含关于标签空间的分层信息。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/6.png" alt="图6"></p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/7.png" alt="图7"></p>
-<p>​    然后将平均描述向量与GCNN标签向量连接起来</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/8.png" alt="图8"></p>
-<p>​    为了比较最终的标签向量v3和它的文档向量ci，我们将文档向量转换成</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/9.png" alt="图9"></p>
-<p>​    预测</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/10.png" alt="图10"></p>
-<p>4.训练</p>
-<p>使用多标签二元交叉熵损失来训练模型</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/11.png" alt="图11"></p>
-<p>参考文章：<a href="https://blog.csdn.net/Daffy10/article/details/109588275">https://blog.csdn.net/Daffy10/article/details/109588275</a></p>
-]]></content>
-      <categories>
-        <category>文献阅读</category>
-        <category>小样本学习</category>
-      </categories>
-      <tags>
-        <tag>Few-Shot Learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Anaconda中为每个项目创建新环境</title>
-    <url>/2020/12/04/Anaconda%E4%B8%AD%E4%B8%BA%E6%AF%8F%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E6%96%B0%E7%8E%AF%E5%A2%83/</url>
-    <content><![CDATA[<h1 id="创建新环境"><a href="#创建新环境" class="headerlink" title="创建新环境"></a>创建新环境</h1><p>进入cmd，进入anaconda所在的文件夹位置（如：D:\Software\Anaconda\envs）</p>
-<a id="more"></a>
-
-<p>依次输入：</p>
-<p><code>conda create --name 项目名称 python=版本号</code></p>
-<p><code>activate</code></p>
-<p><code>conda activate 项目名称</code>   切换不同环境的时候也使用该语句</p>
-<p>然后使用pip install安装所需包即可。</p>
-<hr>
-<h1 id="查看环境"><a href="#查看环境" class="headerlink" title="查看环境"></a>查看环境</h1><ul>
-<li>查看目前已安装的环境：<code>conda info --envs</code></li>
-<li>查看环境下已安装的包：<code>pip list</code></li>
-</ul>
-]]></content>
-      <categories>
-        <category>开发环境</category>
-      </categories>
-      <tags>
-        <tag>Anaconda</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>从1G到6G分别采用了哪种信道共享技术？</title>
     <url>/2020/12/04/1G-6G/</url>
     <content><![CDATA[<p>　　在计算机网络中使用的信道共享技术可以分为三种，即随机接入、受控接入和信道复用。</p>
@@ -100,6 +32,67 @@
       <tags>
         <tag>计算机网络</tag>
         <tag>1G,2G,3G,4G,5G,6G</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Anaconda中为每个项目创建新环境</title>
+    <url>/2020/12/04/Anaconda%E4%B8%AD%E4%B8%BA%E6%AF%8F%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E6%96%B0%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<h1 id="创建新环境"><a href="#创建新环境" class="headerlink" title="创建新环境"></a>创建新环境</h1><p>进入cmd，进入anaconda所在的文件夹位置（如：D:\Software\Anaconda\envs）</p>
+<a id="more"></a>
+
+<p>依次输入：</p>
+<p><code>conda create --name 项目名称 python=版本号</code></p>
+<p><code>activate</code></p>
+<p><code>conda activate 项目名称</code>   切换不同环境的时候也使用该语句</p>
+<p>然后使用pip install安装所需包即可。</p>
+<hr>
+<h1 id="查看环境"><a href="#查看环境" class="headerlink" title="查看环境"></a>查看环境</h1><ul>
+<li>查看目前已安装的环境：<code>conda info --envs</code></li>
+<li>查看环境下已安装的包：<code>pip list</code></li>
+</ul>
+]]></content>
+      <categories>
+        <category>开发环境</category>
+      </categories>
+      <tags>
+        <tag>Anaconda</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从网络体系架构的角度分析，P2P技术的本质是什么？</title>
+    <url>/2020/12/16/P2P%E7%BD%91%E7%BB%9C%E7%9A%84%E6%9C%AC%E8%B4%A8/</url>
+    <content><![CDATA[<p>　　P2P可以理解为对等计算或对等网络。国内一些媒体将P2P翻译成“点对点”或者“端对端”，学术界则统一称为对等网络（Peer-to-peer networking）或对等计算（Peer-to-peer computing），<a id="more"></a>其可以定义为：网络的参与者共享他们所拥有的一部分硬件资源（处理能力、存储能力、网络连接能力、打印机等），这些共享资源通过网络提供服务和内容，能被其它对等节点（Peer）直接访问而无需经过中间实体。在此网络中的参与者既是资源、服务和内容的提供者（Server），又是资源、服务和内容的获取者（Client）。</p>
+<p>　　目前主流的客户端/服务器（Client/Server）结构中，客户端和服务器之间的关系是主从关系。在C/S中，效率=服务器的数量/客户端的数量，随着客户端的数量的急速增长，效率越来越低。因此一种解决方法是将一部分客户端转变成服务器，这样效率就会增大。即若用户N1从服务器S下载10%的文件之后就可以作为服务器来供其他用户使用。因此，将C变成S就是P2P对等网络的本质。</p>
+]]></content>
+      <categories>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+        <tag>P2P</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为什么要开发TCP/IP协议</title>
+    <url>/2020/12/04/TCPIP/</url>
+    <content><![CDATA[<p>TCP/IP协议的作用是使计算机实现互联共享。</p>
+<a id="more"></a>
+
+<p>　　世界上有很多台计算机，多台计算机之间需要进行通信，因此Internet可以将不同地区的计算机相互连接。但是每台计算机都使用不同的操作系统，为了使这些互连的计算机之间能够进行通信，他们必须使用同样的“语言”。就像世界各地的人都使用不同的语言，当他们需要进行交流的时候就需要一个共同的语言以便沟通，这个共同的“语言”就是协议。只要使用相同的协议便可以实现通信。</p>
+<p>　　因此，TCP/IP(Transmission Control Protocol/Internet Protocol)是指能够在多个不同的网络间实现传输的协议簇。也就是说，TCP/IP 是互联网相关各类协议族的总称。</p>
+<p>　　TCP/IP五层模型为：<img src="http://jiajunjun.top/md_picture/Tcpip.png" alt="图2"></p>
+<p>　　物理层：该层负责比特流在节点之间的传输，即负责物理传输。</p>
+<p>　　数据链路层：控制网络层与物理层之间的通信，主要功能是保证物理线路上进行可靠的数据传递。</p>
+<p>　　网络层：决定如何将数据从发送方路由到接收方。网络层通过综合考虑发送优先权，网络拥塞程度，服务质量以及可选路由的花费等来决定从网络中的A节点到B节点的最佳途径。即建立主机到主机的通信。</p>
+<p>　　传输层：该层为两台主机上的应用程序提供端到端的通信。</p>
+<p>　　应用层：应用程序收到传输层的数据后，接下来就要进行解读。解读必须事先规定好格式，而应用层就是规定应用程序的数据格式。主要的协议有：HTTP.FTP,Telent等。</p>
+]]></content>
+      <categories>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+        <tag>TCP/IP</tag>
       </tags>
   </entry>
   <entry>
@@ -151,264 +144,6 @@
       </categories>
       <tags>
         <tag>Few-Shot Learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>从网络体系架构的角度分析，P2P技术的本质是什么？</title>
-    <url>/2020/12/16/P2P%E7%BD%91%E7%BB%9C%E7%9A%84%E6%9C%AC%E8%B4%A8/</url>
-    <content><![CDATA[<p>　　P2P可以理解为对等计算或对等网络。国内一些媒体将P2P翻译成“点对点”或者“端对端”，学术界则统一称为对等网络（Peer-to-peer networking）或对等计算（Peer-to-peer computing），<a id="more"></a>其可以定义为：网络的参与者共享他们所拥有的一部分硬件资源（处理能力、存储能力、网络连接能力、打印机等），这些共享资源通过网络提供服务和内容，能被其它对等节点（Peer）直接访问而无需经过中间实体。在此网络中的参与者既是资源、服务和内容的提供者（Server），又是资源、服务和内容的获取者（Client）。</p>
-<p>　　目前主流的客户端/服务器（Client/Server）结构中，客户端和服务器之间的关系是主从关系。在C/S中，效率=服务器的数量/客户端的数量，随着客户端的数量的急速增长，效率越来越低。因此一种解决方法是将一部分客户端转变成服务器，这样效率就会增大。即若用户N1从服务器S下载10%的文件之后就可以作为服务器来供其他用户使用。因此，将C变成S就是P2P对等网络的本质。</p>
-]]></content>
-      <categories>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-        <tag>P2P</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>文献阅读：Optimization as a model for few-shot learning</title>
-    <url>/2021/03/21/Optimization%20as%20a%20model%20for%20few-shot%20learning/</url>
-    <content><![CDATA[<h5 id="Optimization-as-a-model-for-few-shot-learning"><a href="#Optimization-as-a-model-for-few-shot-learning" class="headerlink" title="Optimization as a model for few-shot learning"></a>Optimization as a model for few-shot learning</h5><h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>​    提出基于LSTM的元学习者模型来学习精确的优化算法，用于训练另一个在少样本的情况下的学习者神经网络分类器。该模型能够学习适当的参数更新，还可以学习学习者网络的一般初始化，以便快速收敛训练。</p>
-<a id="more"></a>
-
-<h5 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h5><p>​    优化深度的、高容量的模型需要在许多标记的例子中进行多次迭代更新。但目前拥有的是一组数据集，每个数据集都有很少的带注释的实例。提出了一种基于LSTM的元学习者优化器，他经过训练来优化学习者神经网络分类器。元学习者既掌握任务中的短期知识，也掌握所有任务中普遍存在的长期知识。元学习者模型被训练为在每个任务上快速收敛学习者分类器到一个良好的解。此外，元学习者模型的形成允许它学习一个任务通用的初始化，它捕获所有任务之间共享的基本知识。</p>
-<p>​    基于梯度下降的优化算法在少样本问题上会导致失效，是由于基于梯度的下降算法都不是专门设计以用于少样本少量参数更新迭代的，还有就是对于分离的多个任务，网络参数通常会从一个随机的初始化参数开始训练，影响在少量参数更新迭代之后的表现。</p>
-<h5 id="Task-Description"><a href="#Task-Description" class="headerlink" title="Task Description"></a>Task Description</h5><p>​    机器学习中通常对一个数据集D进行划分，然后在训练集上优化参数，在测试集上评估泛化能力。但是在元学习中，处理的是包含多个正则数据集的元集D<del>,每个D∈D</del>都包含训练集和测试集。</p>
-<p>​    对于一个K-shot,N-class的分类任务，训练集由N个类组成，每个类包含K个带标签的例子，即训练集包含K*N个数据。</p>
-<p>​    在元学习中，有不同的元集用于元训练、元验证和元测试。在元训练中训练一个元学习者，它可以把其中一个训练集作为输入，生成一个在相应的测试集上获得高平均分类性能的分类器（学习者）。使用元验证集对元学习者进行超参数选择，并在元测试集上评价其泛化性能。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL3/1.png" alt="图1"></p>
-<h5 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h5><h6 id="Model-Description"><a href="#Model-Description" class="headerlink" title="Model Description"></a>Model Description</h6><p>常规的梯度下降优化方法是：</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL3/2.png" alt="image-20210321192958948"></p>
-<p>​    这与LSTM中的单元状态的更新很类似，</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL3/3.png" alt="image-20210321193052220"></p>
-<p>​    因此提出一个使用LSTM的元学习者来学习一个更新规则。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL3/4.png" alt="image-20210321193604250"></p>
-<p><img src="http://jiajunjun.top/md_picture/FSL3/5.png" alt="image-20210321193611574"></p>
-<p>​    通过上述式子决定学习率it可以控制任务学习者在少样本学习任务上快速学习同时避免发散。对于ft，需要收缩当前的参数并忘掉部分之前的参数来逃离当前的局部最优。</p>
-<p>​    这样不仅学习了一个新的优化过程，还学习了一个作为任务学习者的初始化参数，这个初始化参数可以作为一个最佳的训练起点，加速优化过程。</p>
-<h6 id="Parameter-sharing-amp-Preprocessing"><a href="#Parameter-sharing-amp-Preprocessing" class="headerlink" title="Parameter sharing &amp; Preprocessing"></a>Parameter sharing &amp; Preprocessing</h6><p>​    为了避免元学习者的参数爆炸，采用了在任务学习者的梯度坐标上共享参数。将输入作为一批梯度坐标和每个维度的损失输入。</p>
-<p>​    由于不同坐标的梯度和损失大小可能不同，所以进行了一个标准化。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL3/6.png" alt="image-20210321194635027"></p>
-<h6 id="Training"><a href="#Training" class="headerlink" title="Training"></a>Training</h6><p>​    在多个元训练集上进行训练，然后学习到所需要的更新规则和初始化，面对一个新的少样本任务是，在这个任务的support set上使用更新规则对这个初始化参数进行优化更新，在query set上进行性能评估。</p>
-<h5 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h5><p>数据集：MIMIC Ⅱ 和MIMIC Ⅲ（包含标注诊断和手术标签的出院总结），根据训练数据集中的频分为三组：频繁组（大于5），少样本组（1~5），零样本组。</p>
-<p>评估方法：同一个实例可以出现在所有的组中，多标签；采用R@k处理多个标签。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL3/7.png" alt="image-20210322093249973"></p>
-]]></content>
-      <categories>
-        <category>文献阅读</category>
-        <category>小样本学习</category>
-      </categories>
-      <tags>
-        <tag>Few-Shot Learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>为什么要开发TCP/IP协议</title>
-    <url>/2020/12/04/TCPIP/</url>
-    <content><![CDATA[<p>TCP/IP协议的作用是使计算机实现互联共享。</p>
-<a id="more"></a>
-
-<p>　　世界上有很多台计算机，多台计算机之间需要进行通信，因此Internet可以将不同地区的计算机相互连接。但是每台计算机都使用不同的操作系统，为了使这些互连的计算机之间能够进行通信，他们必须使用同样的“语言”。就像世界各地的人都使用不同的语言，当他们需要进行交流的时候就需要一个共同的语言以便沟通，这个共同的“语言”就是协议。只要使用相同的协议便可以实现通信。</p>
-<p>　　因此，TCP/IP(Transmission Control Protocol/Internet Protocol)是指能够在多个不同的网络间实现传输的协议簇。也就是说，TCP/IP 是互联网相关各类协议族的总称。</p>
-<p>　　TCP/IP五层模型为：<img src="http://jiajunjun.top/md_picture/Tcpip.png" alt="图2"></p>
-<p>　　物理层：该层负责比特流在节点之间的传输，即负责物理传输。</p>
-<p>　　数据链路层：控制网络层与物理层之间的通信，主要功能是保证物理线路上进行可靠的数据传递。</p>
-<p>　　网络层：决定如何将数据从发送方路由到接收方。网络层通过综合考虑发送优先权，网络拥塞程度，服务质量以及可选路由的花费等来决定从网络中的A节点到B节点的最佳途径。即建立主机到主机的通信。</p>
-<p>　　传输层：该层为两台主机上的应用程序提供端到端的通信。</p>
-<p>　　应用层：应用程序收到传输层的数据后，接下来就要进行解读。解读必须事先规定好格式，而应用层就是规定应用程序的数据格式。主要的协议有：HTTP.FTP,Telent等。</p>
-]]></content>
-      <categories>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-        <tag>TCP/IP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>要提供可靠的传输要解决哪些问题，如何解决？</title>
-    <url>/2020/12/17/%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93/</url>
-    <content><![CDATA[<p>思考：</p>
-<ul>
-<li><p>TCP层实现可靠传输中面向连接和无连接各自的优点和缺点</p>
-</li>
-<li><p>什么是端到端的可靠传输</p>
-<a id="more"></a></li>
-<li><p>数据链路层和TCP层解决可靠传输的区别</p>
-<ul>
-<li>TCP层解决端到端的可靠传输，而DLL层解决一跳内的可靠传输。</li>
-</ul>
-</li>
-</ul>
-<p>　　计算机网络的可靠传输从核心网外移，在端系统解决。不可靠的传输可能会出现：1.传输错误的信息；2.重复信息；3.信息丢失；4.超时。针对上述问题，有以下解决方法：</p>
-<ul>
-<li>1.解决信息错误：</li>
-</ul>
-<p>　　解决信息错误包括两个部分：检错和纠错。</p>
-<p>　　检错：发送方除了发送所需的信息外，还需要额外发送一部分用来检错，例如奇偶校验法。在最后添加一位检错位（0或1），最终使得整条数据的1的个数为偶（或奇）。</p>
-<p>　　纠错：</p>
-<p>　　1.重传：依赖于发送方的配合，简单易于实现，但耗费时间长。</p>
-<p>　　2.前向纠错（FEC)：无时延，依赖复杂的编码技术，开销大。（前向纠错是一种差错控制方式，它是指信号在被送入传输信道之前预先按一定的算法进行编码处理，加入带有信号本身特征的冗码，在接收端按照相应算法对接收到的信号进行解码，从而找出在传输过程中产生的错误码并将其纠正的技术）</p>
-<p>　　3.第一种和第二种方法结合（混合技术）</p>
-<ul>
-<li>2.解决重复信息：</li>
-</ul>
-<p>　　为每组信息加上编号，信息重复则编号重复，编号重复的信息直接丢弃。</p>
-<ul>
-<li>3.解决信息丢失：</li>
-</ul>
-<p>　　有了编号后就可以通过编号的顺序判断数据的丢失情况。</p>
-<ul>
-<li>4.解决超时的问题：</li>
-</ul>
-<p>　　信息传输过程中需要等待对方的确认信息，互相等待会导致死锁。解决方法是使用定时器，若超过预定时间，将进行重传。此为停止等待协议，但该协议存在的问题是大部分的时间都用来等待，信道的利用率低，因此可以采用流水线机制，发送方不停地发数据，接收方的接受能力要与发送方的发送能力匹配，需要进行流量控制和拥塞控制。</p>
-<p>　　流量控制：滑动窗口，连续ARQ协议。</p>
-<p>　　拥塞控制：产生拥塞的原因是对资源的需求总和&gt;可用资源。拥塞控制方法有：慢开始和拥塞避免、快重传和快恢复。</p>
-]]></content>
-      <categories>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-        <tag>可靠传输</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git的使用</title>
-    <url>/2020/12/15/git%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h1><ul>
-<li>创建空目录：<code>mkdir xxxxx（文件夹名）</code></li>
-<li>创建仓库：<code>git init</code></li>
-</ul>
-<p>　　使用Notepad++创建一个.txt文件并保存到刚刚文件夹下，如readme.txt</p>
-<a id="more"></a>
-
-<ul>
-<li>将文件添加到仓库：<code>git add readme.txt</code></li>
-<li>把文件提交到仓库：<code>git commit -m &quot;xxxxx&quot;</code>（-m后面输入的是本次提交的说明，这样就能从历史记录里方便地找到改动记录。）</li>
-</ul>
-<p>　　git commit命令执行成功后如下图：</p>
-<p><img src="http://jiajunjun.top/md_picture/usegit1.png" alt="git commit命令执行成功"></p>
-<p>　　(1 file changed：1个文件被改动（新添加的readme.txt文件）; 2 insertions：插入了两行内容（readme.txt有两行内容）)</p>
-<p>　　commit可以一次提交多个文件，所以可以多次add再commit。</p>
-<p><img src="http://jiajunjun.top/md_picture/usegit2.png" alt="git commit命令执行成功"></p>
-<ul>
-<li>查看仓库当前的状态：<code>git status</code></li>
-</ul>
-<p>　　例如：当对readme.txt进行修改后，输入git status。输出表明修改过但没提交。<br><img src="http://jiajunjun.top/md_picture/usegit3.png" alt="git commit命令执行成功"></p>
-<ul>
-<li><p>查看修改的内容：<code>git diff</code>。可以看到绿色字体与红色字体的对比，添加了distributed。<br><img src="http://jiajunjun.top/md_picture/usegit4.png" alt="git commit命令执行成功"></p>
-</li>
-<li><p>进行提交：<code>git add readme.txt</code></p>
-</li>
-<li><p><code>git commit -m &quot;add distributed&quot;</code></p>
-</li>
-<li><p>查看此时仓库的状态： <code>git status</code> (显示 nothing to commit,working tree clean，表明当前没有需要提交的修改，而且工作目录是干净的。)</p>
-</li>
-<li><p>查看提交日志：<code>git log(完整版）</code> (<code>git log --pretty=oneline</code>(精简版）)</p>
-</li>
-</ul>
-<h1 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h1><ul>
-<li><p>回退到上一个版本：<code>git reset --hard HEAD^</code> (文件已经被修改回上一个版本，若想回到上上个版本，用HEAD^^，若想回到往上100个版本，用HEAD~100)</p>
-</li>
-<li><p>又想回到刚刚最新的版本：git reset –hard 6d1fe (从命令行往上翻，找到最新版本前边的commit id，输入前几位就OK了，这里最新版本的commit id 是 6d1fe770…）</p>
-</li>
-<li><p>如果忘记commit id：git reflog（可以查看之前的每一次命令，可以找到每一次命令的commit id )</p>
-</li>
-</ul>
-<h1 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h1><p><img src="http://jiajunjun.top/md_picture/usegit5.png" alt="git commit命令执行成功"></p>
-<p>　　git add 实际上是把文件修改添加到暂存区（图中的stage)，git commit 实际上是把暂存区中的所有内容提交到当前分支（master是Git自动创建的第一个分支）。所以commit可以一次性提交多个文件。如果修改readme.txt文件，并且新建了一个LICENSE文件，此时若执行完git add readme.txt和git add LICENSE后，暂存区的状态如下图：</p>
-<p><img src="http://jiajunjun.top/md_picture/usegit6.png" alt="git commit命令执行成功"></p>
-<p>　　此时执行git commit后，就变成了下图，暂存区没有任何内容，commit将两个文件全部提交。</p>
-<p><img src="http://jiajunjun.top/md_picture/usegit7.png" alt="git commit命令执行成功"></p>
-<h1 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h1><ul>
-<li><p>文件提交前，可手动修改到之前的状态，也可使用 <code>git checkout -- readme.txt</code> ，将readme.txt文件在工作区的修改撤销，回退到最近一次 git commit 或 git add 的状态。</p>
-</li>
-<li><p>文件已经add，但未commit：<code>git reset HEAD readme.txt</code>，回退版本，把暂存区的修改退回到工作区。</p>
-</li>
-</ul>
-<h1 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h1><ul>
-<li><code>rm test.txt</code><ul>
-<li>确实要删除：<code>git rm test.txt</code><br>　<code>git commit -m &quot;xxxxx&quot;</code></li>
-<li>删错了：<code>git checkout -- test.txt</code>
-　　　　</li>
-</ul>
-</li>
-</ul>
-<h1 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h1><ul>
-<li><p>在GitHub中新建一个仓库后，在本地仓库下运行：<code>git remote add origin git@github.com:JiaJunJun/learngit.git</code></p>
-</li>
-<li><p>第一次推送master分支的所有内容：<code>git push -u origin master</code></p>
-</li>
-<li><p>之后提交：<code>git push origin master</code></p>
-</li>
-</ul>
-<p>　　本地仓库与远程仓库同步</p>
-<ul>
-<li>把远程仓库克隆到本地：github中新建仓库newlocal，在本地想要位置下输入命令：<code>git clone git@github.com:JiaJunJun/newlocal.git</code></li>
-</ul>
-<h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1><ul>
-<li><p>查看分支：<code>git branch</code></p>
-</li>
-<li><p>创建分支：<code>git branch &lt;name&gt;</code></p>
-</li>
-<li><p>切换分支：<code>git checkout &lt;name&gt;</code> 或 <code>git switch &lt;name&gt;</code></p>
-</li>
-<li><p>创建+切换分支：<code>git checkout -b &lt;name&gt;</code> 或 <code>git switch -c &lt;name&gt;</code></p>
-</li>
-<li><p>合并某分支到当前分支：<code>git merge &lt;name&gt;</code></p>
-</li>
-<li><p>删除分支：<code>git branch -d &lt;name&gt;</code></p>
-</li>
-</ul>
-<p>参考链接：<a href="https://www.liaoxuefeng.com/wiki/896043488029600">https://www.liaoxuefeng.com/wiki/896043488029600</a></p>
-]]></content>
-      <categories>
-        <category>开发环境</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>案例学习1：基于图像的水质识别</title>
-    <url>/2021/01/09/%E6%A1%88%E4%BE%8B%E5%AD%A6%E4%B9%A01%EF%BC%9A%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB/</url>
-    <content><![CDATA[<h1 id="案例背景"><a href="#案例背景" class="headerlink" title="案例背景"></a>案例背景</h1><p>已有数据集根据专家经验将水质分为5个类别，要求根据水质图片能够实现水质的分类。</p>
-<p>案例与教程来源：人邮教师学院大数据（python方向）教学能力提升训练营（第2期）</p>
-<a id="more"></a>
-
-<h1 id="求解思路"><a href="#求解思路" class="headerlink" title="求解思路"></a>求解思路</h1><ul>
-<li>读取图片数据</li>
-<li>截取图片中心区域</li>
-<li>提取颜色特征</li>
-<li>模型构建与评估</li>
-</ul>
-<h1 id="过程要点"><a href="#过程要点" class="headerlink" title="过程要点"></a>过程要点</h1><p><strong>图像的读取</strong></p>
-<p><code>from PIL import Image</code><br><code>path = &#39;...&#39;</code><br><code>img = Image.open(path)</code></p>
-<p>上述代码可以读取一张图片，若要读取文件夹内所有图片，则可以使用循环。path赋值为图片的公共路径，即所在的文件夹的路径，之后每幅图片用“path+img_names[i]”表示，其中img_names中保存所有图片的名称。通过使用正则化提取所有图片的名称，并添加到img_names列表中。</p>
-<p><strong>截取图片中心区域</strong></p>
-<p>使用<code>img.crop((左上点横坐标，左上点纵坐标，右下角横坐标，右下角纵坐标))</code>截取某一区域</p>
-<p><strong>读取图像的颜色特征</strong></p>
-<p>颜色特征采用颜色矩的方法，颜色矩包括各个颜色通道的一阶矩，二阶矩和三阶矩，因此一个RGB的图像共有9个特征分量。</p>
-<p><img src="http://jiajunjun.top/md_picture/renyoucase/color_moment.png" alt="图1"></p>
-<p><code>r, g, b = img.split()</code>(分成三个颜色通道）</p>
-<p><code>rd = np.asarray(r)</code><br><code>gd = np.asarray(g)</code><br><code>bd = np.asarray(b)</code>(取出各通道的像素值）</p>
-<p><code>rd.mean()</code>（一阶矩）</p>
-<p><code>rd.std()</code>(二阶矩)</p>
-<p><code>mid = np.mean((rd-rd.mean())**3)</code>  <code>np.sign(mid)*abs(mid)**(1/3)</code>（三阶矩的计算方法）</p>
-<p>其中需要使用np.sign(mid)用来表示mid的符号，取值为-1,0,1。否则开三次根的时候，若为负数会出错。</p>
-<p>完整代码：</p>
-<p><a href="https://github.com/JiaJunJun/case_study/tree/master/%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB">https://github.com/JiaJunJun/case_study/tree/master/%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB</a></p>
-]]></content>
-      <categories>
-        <category>案例学习</category>
-      </categories>
-      <tags>
-        <tag>计算机视觉</tag>
-        <tag>图像处理</tag>
-        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -542,7 +277,7 @@
 <p>　　五组群体的注意权重分布有很大的不同</p>
 ]]></content>
       <categories>
-        <category>文献阅读</category>
+        <category>教育数据挖掘</category>
       </categories>
       <tags>
         <tag>教育数据挖掘</tag>
@@ -550,25 +285,187 @@
       </tags>
   </entry>
   <entry>
-    <title>从面向连接和无连接的角度分析，计算机网络为什么没有采用通信网络的方法和模式？</title>
-    <url>/2020/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%97%A0%E8%BF%9E%E6%8E%A5/</url>
-    <content><![CDATA[<ul>
-<li>面向连接：在通信时事先建立好一条虚拟通信线路</li>
-<li>无连接：不需事先建立线路，每个分组自主选择线路传输到目标地址<a id="more"></a>
-　　通信网络采用面向连接的方式，使用电路交换，由核心网链接各种终端和设备，而计算机网络的可靠传输从核心网外移，在核心网中只提供互连的作用，因此可靠传输如何实现是计算机网络需要考虑的问题。计算机网络没有采用面向连接的原因有：</li>
+    <title>Git的使用</title>
+    <url>/2020/12/15/git%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h1><ul>
+<li>创建空目录：<code>mkdir xxxxx（文件夹名）</code></li>
+<li>创建仓库：<code>git init</code></li>
 </ul>
-<p>　　1.二者终端设备的性能差别大</p>
-<p>　　通信网络的终端不具备差错处理和计算能力，需要采用面向连接来保证通信的质量。而计算机网络的终端是只能的主机，如果传输过程中出现了差错，终端也有办法实现可靠传输。</p>
-<p>　　2.即使网络传输正确，端到端的数据处理也有可能出现错误。在传输层中使用TCP面向连接的协议用来保障可靠传输。网络层使用无连接的方法。</p>
-<p>　　3.计算机网络的需求更多，如果采用面向连接的方法所需成本较高。</p>
-<p>　　这也是201电话比之前电话便宜一半的原因。</p>
+<p>　　使用Notepad++创建一个.txt文件并保存到刚刚文件夹下，如readme.txt</p>
+<a id="more"></a>
+
+<ul>
+<li>将文件添加到仓库：<code>git add readme.txt</code></li>
+<li>把文件提交到仓库：<code>git commit -m &quot;xxxxx&quot;</code>（-m后面输入的是本次提交的说明，这样就能从历史记录里方便地找到改动记录。）</li>
+</ul>
+<p>　　git commit命令执行成功后如下图：</p>
+<p><img src="http://jiajunjun.top/md_picture/usegit1.png" alt="git commit命令执行成功"></p>
+<p>　　(1 file changed：1个文件被改动（新添加的readme.txt文件）; 2 insertions：插入了两行内容（readme.txt有两行内容）)</p>
+<p>　　commit可以一次提交多个文件，所以可以多次add再commit。</p>
+<p><img src="http://jiajunjun.top/md_picture/usegit2.png" alt="git commit命令执行成功"></p>
+<ul>
+<li>查看仓库当前的状态：<code>git status</code></li>
+</ul>
+<p>　　例如：当对readme.txt进行修改后，输入git status。输出表明修改过但没提交。<br><img src="http://jiajunjun.top/md_picture/usegit3.png" alt="git commit命令执行成功"></p>
+<ul>
+<li><p>查看修改的内容：<code>git diff</code>。可以看到绿色字体与红色字体的对比，添加了distributed。<br><img src="http://jiajunjun.top/md_picture/usegit4.png" alt="git commit命令执行成功"></p>
+</li>
+<li><p>进行提交：<code>git add readme.txt</code></p>
+</li>
+<li><p><code>git commit -m &quot;add distributed&quot;</code></p>
+</li>
+<li><p>查看此时仓库的状态： <code>git status</code> (显示 nothing to commit,working tree clean，表明当前没有需要提交的修改，而且工作目录是干净的。)</p>
+</li>
+<li><p>查看提交日志：<code>git log(完整版）</code> (<code>git log --pretty=oneline</code>(精简版）)</p>
+</li>
+</ul>
+<h1 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h1><ul>
+<li><p>回退到上一个版本：<code>git reset --hard HEAD^</code> (文件已经被修改回上一个版本，若想回到上上个版本，用HEAD^^，若想回到往上100个版本，用HEAD~100)</p>
+</li>
+<li><p>又想回到刚刚最新的版本：git reset –hard 6d1fe (从命令行往上翻，找到最新版本前边的commit id，输入前几位就OK了，这里最新版本的commit id 是 6d1fe770…）</p>
+</li>
+<li><p>如果忘记commit id：git reflog（可以查看之前的每一次命令，可以找到每一次命令的commit id )</p>
+</li>
+</ul>
+<h1 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h1><p><img src="http://jiajunjun.top/md_picture/usegit5.png" alt="git commit命令执行成功"></p>
+<p>　　git add 实际上是把文件修改添加到暂存区（图中的stage)，git commit 实际上是把暂存区中的所有内容提交到当前分支（master是Git自动创建的第一个分支）。所以commit可以一次性提交多个文件。如果修改readme.txt文件，并且新建了一个LICENSE文件，此时若执行完git add readme.txt和git add LICENSE后，暂存区的状态如下图：</p>
+<p><img src="http://jiajunjun.top/md_picture/usegit6.png" alt="git commit命令执行成功"></p>
+<p>　　此时执行git commit后，就变成了下图，暂存区没有任何内容，commit将两个文件全部提交。</p>
+<p><img src="http://jiajunjun.top/md_picture/usegit7.png" alt="git commit命令执行成功"></p>
+<h1 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h1><ul>
+<li><p>文件提交前，可手动修改到之前的状态，也可使用 <code>git checkout -- readme.txt</code> ，将readme.txt文件在工作区的修改撤销，回退到最近一次 git commit 或 git add 的状态。</p>
+</li>
+<li><p>文件已经add，但未commit：<code>git reset HEAD readme.txt</code>，回退版本，把暂存区的修改退回到工作区。</p>
+</li>
+</ul>
+<h1 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h1><ul>
+<li><code>rm test.txt</code><ul>
+<li>确实要删除：<code>git rm test.txt</code><br>　<code>git commit -m &quot;xxxxx&quot;</code></li>
+<li>删错了：<code>git checkout -- test.txt</code>
+　　　　</li>
+</ul>
+</li>
+</ul>
+<h1 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h1><ul>
+<li><p>在GitHub中新建一个仓库后，在本地仓库下运行：<code>git remote add origin git@github.com:JiaJunJun/learngit.git</code></p>
+</li>
+<li><p>第一次推送master分支的所有内容：<code>git push -u origin master</code></p>
+</li>
+<li><p>之后提交：<code>git push origin master</code></p>
+</li>
+</ul>
+<p>　　本地仓库与远程仓库同步</p>
+<ul>
+<li>把远程仓库克隆到本地：github中新建仓库newlocal，在本地想要位置下输入命令：<code>git clone git@github.com:JiaJunJun/newlocal.git</code></li>
+</ul>
+<h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1><ul>
+<li><p>查看分支：<code>git branch</code></p>
+</li>
+<li><p>创建分支：<code>git branch &lt;name&gt;</code></p>
+</li>
+<li><p>切换分支：<code>git checkout &lt;name&gt;</code> 或 <code>git switch &lt;name&gt;</code></p>
+</li>
+<li><p>创建+切换分支：<code>git checkout -b &lt;name&gt;</code> 或 <code>git switch -c &lt;name&gt;</code></p>
+</li>
+<li><p>合并某分支到当前分支：<code>git merge &lt;name&gt;</code></p>
+</li>
+<li><p>删除分支：<code>git branch -d &lt;name&gt;</code></p>
+</li>
+</ul>
+<p>参考链接：<a href="https://www.liaoxuefeng.com/wiki/896043488029600">https://www.liaoxuefeng.com/wiki/896043488029600</a></p>
+]]></content>
+      <categories>
+        <category>开发环境</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>要提供可靠的传输要解决哪些问题，如何解决？</title>
+    <url>/2020/12/17/%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93/</url>
+    <content><![CDATA[<p>思考：</p>
+<ul>
+<li><p>TCP层实现可靠传输中面向连接和无连接各自的优点和缺点</p>
+</li>
+<li><p>什么是端到端的可靠传输</p>
+<a id="more"></a></li>
+<li><p>数据链路层和TCP层解决可靠传输的区别</p>
+<ul>
+<li>TCP层解决端到端的可靠传输，而DLL层解决一跳内的可靠传输。</li>
+</ul>
+</li>
+</ul>
+<p>　　计算机网络的可靠传输从核心网外移，在端系统解决。不可靠的传输可能会出现：1.传输错误的信息；2.重复信息；3.信息丢失；4.超时。针对上述问题，有以下解决方法：</p>
+<ul>
+<li>1.解决信息错误：</li>
+</ul>
+<p>　　解决信息错误包括两个部分：检错和纠错。</p>
+<p>　　检错：发送方除了发送所需的信息外，还需要额外发送一部分用来检错，例如奇偶校验法。在最后添加一位检错位（0或1），最终使得整条数据的1的个数为偶（或奇）。</p>
+<p>　　纠错：</p>
+<p>　　1.重传：依赖于发送方的配合，简单易于实现，但耗费时间长。</p>
+<p>　　2.前向纠错（FEC)：无时延，依赖复杂的编码技术，开销大。（前向纠错是一种差错控制方式，它是指信号在被送入传输信道之前预先按一定的算法进行编码处理，加入带有信号本身特征的冗码，在接收端按照相应算法对接收到的信号进行解码，从而找出在传输过程中产生的错误码并将其纠正的技术）</p>
+<p>　　3.第一种和第二种方法结合（混合技术）</p>
+<ul>
+<li>2.解决重复信息：</li>
+</ul>
+<p>　　为每组信息加上编号，信息重复则编号重复，编号重复的信息直接丢弃。</p>
+<ul>
+<li>3.解决信息丢失：</li>
+</ul>
+<p>　　有了编号后就可以通过编号的顺序判断数据的丢失情况。</p>
+<ul>
+<li>4.解决超时的问题：</li>
+</ul>
+<p>　　信息传输过程中需要等待对方的确认信息，互相等待会导致死锁。解决方法是使用定时器，若超过预定时间，将进行重传。此为停止等待协议，但该协议存在的问题是大部分的时间都用来等待，信道的利用率低，因此可以采用流水线机制，发送方不停地发数据，接收方的接受能力要与发送方的发送能力匹配，需要进行流量控制和拥塞控制。</p>
+<p>　　流量控制：滑动窗口，连续ARQ协议。</p>
+<p>　　拥塞控制：产生拥塞的原因是对资源的需求总和&gt;可用资源。拥塞控制方法有：慢开始和拥塞避免、快重传和快恢复。</p>
 ]]></content>
       <categories>
         <category>计算机网络</category>
       </categories>
       <tags>
         <tag>计算机网络</tag>
-        <tag>面向连接和无连接</tag>
+        <tag>可靠传输</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>案例学习1：基于图像的水质识别</title>
+    <url>/2021/01/09/%E6%A1%88%E4%BE%8B%E5%AD%A6%E4%B9%A01%EF%BC%9A%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="案例背景"><a href="#案例背景" class="headerlink" title="案例背景"></a>案例背景</h1><p>已有数据集根据专家经验将水质分为5个类别，要求根据水质图片能够实现水质的分类。</p>
+<p>案例与教程来源：人邮教师学院大数据（python方向）教学能力提升训练营（第2期）</p>
+<a id="more"></a>
+
+<h1 id="求解思路"><a href="#求解思路" class="headerlink" title="求解思路"></a>求解思路</h1><ul>
+<li>读取图片数据</li>
+<li>截取图片中心区域</li>
+<li>提取颜色特征</li>
+<li>模型构建与评估</li>
+</ul>
+<h1 id="过程要点"><a href="#过程要点" class="headerlink" title="过程要点"></a>过程要点</h1><p><strong>图像的读取</strong></p>
+<p><code>from PIL import Image</code><br><code>path = &#39;...&#39;</code><br><code>img = Image.open(path)</code></p>
+<p>上述代码可以读取一张图片，若要读取文件夹内所有图片，则可以使用循环。path赋值为图片的公共路径，即所在的文件夹的路径，之后每幅图片用“path+img_names[i]”表示，其中img_names中保存所有图片的名称。通过使用正则化提取所有图片的名称，并添加到img_names列表中。</p>
+<p><strong>截取图片中心区域</strong></p>
+<p>使用<code>img.crop((左上点横坐标，左上点纵坐标，右下角横坐标，右下角纵坐标))</code>截取某一区域</p>
+<p><strong>读取图像的颜色特征</strong></p>
+<p>颜色特征采用颜色矩的方法，颜色矩包括各个颜色通道的一阶矩，二阶矩和三阶矩，因此一个RGB的图像共有9个特征分量。</p>
+<p><img src="http://jiajunjun.top/md_picture/renyoucase/color_moment.png" alt="图1"></p>
+<p><code>r, g, b = img.split()</code>(分成三个颜色通道）</p>
+<p><code>rd = np.asarray(r)</code><br><code>gd = np.asarray(g)</code><br><code>bd = np.asarray(b)</code>(取出各通道的像素值）</p>
+<p><code>rd.mean()</code>（一阶矩）</p>
+<p><code>rd.std()</code>(二阶矩)</p>
+<p><code>mid = np.mean((rd-rd.mean())**3)</code>  <code>np.sign(mid)*abs(mid)**(1/3)</code>（三阶矩的计算方法）</p>
+<p>其中需要使用np.sign(mid)用来表示mid的符号，取值为-1,0,1。否则开三次根的时候，若为负数会出错。</p>
+<p>完整代码：</p>
+<p><a href="https://github.com/JiaJunJun/case_study/tree/master/%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB">https://github.com/JiaJunJun/case_study/tree/master/%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB</a></p>
+]]></content>
+      <categories>
+        <category>案例学习</category>
+      </categories>
+      <tags>
+        <tag>计算机视觉</tag>
+        <tag>图像处理</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -596,6 +493,28 @@
         <tag>计算机视觉</tag>
         <tag>图像处理</tag>
         <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从面向连接和无连接的角度分析，计算机网络为什么没有采用通信网络的方法和模式？</title>
+    <url>/2020/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%97%A0%E8%BF%9E%E6%8E%A5/</url>
+    <content><![CDATA[<ul>
+<li>面向连接：在通信时事先建立好一条虚拟通信线路</li>
+<li>无连接：不需事先建立线路，每个分组自主选择线路传输到目标地址<a id="more"></a>
+　　通信网络采用面向连接的方式，使用电路交换，由核心网链接各种终端和设备，而计算机网络的可靠传输从核心网外移，在核心网中只提供互连的作用，因此可靠传输如何实现是计算机网络需要考虑的问题。计算机网络没有采用面向连接的原因有：</li>
+</ul>
+<p>　　1.二者终端设备的性能差别大</p>
+<p>　　通信网络的终端不具备差错处理和计算能力，需要采用面向连接来保证通信的质量。而计算机网络的终端是只能的主机，如果传输过程中出现了差错，终端也有办法实现可靠传输。</p>
+<p>　　2.即使网络传输正确，端到端的数据处理也有可能出现错误。在传输层中使用TCP面向连接的协议用来保障可靠传输。网络层使用无连接的方法。</p>
+<p>　　3.计算机网络的需求更多，如果采用面向连接的方法所需成本较高。</p>
+<p>　　这也是201电话比之前电话便宜一半的原因。</p>
+]]></content>
+      <categories>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+        <tag>面向连接和无连接</tag>
       </tags>
   </entry>
 </search>

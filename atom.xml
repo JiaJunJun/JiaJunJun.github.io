@@ -36,48 +36,6 @@
   </entry>
   
   <entry>
-    <title>文献阅读：Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces</title>
-    <link href="http://example.com/2021/03/21/Few-Shot%20and%20Zero-Shot%20Multi-Label%20Learning%20for%20Structured%20Label%20Spaces/"/>
-    <id>http://example.com/2021/03/21/Few-Shot%20and%20Zero-Shot%20Multi-Label%20Learning%20for%20Structured%20Label%20Spaces/</id>
-    <published>2021-03-21T12:47:06.170Z</published>
-    <updated>2021-03-23T12:26:45.591Z</updated>
-    
-    
-    <summary type="html">&lt;h3 id=&quot;Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces&quot;&gt;&lt;a href=&quot;#Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces&quot; class=&quot;headerlink&quot; title=&quot;Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces&quot;&gt;&lt;/a&gt;Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces&lt;/h3&gt;&lt;h5 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h5&gt;&lt;p&gt;​    对于文本分类问题，多标签的少样本或者无样本的标签预测很少被探索。在本文中，执行了一个细粒度的评估来理解最新的方法如何在不常见的标签上执行。此外，当标签空间上存在已知结构时，开发了多标签文本分类的少样本和无样本方法。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="文献阅读" scheme="http://example.com/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
-    
-    <category term="小样本学习" scheme="http://example.com/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="Few-Shot Learning" scheme="http://example.com/tags/Few-Shot-Learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>文献阅读：Optimization as a model for few-shot learning</title>
-    <link href="http://example.com/2021/03/21/Optimization%20as%20a%20model%20for%20few-shot%20learning/"/>
-    <id>http://example.com/2021/03/21/Optimization%20as%20a%20model%20for%20few-shot%20learning/</id>
-    <published>2021-03-21T12:01:20.188Z</published>
-    <updated>2021-03-23T12:35:02.814Z</updated>
-    
-    
-    <summary type="html">&lt;h5 id=&quot;Optimization-as-a-model-for-few-shot-learning&quot;&gt;&lt;a href=&quot;#Optimization-as-a-model-for-few-shot-learning&quot; class=&quot;headerlink&quot; title=&quot;Optimization as a model for few-shot learning&quot;&gt;&lt;/a&gt;Optimization as a model for few-shot learning&lt;/h5&gt;&lt;h5 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h5&gt;&lt;p&gt;​    提出基于LSTM的元学习者模型来学习精确的优化算法，用于训练另一个在少样本的情况下的学习者神经网络分类器。该模型能够学习适当的参数更新，还可以学习学习者网络的一般初始化，以便快速收敛训练。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="文献阅读" scheme="http://example.com/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
-    
-    <category term="小样本学习" scheme="http://example.com/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="Few-Shot Learning" scheme="http://example.com/tags/Few-Shot-Learning/"/>
-    
-  </entry>
-  
-  <entry>
     <title>案例实践1：手写数字识别</title>
     <link href="http://example.com/2021/01/10/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/"/>
     <id>http://example.com/2021/01/10/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/</id>
@@ -302,7 +260,7 @@
     <link href="http://example.com/2020/12/01/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
     <id>http://example.com/2020/12/01/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/</id>
     <published>2020-12-01T02:58:16.985Z</published>
-    <updated>2020-12-04T13:02:15.311Z</updated>
+    <updated>2021-03-23T12:47:27.573Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;objective：&lt;/strong&gt;&lt;/p&gt;
@@ -310,7 +268,7 @@
     
     
     
-    <category term="文献阅读" scheme="http://example.com/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+    <category term="教育数据挖掘" scheme="http://example.com/categories/%E6%95%99%E8%82%B2%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"/>
     
     
     <category term="教育数据挖掘" scheme="http://example.com/tags/%E6%95%99%E8%82%B2%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"/>
