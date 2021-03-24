@@ -1,30 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Anaconda中为每个项目创建新环境</title>
-    <url>/2020/12/04/Anaconda%E4%B8%AD%E4%B8%BA%E6%AF%8F%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E6%96%B0%E7%8E%AF%E5%A2%83/</url>
-    <content><![CDATA[<h1 id="创建新环境"><a href="#创建新环境" class="headerlink" title="创建新环境"></a>创建新环境</h1><p>进入cmd，进入anaconda所在的文件夹位置（如：D:\Software\Anaconda\envs）</p>
-<a id="more"></a>
-
-<p>依次输入：</p>
-<p><code>conda create --name 项目名称 python=版本号</code></p>
-<p><code>activate</code></p>
-<p><code>conda activate 项目名称</code>   切换不同环境的时候也使用该语句</p>
-<p>然后使用pip install安装所需包即可。</p>
-<hr>
-<h1 id="查看环境"><a href="#查看环境" class="headerlink" title="查看环境"></a>查看环境</h1><ul>
-<li>查看目前已安装的环境：<code>conda info --envs</code></li>
-<li>查看环境下已安装的包：<code>pip list</code></li>
-</ul>
-]]></content>
-      <categories>
-        <category>开发环境</category>
-      </categories>
-      <tags>
-        <tag>Anaconda</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>从1G到6G分别采用了哪种信道共享技术？</title>
     <url>/2020/12/04/1G-6G/</url>
     <content><![CDATA[<p>　　在计算机网络中使用的信道共享技术可以分为三种，即随机接入、受控接入和信道复用。</p>
@@ -92,6 +68,30 @@
       </tags>
   </entry>
   <entry>
+    <title>Anaconda中为每个项目创建新环境</title>
+    <url>/2020/12/04/Anaconda%E4%B8%AD%E4%B8%BA%E6%AF%8F%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E6%96%B0%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<h1 id="创建新环境"><a href="#创建新环境" class="headerlink" title="创建新环境"></a>创建新环境</h1><p>进入cmd，进入anaconda所在的文件夹位置（如：D:\Software\Anaconda\envs）</p>
+<a id="more"></a>
+
+<p>依次输入：</p>
+<p><code>conda create --name 项目名称 python=版本号</code></p>
+<p><code>activate</code></p>
+<p><code>conda activate 项目名称</code>   切换不同环境的时候也使用该语句</p>
+<p>然后使用pip install安装所需包即可。</p>
+<hr>
+<h1 id="查看环境"><a href="#查看环境" class="headerlink" title="查看环境"></a>查看环境</h1><ul>
+<li>查看目前已安装的环境：<code>conda info --envs</code></li>
+<li>查看环境下已安装的包：<code>pip list</code></li>
+</ul>
+]]></content>
+      <categories>
+        <category>开发环境</category>
+      </categories>
+      <tags>
+        <tag>Anaconda</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>文献阅读：Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces</title>
     <url>/2021/03/21/Few-Shot%20and%20Zero-Shot%20Multi-Label%20Learning%20for%20Structured%20Label%20Spaces/</url>
     <content><![CDATA[<h3 id="Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces"><a href="#Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces" class="headerlink" title="Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces"></a>Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces</h3><h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>​    对于文本分类问题，多标签的少样本或者无样本的标签预测很少被探索。在本文中，执行了一个细粒度的评估来理解最新的方法如何在不常见的标签上执行。此外，当标签空间上存在已知结构时，开发了多标签文本分类的少样本和无样本方法。</p>
@@ -126,6 +126,57 @@
 <p>使用多标签二元交叉熵损失来训练模型</p>
 <p><img src="http://jiajunjun.top/md_picture/FSL1/11.png" alt="图11"></p>
 <p>参考文章：<a href="https://blog.csdn.net/Daffy10/article/details/109588275">https://blog.csdn.net/Daffy10/article/details/109588275</a></p>
+]]></content>
+      <categories>
+        <category>小样本学习</category>
+      </categories>
+      <tags>
+        <tag>Few-Shot Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Few-Shot Learning</title>
+    <url>/2021/03/22/Few-shot%20Learning/</url>
+    <content><![CDATA[<h1 id="Few-shot-Learning"><a href="#Few-shot-Learning" class="headerlink" title="Few-shot Learning"></a>Few-shot Learning</h1><p>​    在我们所熟知的深度学习领域，可以通过大量的训练集训练模型进行分类和回归。但当有标注的数据很少的时候该如何解决？Few-shot learning则是解决该问题的一个领域，就是用很少的样本进行分类或回归。</p>
+<a id="more"></a>
+
+<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>​    首先观察下边这幅图，左边是犰狳，右边是穿山甲。    </p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/1.png" alt="image-20210322194447292"></p>
+<p>​    现在给出一幅Query图片，判断这是犰狳还是穿山甲。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/2.png" alt="image-20210322194636385"></p>
+<p>​    我们可以很容易判断出上述图片是穿山甲。人类可以很容易的从少量样本中学习到信息，通过比对得出图片所属类别。Few-shot learning不是让机器识别训练集中的图片且泛化到测试集，而是学会如何学习。比如我们人类的思维是通过比较Query图片与上述Support set中的哪一类图片更相似从而得出正确的结论。所以类比到机器，只需要让机器learn to learn，然后判断下边的图片是不是同一类。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/3.png" alt="image-20210322195524598"></p>
+<p>​    当直接问神经网络下图中的Query是什么动物时，神经网络不能判别，但当给出下图的Support Set后再次让神经网络判断，得出Query是Otter.</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/4.png" alt="image-20210322195735615"></p>
+<p>​    让机器learn to learn 的过程就是meta learning。meta learning希望机器有自主学习的能力。就是即使没见过Query图片上的动物，但通过Support set上的动物便可以对所要分类的动物进行分辨的能力。</p>
+<p>​    few-shot learning中有两个常用的术语：k-way和n-shot。k-way指的是support set中有k个类，n-shot指的是每个类中含有n个样本。上图就是一个6 way 1 shot的例子。</p>
+<p>​    整个few-learning的过程如下，首先在一个大规模的数据集上学习辨别相似度的能力。然后使用学习到的相似度函数对图片进行预测。通过对Query和Support set中的图片一一对比，分别计算出相似度，从而进行判断，把相似度最高的作为图片的分类结果。</p>
+<h4 id="孪生网络（siamese-network"><a href="#孪生网络（siamese-network" class="headerlink" title="孪生网络（siamese network)"></a>孪生网络（siamese network)</h4><p>​    首先构建数据集，需要构造正样本和负样本。正样本使得神经网络辨别哪些东西属于同一类，负样本使得神经网络具有辨别差异的能力。正样本的选取是随机从数据集上选取一张图片，然后从该图片所属的类中随机抽取另一张，构成正样本，标签为1。负样本的选取是随机从数据集上选取一张图片，然后从除该图片所属类别外的其他类别随机抽取一张图片，构成负样本，标签为0。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/5.png" alt="image-20210322201253073"></p>
+<p>​    然后通过CNN提取图片的特征。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/6.png" alt="image-20210322201346084"></p>
+<p>​    现在开始训练神经网络，例如选出刚刚数据集中标签为1的数据，分别将两张图片放入同一个CNN中提取特征，之后判断相似度，图片中的Z=|h1- h2|,再用全连接层进行处理得到一个标量，最后使用sigmoid函数输出一个0到1之间的概率值，与其标签1进行比对，做损失函数预测标签和预测值的差别，然后反向更新全连接层和CNN的参数。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/7.png" alt="image-20210322201514340"></p>
+<p>​    类似的，训练标签为0的数据。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/8.png" alt="image-20210322201915752"></p>
+<p>​    训练完成后便可进行预测。给定一个Support set，support set中的所有类别都没有在训练集中出现过，现在确定Query中的图片属于Support set中的某一类，通过分别与Support set中的每一类计算相似度，最终得出Query与support set中的squirrel相似度最高，因此把它归为squirrel。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/9.png" alt="image-20210322202015460"></p>
+<p>​    除上述训练孪生网络的方法外，还有另一种方法，Triplet Loss。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/10.png" alt="image-20210322202439744"></p>
+<p>​    首先从数据集中任意选取一张图片做为anchor，从同一类中抽取一张图片作为正样本，从其他类中抽取一张图片作为负样本，然后通过同一个卷积神经网络提取特征，分别计算正样本与锚点之间的距离以及负样本与锚点之间的距离。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/11.png" alt="image-20210322202725837"></p>
+<p>​    我们的目标是使得d+尽可能小，d-尽可能大，因此如下图所示定义损失函数。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/12.png" alt="image-20210322202908782"></p>
+<p>​    然后比较Query与support set的每一类的距离得出结论。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/13.png" alt="image-20210322203025495"></p>
+<h4 id="Pretraining-和-fine-tuning"><a href="#Pretraining-和-fine-tuning" class="headerlink" title="Pretraining 和 fine tuning"></a>Pretraining 和 fine tuning</h4><h5 id="余弦相似度"><a href="#余弦相似度" class="headerlink" title="余弦相似度"></a>余弦相似度</h5><p>​    假设有两个单位向量，它们的夹角记为θ，此时余弦相似度为： <img src="http://jiajunjun.top/md_picture/FSL/14.png" alt="[公式]"> ，其实就是x在w方向上的投影长度，因此它的取值范围就是[-1,1]。如果两个向量不是单位向量，此时就需要对其进行归一化。此时计算余弦相似度的公式为： <img src="http://jiajunjun.top/md_picture/FSL/15.png" alt="[公式]"></p>
+<p>​    对于一个3-way,2-shot的例子，首先对于每个类别中的两个样本提取特征，然后将每个类别的两个特征求平均值和归一化，得到三个类别的表征：μ1，μ2，μ3。做分类的时候将Query的特征向量q与三个表征计算余弦相似度。使用P=Softmax(Mq)计算概率，其中M是三个表征向量μ1，μ2，μ3组成的矩阵。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/16.png" alt="image-20210322203735265"></p>
+<p>​    通常在第一步预训练和第二步进行预测的中间加一步，即为在小样本数据集上进行fine-tuning，我们之前预测的时候softmax函数中的权重W采用M，偏置b设为0，现在我们把support set中的所有数据输入训练参数W和b，通常加一个正则化防止过拟合。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/17.png" alt="image-20210322204534008"></p>
+<p>​    fine - tuning有三个技巧，一是初始化权重为M，二是正则化采用Entropy regularization，三是使用余弦距离和softmax分类器提高准确率。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/18.png" alt="image-20210322204735204"></p>
+<p><img src="http://jiajunjun.top/md_picture/FSL/19.png" alt="image-20210322205108258"></p>
 ]]></content>
       <categories>
         <category>小样本学习</category>
@@ -194,57 +245,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Few-Shot Learning</title>
-    <url>/2021/03/22/Few-shot%20Learning/</url>
-    <content><![CDATA[<h1 id="Few-shot-Learning"><a href="#Few-shot-Learning" class="headerlink" title="Few-shot Learning"></a>Few-shot Learning</h1><p>​    在我们所熟知的深度学习领域，可以通过大量的训练集训练模型进行分类和回归。但当有标注的数据很少的时候该如何解决？Few-shot learning则是解决该问题的一个领域，就是用很少的样本进行分类或回归。</p>
-<a id="more"></a>
-
-<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>​    首先观察下边这幅图，左边是犰狳，右边是穿山甲。    </p>
-<p><img src="http://jiajunjun.top/md_picture/FSL/1.png" alt="image-20210322194447292"></p>
-<p>​    现在给出一幅Query图片，判断这是犰狳还是穿山甲。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL/2.png" alt="image-20210322194636385"></p>
-<p>​    我们可以很容易判断出上述图片是穿山甲。人类可以很容易的从少量样本中学习到信息，通过比对得出图片所属类别。Few-shot learning不是让机器识别训练集中的图片且泛化到测试集，而是学会如何学习。比如我们人类的思维是通过比较Query图片与上述Support set中的哪一类图片更相似从而得出正确的结论。所以类比到机器，只需要让机器learn to learn，然后判断下边的图片是不是同一类。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL/3.png" alt="image-20210322195524598"></p>
-<p>​    当直接问神经网络下图中的Query是什么动物时，神经网络不能判别，但当给出下图的Support Set后再次让神经网络判断，得出Query是Otter.</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL/4.png" alt="image-20210322195735615"></p>
-<p>​    让机器learn to learn 的过程就是meta learning。meta learning希望机器有自主学习的能力。就是即使没见过Query图片上的动物，但通过Support set上的动物便可以对所要分类的动物进行分辨的能力。</p>
-<p>​    few-shot learning中有两个常用的术语：k-way和n-shot。k-way指的是support set中有k个类，n-shot指的是每个类中含有n个样本。上图就是一个6 way 1 shot的例子。</p>
-<p>​    整个few-learning的过程如下，首先在一个大规模的数据集上学习辨别相似度的能力。然后使用学习到的相似度函数对图片进行预测。通过对Query和Support set中的图片一一对比，分别计算出相似度，从而进行判断，把相似度最高的作为图片的分类结果。</p>
-<h4 id="孪生网络（siamese-network"><a href="#孪生网络（siamese-network" class="headerlink" title="孪生网络（siamese network)"></a>孪生网络（siamese network)</h4><p>​    首先构建数据集，需要构造正样本和负样本。正样本使得神经网络辨别哪些东西属于同一类，负样本使得神经网络具有辨别差异的能力。正样本的选取是随机从数据集上选取一张图片，然后从该图片所属的类中随机抽取另一张，构成正样本，标签为1。负样本的选取是随机从数据集上选取一张图片，然后从除该图片所属类别外的其他类别随机抽取一张图片，构成负样本，标签为0。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL/5.png" alt="image-20210322201253073"></p>
-<p>​    然后通过CNN提取图片的特征。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL/6.png" alt="image-20210322201346084"></p>
-<p>​    现在开始训练神经网络，例如选出刚刚数据集中标签为1的数据，分别将两张图片放入同一个CNN中提取特征，之后判断相似度，图片中的Z=|h1- h2|,再用全连接层进行处理得到一个标量，最后使用sigmoid函数输出一个0到1之间的概率值，与其标签1进行比对，做损失函数预测标签和预测值的差别，然后反向更新全连接层和CNN的参数。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL/7.png" alt="image-20210322201514340"></p>
-<p>​    类似的，训练标签为0的数据。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL/8.png" alt="image-20210322201915752"></p>
-<p>​    训练完成后便可进行预测。给定一个Support set，support set中的所有类别都没有在训练集中出现过，现在确定Query中的图片属于Support set中的某一类，通过分别与Support set中的每一类计算相似度，最终得出Query与support set中的squirrel相似度最高，因此把它归为squirrel。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL/9.png" alt="image-20210322202015460"></p>
-<p>​    除上述训练孪生网络的方法外，还有另一种方法，Triplet Loss。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL/10.png" alt="image-20210322202439744"></p>
-<p>​    首先从数据集中任意选取一张图片做为anchor，从同一类中抽取一张图片作为正样本，从其他类中抽取一张图片作为负样本，然后通过同一个卷积神经网络提取特征，分别计算正样本与锚点之间的距离以及负样本与锚点之间的距离。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL/11.png" alt="image-20210322202725837"></p>
-<p>​    我们的目标是使得d+尽可能小，d-尽可能大，因此如下图所示定义损失函数。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL/12.png" alt="image-20210322202908782"></p>
-<p>​    然后比较Query与support set的每一类的距离得出结论。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL/13.png" alt="image-20210322203025495"></p>
-<h4 id="Pretraining-和-fine-tuning"><a href="#Pretraining-和-fine-tuning" class="headerlink" title="Pretraining 和 fine tuning"></a>Pretraining 和 fine tuning</h4><h5 id="余弦相似度"><a href="#余弦相似度" class="headerlink" title="余弦相似度"></a>余弦相似度</h5><p>​    假设有两个单位向量，它们的夹角记为θ，此时余弦相似度为： <img src="http://jiajunjun.top/md_picture/FSL/14.png" alt="[公式]"> ，其实就是x在w方向上的投影长度，因此它的取值范围就是[-1,1]。如果两个向量不是单位向量，此时就需要对其进行归一化。此时计算余弦相似度的公式为： <img src="http://jiajunjun.top/md_picture/FSL/15.png" alt="[公式]"></p>
-<p>​    对于一个3-way,2-shot的例子，首先对于每个类别中的两个样本提取特征，然后将每个类别的两个特征求平均值和归一化，得到三个类别的表征：μ1，μ2，μ3。做分类的时候将Query的特征向量q与三个表征计算余弦相似度。使用P=Softmax(Mq)计算概率，其中M是三个表征向量μ1，μ2，μ3组成的矩阵。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL/16.png" alt="image-20210322203735265"></p>
-<p>​    通常在第一步预训练和第二步进行预测的中间加一步，即为在小样本数据集上进行fine-tuning，我们之前预测的时候softmax函数中的权重W采用M，偏置b设为0，现在我们把support set中的所有数据输入训练参数W和b，通常加一个正则化防止过拟合。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL/17.png" alt="image-20210322204534008"></p>
-<p>​    fine - tuning有三个技巧，一是初始化权重为M，二是正则化采用Entropy regularization，三是使用余弦距离和softmax分类器提高准确率。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL/18.png" alt="image-20210322204735204"></p>
-<p><img src="http://jiajunjun.top/md_picture/FSL/19.png" alt="image-20210322205108258"></p>
-]]></content>
-      <categories>
-        <category>小样本学习</category>
-      </categories>
-      <tags>
-        <tag>Few-Shot Learning</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>从网络体系架构的角度分析，P2P技术的本质是什么？</title>
     <url>/2020/12/16/P2P%E7%BD%91%E7%BB%9C%E7%9A%84%E6%9C%AC%E8%B4%A8/</url>
     <content><![CDATA[<p>　　P2P可以理解为对等计算或对等网络。国内一些媒体将P2P翻译成“点对点”或者“端对端”，学术界则统一称为对等网络（Peer-to-peer networking）或对等计算（Peer-to-peer computing），<a id="more"></a>其可以定义为：网络的参与者共享他们所拥有的一部分硬件资源（处理能力、存储能力、网络连接能力、打印机等），这些共享资源通过网络提供服务和内容，能被其它对等节点（Peer）直接访问而无需经过中间实体。在此网络中的参与者既是资源、服务和内容的提供者（Server），又是资源、服务和内容的获取者（Client）。</p>
@@ -256,47 +256,6 @@
       <tags>
         <tag>计算机网络</tag>
         <tag>P2P</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在markdown中插入图片</title>
-    <url>/2020/12/02/markdown%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
-    <content><![CDATA[<h1 id="在markdown文件中插入图片"><a href="#在markdown文件中插入图片" class="headerlink" title="在markdown文件中插入图片"></a>在markdown文件中插入图片</h1><p>　　这里选择采用将图片上传到GitHub上的方法进行图片的插入。具体步骤如下：</p>
-<p>　　<a id="more"></a></p>
-<p>　　1.登录GitHub,创建一个新仓库用来存放图片，如下图所示：<div align=center><img src="http://jiajunjun.top/md_picture/test_pic1.png" alt="图1"></div></p>
-<p>　　2.在本地磁盘中新建一个存放图片的文件夹，然后把需要插入的图片放入该文件夹中。</p>
-<p>　　3.在该文件夹下打开Git Bash。</p>
-<p>　　4.配置自己的身份：依次输入 </p>
-<p>　　<code>git config --global user.name &quot;Your name&quot;</code> </p>
-<p>　　<code>git config --global user.email &quot;Your email&quot;</code></p>
-<p>　　5.创建代码仓库：</p>
-<p>　　<code>git init</code>：此时本地仓库就有一个.git的隐藏文件夹</p>
-<p>　　6.提交本地代码：</p>
-<p>　　<code>git add .</code> ：把所有文件添加到仓库</p>
-<p>　　<code>git commit -m &quot;xxx&quot;</code>：把文件提交到仓库，xxx可以输入本次提交的说明</p>
-<p>　　如下图所示：<br>　　<br>　　<div align=center><img src="http://jiajunjun.top/md_picture/test_pic2.png" alt="图2"></div></p>
-<p>　　7.把本地仓库关联到GitHub上的远程库：</p>
-<p>　　<code>git remote add origin git@github.com:your username/repositories name.git</code>：注意要将your username改成你自己的GitHub账户名，repositories name改成仓库名。</p>
-<p>　　8.把本地库的内容推送到远程：</p>
-<p>　　<code>git push -u origin master</code></p>
-<p>　　此时本地库和远程库的内容就已经一样了。</p>
-<p>　　9.打开在GitHub上创建的仓库，进入Settings，下拉找到GitHub Pages，将Source中的None改为master，点击save保存。如下图所示：<div align=center><img src="http://jiajunjun.top/md_picture/test_pic3.png" alt="图3"></div></p>
-<p>　　10.此时图片在网络上的地址为GitHub项目地址加图片名，例如我这里的图片地址为：<a href="https://jiajunjun.github.io/md_picture/pic1.png">https://jiajunjun.github.io/md_picture/pic1.png</a></p>
-<p>　　11.在markdown文件中插入图片：</p>
-<p>　　<code>![图片名称](https://jiajunjun.top/md_picture/pic1.png)</code></p>
-<p>　　如果还不能显示，将https://改为http://即可</p>
-<p>　　<div align=center><img src="http://jiajunjun.top/md_picture/pic1.png" alt="pic1"></div></p>
-<p>　　12.之后如果想要再插入新的图片时，可以在本地库中添加图片，然后在本地库的文件夹下打开Git Bash，然后依次输入：</p>
-<p>　　<code>git add .</code></p>
-<p>　　<code>git commit -m &quot;xxxx&quot;</code></p>
-<p>　　<code>git push origin master</code></p>
-<p>　　之后按上述方法在markdown文件中插入图片即可。</p>
-]]></content>
-      <categories>
-        <category>TIPS</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -397,42 +356,44 @@
       </tags>
   </entry>
   <entry>
-    <title>案例学习1：基于图像的水质识别</title>
-    <url>/2021/01/09/%E6%A1%88%E4%BE%8B%E5%AD%A6%E4%B9%A01%EF%BC%9A%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB/</url>
-    <content><![CDATA[<h1 id="案例背景"><a href="#案例背景" class="headerlink" title="案例背景"></a>案例背景</h1><p>已有数据集根据专家经验将水质分为5个类别，要求根据水质图片能够实现水质的分类。</p>
-<p>案例与教程来源：人邮教师学院大数据（python方向）教学能力提升训练营（第2期）</p>
-<a id="more"></a>
-
-<h1 id="求解思路"><a href="#求解思路" class="headerlink" title="求解思路"></a>求解思路</h1><ul>
-<li>读取图片数据</li>
-<li>截取图片中心区域</li>
-<li>提取颜色特征</li>
-<li>模型构建与评估</li>
-</ul>
-<h1 id="过程要点"><a href="#过程要点" class="headerlink" title="过程要点"></a>过程要点</h1><p><strong>图像的读取</strong></p>
-<p><code>from PIL import Image</code><br><code>path = &#39;...&#39;</code><br><code>img = Image.open(path)</code></p>
-<p>上述代码可以读取一张图片，若要读取文件夹内所有图片，则可以使用循环。path赋值为图片的公共路径，即所在的文件夹的路径，之后每幅图片用“path+img_names[i]”表示，其中img_names中保存所有图片的名称。通过使用正则化提取所有图片的名称，并添加到img_names列表中。</p>
-<p><strong>截取图片中心区域</strong></p>
-<p>使用<code>img.crop((左上点横坐标，左上点纵坐标，右下角横坐标，右下角纵坐标))</code>截取某一区域</p>
-<p><strong>读取图像的颜色特征</strong></p>
-<p>颜色特征采用颜色矩的方法，颜色矩包括各个颜色通道的一阶矩，二阶矩和三阶矩，因此一个RGB的图像共有9个特征分量。</p>
-<p><img src="http://jiajunjun.top/md_picture/renyoucase/color_moment.png" alt="图1"></p>
-<p><code>r, g, b = img.split()</code>(分成三个颜色通道）</p>
-<p><code>rd = np.asarray(r)</code><br><code>gd = np.asarray(g)</code><br><code>bd = np.asarray(b)</code>(取出各通道的像素值）</p>
-<p><code>rd.mean()</code>（一阶矩）</p>
-<p><code>rd.std()</code>(二阶矩)</p>
-<p><code>mid = np.mean((rd-rd.mean())**3)</code>  <code>np.sign(mid)*abs(mid)**(1/3)</code>（三阶矩的计算方法）</p>
-<p>其中需要使用np.sign(mid)用来表示mid的符号，取值为-1,0,1。否则开三次根的时候，若为负数会出错。</p>
-<p>完整代码：</p>
-<p><a href="https://github.com/JiaJunJun/case_study/tree/master/%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB">https://github.com/JiaJunJun/case_study/tree/master/%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB</a></p>
+    <title>在markdown中插入图片</title>
+    <url>/2020/12/02/markdown%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<h1 id="在markdown文件中插入图片"><a href="#在markdown文件中插入图片" class="headerlink" title="在markdown文件中插入图片"></a>在markdown文件中插入图片</h1><p>　　这里选择采用将图片上传到GitHub上的方法进行图片的插入。具体步骤如下：</p>
+<p>　　<a id="more"></a></p>
+<p>　　1.登录GitHub,创建一个新仓库用来存放图片，如下图所示：<div align=center><img src="http://jiajunjun.top/md_picture/test_pic1.png" alt="图1"></div></p>
+<p>　　2.在本地磁盘中新建一个存放图片的文件夹，然后把需要插入的图片放入该文件夹中。</p>
+<p>　　3.在该文件夹下打开Git Bash。</p>
+<p>　　4.配置自己的身份：依次输入 </p>
+<p>　　<code>git config --global user.name &quot;Your name&quot;</code> </p>
+<p>　　<code>git config --global user.email &quot;Your email&quot;</code></p>
+<p>　　5.创建代码仓库：</p>
+<p>　　<code>git init</code>：此时本地仓库就有一个.git的隐藏文件夹</p>
+<p>　　6.提交本地代码：</p>
+<p>　　<code>git add .</code> ：把所有文件添加到仓库</p>
+<p>　　<code>git commit -m &quot;xxx&quot;</code>：把文件提交到仓库，xxx可以输入本次提交的说明</p>
+<p>　　如下图所示：<br>　　<br>　　<div align=center><img src="http://jiajunjun.top/md_picture/test_pic2.png" alt="图2"></div></p>
+<p>　　7.把本地仓库关联到GitHub上的远程库：</p>
+<p>　　<code>git remote add origin git@github.com:your username/repositories name.git</code>：注意要将your username改成你自己的GitHub账户名，repositories name改成仓库名。</p>
+<p>　　8.把本地库的内容推送到远程：</p>
+<p>　　<code>git push -u origin master</code></p>
+<p>　　此时本地库和远程库的内容就已经一样了。</p>
+<p>　　9.打开在GitHub上创建的仓库，进入Settings，下拉找到GitHub Pages，将Source中的None改为master，点击save保存。如下图所示：<div align=center><img src="http://jiajunjun.top/md_picture/test_pic3.png" alt="图3"></div></p>
+<p>　　10.此时图片在网络上的地址为GitHub项目地址加图片名，例如我这里的图片地址为：<a href="https://jiajunjun.github.io/md_picture/pic1.png">https://jiajunjun.github.io/md_picture/pic1.png</a></p>
+<p>　　11.在markdown文件中插入图片：</p>
+<p>　　<code>![图片名称](https://jiajunjun.top/md_picture/pic1.png)</code></p>
+<p>　　如果还不能显示，将https://改为http://即可</p>
+<p>　　<div align=center><img src="http://jiajunjun.top/md_picture/pic1.png" alt="pic1"></div></p>
+<p>　　12.之后如果想要再插入新的图片时，可以在本地库中添加图片，然后在本地库的文件夹下打开Git Bash，然后依次输入：</p>
+<p>　　<code>git add .</code></p>
+<p>　　<code>git commit -m &quot;xxxx&quot;</code></p>
+<p>　　<code>git push origin master</code></p>
+<p>　　之后按上述方法在markdown文件中插入图片即可。</p>
 ]]></content>
       <categories>
-        <category>案例学习</category>
+        <category>TIPS</category>
       </categories>
       <tags>
-        <tag>计算机视觉</tag>
-        <tag>图像处理</tag>
-        <tag>机器学习</tag>
+        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -484,25 +445,69 @@
       </tags>
   </entry>
   <entry>
-    <title>从面向连接和无连接的角度分析，计算机网络为什么没有采用通信网络的方法和模式？</title>
-    <url>/2020/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%97%A0%E8%BF%9E%E6%8E%A5/</url>
-    <content><![CDATA[<ul>
-<li>面向连接：在通信时事先建立好一条虚拟通信线路</li>
-<li>无连接：不需事先建立线路，每个分组自主选择线路传输到目标地址<a id="more"></a>
-　　通信网络采用面向连接的方式，使用电路交换，由核心网链接各种终端和设备，而计算机网络的可靠传输从核心网外移，在核心网中只提供互连的作用，因此可靠传输如何实现是计算机网络需要考虑的问题。计算机网络没有采用面向连接的原因有：</li>
+    <title>案例学习1：基于图像的水质识别</title>
+    <url>/2021/01/09/%E6%A1%88%E4%BE%8B%E5%AD%A6%E4%B9%A01%EF%BC%9A%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="案例背景"><a href="#案例背景" class="headerlink" title="案例背景"></a>案例背景</h1><p>已有数据集根据专家经验将水质分为5个类别，要求根据水质图片能够实现水质的分类。</p>
+<p>案例与教程来源：人邮教师学院大数据（python方向）教学能力提升训练营（第2期）</p>
+<a id="more"></a>
+
+<h1 id="求解思路"><a href="#求解思路" class="headerlink" title="求解思路"></a>求解思路</h1><ul>
+<li>读取图片数据</li>
+<li>截取图片中心区域</li>
+<li>提取颜色特征</li>
+<li>模型构建与评估</li>
 </ul>
-<p>　　1.二者终端设备的性能差别大</p>
-<p>　　通信网络的终端不具备差错处理和计算能力，需要采用面向连接来保证通信的质量。而计算机网络的终端是只能的主机，如果传输过程中出现了差错，终端也有办法实现可靠传输。</p>
-<p>　　2.即使网络传输正确，端到端的数据处理也有可能出现错误。在传输层中使用TCP面向连接的协议用来保障可靠传输。网络层使用无连接的方法。</p>
-<p>　　3.计算机网络的需求更多，如果采用面向连接的方法所需成本较高。</p>
-<p>　　这也是201电话比之前电话便宜一半的原因。</p>
+<h1 id="过程要点"><a href="#过程要点" class="headerlink" title="过程要点"></a>过程要点</h1><p><strong>图像的读取</strong></p>
+<p><code>from PIL import Image</code><br><code>path = &#39;...&#39;</code><br><code>img = Image.open(path)</code></p>
+<p>上述代码可以读取一张图片，若要读取文件夹内所有图片，则可以使用循环。path赋值为图片的公共路径，即所在的文件夹的路径，之后每幅图片用“path+img_names[i]”表示，其中img_names中保存所有图片的名称。通过使用正则化提取所有图片的名称，并添加到img_names列表中。</p>
+<p><strong>截取图片中心区域</strong></p>
+<p>使用<code>img.crop((左上点横坐标，左上点纵坐标，右下角横坐标，右下角纵坐标))</code>截取某一区域</p>
+<p><strong>读取图像的颜色特征</strong></p>
+<p>颜色特征采用颜色矩的方法，颜色矩包括各个颜色通道的一阶矩，二阶矩和三阶矩，因此一个RGB的图像共有9个特征分量。</p>
+<p><img src="http://jiajunjun.top/md_picture/renyoucase/color_moment.png" alt="图1"></p>
+<p><code>r, g, b = img.split()</code>(分成三个颜色通道）</p>
+<p><code>rd = np.asarray(r)</code><br><code>gd = np.asarray(g)</code><br><code>bd = np.asarray(b)</code>(取出各通道的像素值）</p>
+<p><code>rd.mean()</code>（一阶矩）</p>
+<p><code>rd.std()</code>(二阶矩)</p>
+<p><code>mid = np.mean((rd-rd.mean())**3)</code>  <code>np.sign(mid)*abs(mid)**(1/3)</code>（三阶矩的计算方法）</p>
+<p>其中需要使用np.sign(mid)用来表示mid的符号，取值为-1,0,1。否则开三次根的时候，若为负数会出错。</p>
+<p>完整代码：</p>
+<p><a href="https://github.com/JiaJunJun/case_study/tree/master/%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB">https://github.com/JiaJunJun/case_study/tree/master/%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB</a></p>
 ]]></content>
       <categories>
-        <category>计算机网络</category>
+        <category>案例学习</category>
       </categories>
       <tags>
-        <tag>计算机网络</tag>
-        <tag>面向连接和无连接</tag>
+        <tag>计算机视觉</tag>
+        <tag>图像处理</tag>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>案例实践1：手写数字识别</title>
+    <url>/2021/01/10/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="实践过程遇到的问题"><a href="#实践过程遇到的问题" class="headerlink" title="实践过程遇到的问题"></a>实践过程遇到的问题</h1><p>1.教程中图片读取使用的是cv2。cv2和pillow.Image的区别如下：</p>
+<a id="more"></a>
+
+<ul>
+<li>打开：<code>cv2.imread()</code>（BGR） <code>Image.open()</code>（RGB)</li>
+<li>查看图片尺寸：<code>cv2.shape</code> <code>Image.size</code></li>
+<li>保存：<code>cv2.inwrite(path,img)</code> <code>Image.save(path)</code></li>
+</ul>
+<p>2.读取图片时需要注意一下图片的尺寸，由于输入模型要使用同样的尺寸，因此在本案例中需要对图片进行压缩以实现同样尺寸，使用cv2.resize。</p>
+<p>3.本例中对于RGB三个通道的区分意义不大，因为都是白纸黑字，只需要取其中一个通道的特征就好了。</p>
+<p>4.采用机器学习的决策树算法效果不好，可使用MLPClassfier，之后的学习中可采用CNN等其他神经网络。</p>
+<h1 id="个人代码"><a href="#个人代码" class="headerlink" title="个人代码"></a>个人代码</h1><p>my_data_process.py是看教程之前自己编写的数据处理程序，多是仿照上节课的案例进行实践，没有进行深入的思考，对于数据处理应当考虑不同案例的特殊性。例如RGB三通道的问题。</p>
+<p>my_main.py中只读取了测试数据和训练数据，由于找不到好的训练方法，故没有进一步编写。</p>
+<p>完整代码：<br><a href="https://github.com/JiaJunJun/case_study/tree/master/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB">https://github.com/JiaJunJun/case_study/tree/master/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB</a></p>
+]]></content>
+      <categories>
+        <category>案例实践</category>
+      </categories>
+      <tags>
+        <tag>计算机视觉</tag>
+        <tag>图像处理</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -603,30 +608,79 @@
       </tags>
   </entry>
   <entry>
-    <title>案例实践1：手写数字识别</title>
-    <url>/2021/01/10/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/</url>
-    <content><![CDATA[<h1 id="实践过程遇到的问题"><a href="#实践过程遇到的问题" class="headerlink" title="实践过程遇到的问题"></a>实践过程遇到的问题</h1><p>1.教程中图片读取使用的是cv2。cv2和pillow.Image的区别如下：</p>
-<a id="more"></a>
-
-<ul>
-<li>打开：<code>cv2.imread()</code>（BGR） <code>Image.open()</code>（RGB)</li>
-<li>查看图片尺寸：<code>cv2.shape</code> <code>Image.size</code></li>
-<li>保存：<code>cv2.inwrite(path,img)</code> <code>Image.save(path)</code></li>
+    <title>从面向连接和无连接的角度分析，计算机网络为什么没有采用通信网络的方法和模式？</title>
+    <url>/2020/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%97%A0%E8%BF%9E%E6%8E%A5/</url>
+    <content><![CDATA[<ul>
+<li>面向连接：在通信时事先建立好一条虚拟通信线路</li>
+<li>无连接：不需事先建立线路，每个分组自主选择线路传输到目标地址<a id="more"></a>
+　　通信网络采用面向连接的方式，使用电路交换，由核心网链接各种终端和设备，而计算机网络的可靠传输从核心网外移，在核心网中只提供互连的作用，因此可靠传输如何实现是计算机网络需要考虑的问题。计算机网络没有采用面向连接的原因有：</li>
 </ul>
-<p>2.读取图片时需要注意一下图片的尺寸，由于输入模型要使用同样的尺寸，因此在本案例中需要对图片进行压缩以实现同样尺寸，使用cv2.resize。</p>
-<p>3.本例中对于RGB三个通道的区分意义不大，因为都是白纸黑字，只需要取其中一个通道的特征就好了。</p>
-<p>4.采用机器学习的决策树算法效果不好，可使用MLPClassfier，之后的学习中可采用CNN等其他神经网络。</p>
-<h1 id="个人代码"><a href="#个人代码" class="headerlink" title="个人代码"></a>个人代码</h1><p>my_data_process.py是看教程之前自己编写的数据处理程序，多是仿照上节课的案例进行实践，没有进行深入的思考，对于数据处理应当考虑不同案例的特殊性。例如RGB三通道的问题。</p>
-<p>my_main.py中只读取了测试数据和训练数据，由于找不到好的训练方法，故没有进一步编写。</p>
-<p>完整代码：<br><a href="https://github.com/JiaJunJun/case_study/tree/master/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB">https://github.com/JiaJunJun/case_study/tree/master/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB</a></p>
+<p>　　1.二者终端设备的性能差别大</p>
+<p>　　通信网络的终端不具备差错处理和计算能力，需要采用面向连接来保证通信的质量。而计算机网络的终端是只能的主机，如果传输过程中出现了差错，终端也有办法实现可靠传输。</p>
+<p>　　2.即使网络传输正确，端到端的数据处理也有可能出现错误。在传输层中使用TCP面向连接的协议用来保障可靠传输。网络层使用无连接的方法。</p>
+<p>　　3.计算机网络的需求更多，如果采用面向连接的方法所需成本较高。</p>
+<p>　　这也是201电话比之前电话便宜一半的原因。</p>
 ]]></content>
       <categories>
-        <category>案例实践</category>
+        <category>计算机网络</category>
       </categories>
       <tags>
-        <tag>计算机视觉</tag>
-        <tag>图像处理</tag>
-        <tag>机器学习</tag>
+        <tag>计算机网络</tag>
+        <tag>面向连接和无连接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文献阅读——Learning to Propagate Labels： Transductive Propagation Network for Few-shot Learning</title>
+    <url>/2021/03/23/Learning-to-propagate-labels/</url>
+    <content><![CDATA[<h3 id="Learning-to-Propagate-Labels-Transductive-Propagation-Network-for-Few-shot-Learning"><a href="#Learning-to-Propagate-Labels-Transductive-Propagation-Network-for-Few-shot-Learning" class="headerlink" title="Learning to Propagate Labels: Transductive Propagation Network for Few-shot Learning"></a>Learning to Propagate Labels: Transductive Propagation Network for Few-shot Learning</h3><h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>​    few-shot learning 通常引用元学习的方法解决，但仍然存在数据少的问题。本文提出了一种新的元学习框架——TPN，TPN通过学习采用数据中的流形结构的图构造模块，学习将标签从已标记的实例传播到未标记的实例。</p>
+<a id="more"></a>
+
+<h5 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h5><p>​    本文采用直推式推导解决低数据量的问题</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL2/1.png" alt="image-20210322095424581"></p>
+<p>​    首先使用深度神经网络将输入映射到嵌入空间。然后提出了一个图构造模块，利用支持集和查询集的结合来开发新类空间的流形结构。根据图的结构，应用迭代标签传播将标签从支持集传播到查询集，最终得到一个封闭形式的解。利用查询集的传播得分和基本真值标签，我们计算了与特征嵌入和图构造参数相关的交叉熵损失。最后，所有参数都可以使用反向传播进行端到端更新。</p>
+<h5 id="Main-Approach"><a href="#Main-Approach" class="headerlink" title="Main Approach"></a>Main Approach</h5><p><img src="http://jiajunjun.top/md_picture/FSL2/2.png" alt="image-20210322095651073"></p>
+<h6 id="Feature-Embedding"><a href="#Feature-Embedding" class="headerlink" title="Feature Embedding"></a>Feature Embedding</h6><p>​    通过CNN对输入样本进行特征提取生成Embedding编码</p>
+<h6 id="Graph-Construction"><a href="#Graph-Construction" class="headerlink" title="Graph Construction"></a>Graph Construction</h6><p><img src="http://jiajunjun.top/md_picture/FSL2/3.png" alt="image-20210322100144958"></p>
+<p>​    构建无向图，根据上述公式计算权重。</p>
+<h6 id="Label-Propagation"><a href="#Label-Propagation" class="headerlink" title="Label Propagation"></a>Label Propagation</h6><p>​    <img src="http://jiajunjun.top/md_picture/FSL2/4.png" alt="image-20210322100334591"></p>
+<p>​    S表示归一化权重，α∈（0，1）控制传播的信息量，通过上式进行标签传播。</p>
+<h6 id="Classfication-Loss-Generation"><a href="#Classfication-Loss-Generation" class="headerlink" title="Classfication Loss Generation"></a>Classfication Loss Generation</h6><p>​    计算交叉熵损失，反向传播更新参数。</p>
+<h5 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h5><p>数据集：</p>
+<p>​    采用miniImageNet 和 tieredImageNet</p>
+]]></content>
+      <categories>
+        <category>小样本学习</category>
+      </categories>
+      <tags>
+        <tag>Few-Shot Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文献阅读——BBN Bilateral-Branch Network with Cumulative Learning for Long-Tailed Visual Recognition</title>
+    <url>/2021/03/22/BBN%20Bilateral-Branch%20Network%20with%20Cumulative%20Learning%20for%20Long-Tailed%20Visual%20Recognition/</url>
+    <content><![CDATA[<h3 id="BBN-Bilateral-Branch-Network-with-Cumulative-Learning-for-Long-Tailed-Visual-Recognition"><a href="#BBN-Bilateral-Branch-Network-with-Cumulative-Learning-for-Long-Tailed-Visual-Recognition" class="headerlink" title="BBN: Bilateral-Branch Network with Cumulative Learning for Long-Tailed Visual Recognition"></a>BBN: Bilateral-Branch Network with Cumulative Learning for Long-Tailed Visual Recognition</h3><h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>​    处理长尾分布问题通常的措施是采用重平衡策略（重加权和重采样），这些重平衡方法能够有效促进深层网络的分类器学习，但同时会在一定程度上损害深度网络学习到的特征。<a id="more"></a>因此本文提出了一个双分支网络（BBN）同时处理表征学习和分类器学习。该模型具有累积学习策略，首先学习通用模式，然后逐步关注尾部数据。</p>
+<h5 id="Re-balancing-strategies"><a href="#Re-balancing-strategies" class="headerlink" title="Re-balancing strategies"></a>Re-balancing strategies</h5><p>​    将深度分类模型分为两个部分：特征提取和分类器。本文设计了一个两阶段的实验方式，分别学习深层模型的表征和分类器。第一阶段采用传统的CE（交叉熵损失）、RW(重加权)、RS（重采样）三种训练策略训练模型。第二阶段固定特征提取部分，按照第一阶段的训练策略训练分类器。结果如下图。</p>
+<p><img src="http://jiajunjun.top/md_picture/BBN/1.png" alt="image-20210322111031941"></p>
+<p>​    结果表明：固定表示学习，在垂直方向上使用重平衡策略有效。但在水平方向上，固定分类器后，使用重平衡策略的结果更差。表明学习深层特征的辨别能力更差。</p>
+<h5 id="Methodology"><a href="#Methodology" class="headerlink" title="Methodology"></a>Methodology</h5><p><img src="http://jiajunjun.top/md_picture/BBN/2.png" alt="image-20210322111314609"></p>
+<p>​    在数据采样阶段，传统学习分支使用正常的uniform sampler，而re-blancing分支使用reversed sampler。反向采样器中每个类的采样可能性与其样本大小的倒数成正比。采样可能性的计算如下式：</p>
+<p><img src="http://jiajunjun.top/md_picture/BBN/3.png" alt="image-20210322112154347"></p>
+<p>​    使用ResNet作为主干网络，除了最后一个剩余块，两个分支网络共享相同的权重。共享权重有两个好处:一方面，传统学习分支的良好学习表示可以有利于重新平衡分支的学习。另一方面，共享权重将大大降低推理阶段的计算复杂度。</p>
+<p>​    积累学习策略：通过控制两个分支产生的特征的权重和分类损失来转移双边分支之间的学习焦点。首先学习通用模式，然后逐渐关注尾部数据。在训练阶段，传统学习分支的特征乘以α，重平衡分支的特征乘以1-α，α根据训练时间自动生成。α随着训练时间的增加而逐渐减小。</p>
+<p><img src="http://jiajunjun.top/md_picture/BBN/4.png" alt="image-20210322144827580"></p>
+<h5 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h5><p>数据集：Long-tailed CIFAR-10 和 CIFAR-100</p>
+<p>​                iNaturalist 2017 and iNaturalist 2018.</p>
+<p><img src="http://jiajunjun.top/md_picture/BBN/5.png" alt="image-20210322145244397"></p>
+<p><img src="http://jiajunjun.top/md_picture/BBN/6.png" alt="image-20210322145305351"></p>
+<p><img src="http://jiajunjun.top/md_picture/BBN/7.png" alt="image-20210322145410182"></p>
+<p><img src="http://jiajunjun.top/md_picture/BBN/8.png" alt="image-20210322145439154"></p>
+]]></content>
+      <categories>
+        <category>长尾分布</category>
+      </categories>
+      <tags>
+        <tag>Few-Shot Learning</tag>
+        <tag>Long-Tailed</tag>
       </tags>
   </entry>
 </search>
