@@ -35,6 +35,58 @@
       </tags>
   </entry>
   <entry>
+    <title>Anaconda中为每个项目创建新环境</title>
+    <url>/2020/12/04/Anaconda%E4%B8%AD%E4%B8%BA%E6%AF%8F%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E6%96%B0%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<h1 id="创建新环境"><a href="#创建新环境" class="headerlink" title="创建新环境"></a>创建新环境</h1><p>进入cmd，进入anaconda所在的文件夹位置（如：D:\Software\Anaconda\envs）</p>
+<a id="more"></a>
+
+<p>依次输入：</p>
+<p><code>conda create --name 项目名称 python=版本号</code></p>
+<p><code>activate</code></p>
+<p><code>conda activate 项目名称</code>   切换不同环境的时候也使用该语句</p>
+<p>然后使用pip install安装所需包即可。</p>
+<hr>
+<h1 id="查看环境"><a href="#查看环境" class="headerlink" title="查看环境"></a>查看环境</h1><ul>
+<li>查看目前已安装的环境：<code>conda info --envs</code></li>
+<li>查看环境下已安装的包：<code>pip list</code></li>
+</ul>
+]]></content>
+      <categories>
+        <category>开发环境</category>
+      </categories>
+      <tags>
+        <tag>Anaconda</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文献阅读——BBN Bilateral-Branch Network with Cumulative Learning for Long-Tailed Visual Recognition</title>
+    <url>/2021/03/22/BBN%20Bilateral-Branch%20Network%20with%20Cumulative%20Learning%20for%20Long-Tailed%20Visual%20Recognition/</url>
+    <content><![CDATA[<h3 id="BBN-Bilateral-Branch-Network-with-Cumulative-Learning-for-Long-Tailed-Visual-Recognition"><a href="#BBN-Bilateral-Branch-Network-with-Cumulative-Learning-for-Long-Tailed-Visual-Recognition" class="headerlink" title="BBN: Bilateral-Branch Network with Cumulative Learning for Long-Tailed Visual Recognition"></a>BBN: Bilateral-Branch Network with Cumulative Learning for Long-Tailed Visual Recognition</h3><h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>​    处理长尾分布问题通常的措施是采用重平衡策略（重加权和重采样），这些重平衡方法能够有效促进深层网络的分类器学习，但同时会在一定程度上损害深度网络学习到的特征。<a id="more"></a>因此本文提出了一个双分支网络（BBN）同时处理表征学习和分类器学习。该模型具有累积学习策略，首先学习通用模式，然后逐步关注尾部数据。</p>
+<h5 id="Re-balancing-strategies"><a href="#Re-balancing-strategies" class="headerlink" title="Re-balancing strategies"></a>Re-balancing strategies</h5><p>​    将深度分类模型分为两个部分：特征提取和分类器。本文设计了一个两阶段的实验方式，分别学习深层模型的表征和分类器。第一阶段采用传统的CE（交叉熵损失）、RW(重加权)、RS（重采样）三种训练策略训练模型。第二阶段固定特征提取部分，按照第一阶段的训练策略训练分类器。结果如下图。</p>
+<p><img src="http://jiajunjun.top/md_picture/BBN/1.png" alt="image-20210322111031941"></p>
+<p>​    结果表明：固定表示学习，在垂直方向上使用重平衡策略有效。但在水平方向上，固定分类器后，使用重平衡策略的结果更差。表明学习深层特征的辨别能力更差。</p>
+<h5 id="Methodology"><a href="#Methodology" class="headerlink" title="Methodology"></a>Methodology</h5><p><img src="http://jiajunjun.top/md_picture/BBN/2.png" alt="image-20210322111314609"></p>
+<p>​    在数据采样阶段，传统学习分支使用正常的uniform sampler，而re-blancing分支使用reversed sampler。反向采样器中每个类的采样可能性与其样本大小的倒数成正比。采样可能性的计算如下式：</p>
+<p><img src="http://jiajunjun.top/md_picture/BBN/3.png" alt="image-20210322112154347"></p>
+<p>​    使用ResNet作为主干网络，除了最后一个剩余块，两个分支网络共享相同的权重。共享权重有两个好处:一方面，传统学习分支的良好学习表示可以有利于重新平衡分支的学习。另一方面，共享权重将大大降低推理阶段的计算复杂度。</p>
+<p>​    积累学习策略：通过控制两个分支产生的特征的权重和分类损失来转移双边分支之间的学习焦点。首先学习通用模式，然后逐渐关注尾部数据。在训练阶段，传统学习分支的特征乘以α，重平衡分支的特征乘以1-α，α根据训练时间自动生成。α随着训练时间的增加而逐渐减小。</p>
+<p><img src="http://jiajunjun.top/md_picture/BBN/4.png" alt="image-20210322144827580"></p>
+<h5 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h5><p>数据集：Long-tailed CIFAR-10 和 CIFAR-100</p>
+<p>​                iNaturalist 2017 and iNaturalist 2018.</p>
+<p><img src="http://jiajunjun.top/md_picture/BBN/5.png" alt="image-20210322145244397"></p>
+<p><img src="http://jiajunjun.top/md_picture/BBN/6.png" alt="image-20210322145305351"></p>
+<p><img src="http://jiajunjun.top/md_picture/BBN/7.png" alt="image-20210322145410182"></p>
+<p><img src="http://jiajunjun.top/md_picture/BBN/8.png" alt="image-20210322145439154"></p>
+]]></content>
+      <categories>
+        <category>长尾分布</category>
+      </categories>
+      <tags>
+        <tag>Few-Shot Learning</tag>
+        <tag>Long-Tailed</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>文献阅读：Decoupling Representation and Classifier for Long-Tailed Recognition</title>
     <url>/2021/03/23/Decoupling%20Representation%20and%20Classifier%20for%20Long-Tailed%20Recognition/</url>
     <content><![CDATA[<h2 id="Decoupling-Representation-and-Classifier-for-Long-Tailed-Recognition"><a href="#Decoupling-Representation-and-Classifier-for-Long-Tailed-Recognition" class="headerlink" title="Decoupling Representation and Classifier for Long-Tailed Recognition"></a>Decoupling Representation and Classifier for Long-Tailed Recognition</h2><h4 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h4><p>​    长尾分布的问题通常是由类平衡策略解决的。本文将学习过程分解为表征学习和分类两个部分，并系统地探讨了不同的平衡策略如何影响它们的长尾识别。</p>
@@ -65,30 +117,6 @@
       <tags>
         <tag>Few-Shot Learning</tag>
         <tag>Long-Tailed</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Anaconda中为每个项目创建新环境</title>
-    <url>/2020/12/04/Anaconda%E4%B8%AD%E4%B8%BA%E6%AF%8F%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E6%96%B0%E7%8E%AF%E5%A2%83/</url>
-    <content><![CDATA[<h1 id="创建新环境"><a href="#创建新环境" class="headerlink" title="创建新环境"></a>创建新环境</h1><p>进入cmd，进入anaconda所在的文件夹位置（如：D:\Software\Anaconda\envs）</p>
-<a id="more"></a>
-
-<p>依次输入：</p>
-<p><code>conda create --name 项目名称 python=版本号</code></p>
-<p><code>activate</code></p>
-<p><code>conda activate 项目名称</code>   切换不同环境的时候也使用该语句</p>
-<p>然后使用pip install安装所需包即可。</p>
-<hr>
-<h1 id="查看环境"><a href="#查看环境" class="headerlink" title="查看环境"></a>查看环境</h1><ul>
-<li>查看目前已安装的环境：<code>conda info --envs</code></li>
-<li>查看环境下已安装的包：<code>pip list</code></li>
-</ul>
-]]></content>
-      <categories>
-        <category>开发环境</category>
-      </categories>
-      <tags>
-        <tag>Anaconda</tag>
       </tags>
   </entry>
   <entry>
@@ -186,6 +214,32 @@
       </tags>
   </entry>
   <entry>
+    <title>文献阅读——Learning to Propagate Labels： Transductive Propagation Network for Few-shot Learning</title>
+    <url>/2021/03/23/Learning-to-propagate-labels/</url>
+    <content><![CDATA[<h3 id="Learning-to-Propagate-Labels-Transductive-Propagation-Network-for-Few-shot-Learning"><a href="#Learning-to-Propagate-Labels-Transductive-Propagation-Network-for-Few-shot-Learning" class="headerlink" title="Learning to Propagate Labels: Transductive Propagation Network for Few-shot Learning"></a>Learning to Propagate Labels: Transductive Propagation Network for Few-shot Learning</h3><h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>​    few-shot learning 通常引用元学习的方法解决，但仍然存在数据少的问题。本文提出了一种新的元学习框架——TPN，TPN通过学习采用数据中的流形结构的图构造模块，学习将标签从已标记的实例传播到未标记的实例。</p>
+<a id="more"></a>
+
+<h5 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h5><p>​    本文采用直推式推导解决低数据量的问题</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL2/1.png" alt="image-20210322095424581"></p>
+<p>​    首先使用深度神经网络将输入映射到嵌入空间。然后提出了一个图构造模块，利用支持集和查询集的结合来开发新类空间的流形结构。根据图的结构，应用迭代标签传播将标签从支持集传播到查询集，最终得到一个封闭形式的解。利用查询集的传播得分和基本真值标签，我们计算了与特征嵌入和图构造参数相关的交叉熵损失。最后，所有参数都可以使用反向传播进行端到端更新。</p>
+<h5 id="Main-Approach"><a href="#Main-Approach" class="headerlink" title="Main Approach"></a>Main Approach</h5><p><img src="http://jiajunjun.top/md_picture/FSL2/2.png" alt="image-20210322095651073"></p>
+<h6 id="Feature-Embedding"><a href="#Feature-Embedding" class="headerlink" title="Feature Embedding"></a>Feature Embedding</h6><p>​    通过CNN对输入样本进行特征提取生成Embedding编码</p>
+<h6 id="Graph-Construction"><a href="#Graph-Construction" class="headerlink" title="Graph Construction"></a>Graph Construction</h6><p><img src="http://jiajunjun.top/md_picture/FSL2/3.png" alt="image-20210322100144958"></p>
+<p>​    构建无向图，根据上述公式计算权重。</p>
+<h6 id="Label-Propagation"><a href="#Label-Propagation" class="headerlink" title="Label Propagation"></a>Label Propagation</h6><p>​    <img src="http://jiajunjun.top/md_picture/FSL2/4.png" alt="image-20210322100334591"></p>
+<p>​    S表示归一化权重，α∈（0，1）控制传播的信息量，通过上式进行标签传播。</p>
+<h6 id="Classfication-Loss-Generation"><a href="#Classfication-Loss-Generation" class="headerlink" title="Classfication Loss Generation"></a>Classfication Loss Generation</h6><p>​    计算交叉熵损失，反向传播更新参数。</p>
+<h5 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h5><p>数据集：</p>
+<p>​    采用miniImageNet 和 tieredImageNet</p>
+]]></content>
+      <categories>
+        <category>小样本学习</category>
+      </categories>
+      <tags>
+        <tag>Few-Shot Learning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>文献阅读：Optimization as a model for few-shot learning</title>
     <url>/2021/03/21/Optimization%20as%20a%20model%20for%20few-shot%20learning/</url>
     <content><![CDATA[<h5 id="Optimization-as-a-model-for-few-shot-learning"><a href="#Optimization-as-a-model-for-few-shot-learning" class="headerlink" title="Optimization as a model for few-shot learning"></a>Optimization as a model for few-shot learning</h5><h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>​    提出基于LSTM的元学习者模型来学习精确的优化算法，用于训练另一个在少样本的情况下的学习者神经网络分类器。该模型能够学习适当的参数更新，还可以学习学习者网络的一般初始化，以便快速收敛训练。</p>
@@ -219,29 +273,6 @@
       </categories>
       <tags>
         <tag>Few-Shot Learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>为什么要开发TCP/IP协议</title>
-    <url>/2020/12/04/TCPIP/</url>
-    <content><![CDATA[<p>TCP/IP协议的作用是使计算机实现互联共享。</p>
-<a id="more"></a>
-
-<p>　　世界上有很多台计算机，多台计算机之间需要进行通信，因此Internet可以将不同地区的计算机相互连接。但是每台计算机都使用不同的操作系统，为了使这些互连的计算机之间能够进行通信，他们必须使用同样的“语言”。就像世界各地的人都使用不同的语言，当他们需要进行交流的时候就需要一个共同的语言以便沟通，这个共同的“语言”就是协议。只要使用相同的协议便可以实现通信。</p>
-<p>　　因此，TCP/IP(Transmission Control Protocol/Internet Protocol)是指能够在多个不同的网络间实现传输的协议簇。也就是说，TCP/IP 是互联网相关各类协议族的总称。</p>
-<p>　　TCP/IP五层模型为：<img src="http://jiajunjun.top/md_picture/Tcpip.png" alt="图2"></p>
-<p>　　物理层：该层负责比特流在节点之间的传输，即负责物理传输。</p>
-<p>　　数据链路层：控制网络层与物理层之间的通信，主要功能是保证物理线路上进行可靠的数据传递。</p>
-<p>　　网络层：决定如何将数据从发送方路由到接收方。网络层通过综合考虑发送优先权，网络拥塞程度，服务质量以及可选路由的花费等来决定从网络中的A节点到B节点的最佳途径。即建立主机到主机的通信。</p>
-<p>　　传输层：该层为两台主机上的应用程序提供端到端的通信。</p>
-<p>　　应用层：应用程序收到传输层的数据后，接下来就要进行解读。解读必须事先规定好格式，而应用层就是规定应用程序的数据格式。主要的协议有：HTTP.FTP,Telent等。</p>
-]]></content>
-      <categories>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-        <tag>TCP/IP</tag>
       </tags>
   </entry>
   <entry>
@@ -394,6 +425,29 @@
       </categories>
       <tags>
         <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为什么要开发TCP/IP协议</title>
+    <url>/2020/12/04/TCPIP/</url>
+    <content><![CDATA[<p>TCP/IP协议的作用是使计算机实现互联共享。</p>
+<a id="more"></a>
+
+<p>　　世界上有很多台计算机，多台计算机之间需要进行通信，因此Internet可以将不同地区的计算机相互连接。但是每台计算机都使用不同的操作系统，为了使这些互连的计算机之间能够进行通信，他们必须使用同样的“语言”。就像世界各地的人都使用不同的语言，当他们需要进行交流的时候就需要一个共同的语言以便沟通，这个共同的“语言”就是协议。只要使用相同的协议便可以实现通信。</p>
+<p>　　因此，TCP/IP(Transmission Control Protocol/Internet Protocol)是指能够在多个不同的网络间实现传输的协议簇。也就是说，TCP/IP 是互联网相关各类协议族的总称。</p>
+<p>　　TCP/IP五层模型为：<img src="http://jiajunjun.top/md_picture/Tcpip.png" alt="图2"></p>
+<p>　　物理层：该层负责比特流在节点之间的传输，即负责物理传输。</p>
+<p>　　数据链路层：控制网络层与物理层之间的通信，主要功能是保证物理线路上进行可靠的数据传递。</p>
+<p>　　网络层：决定如何将数据从发送方路由到接收方。网络层通过综合考虑发送优先权，网络拥塞程度，服务质量以及可选路由的花费等来决定从网络中的A节点到B节点的最佳途径。即建立主机到主机的通信。</p>
+<p>　　传输层：该层为两台主机上的应用程序提供端到端的通信。</p>
+<p>　　应用层：应用程序收到传输层的数据后，接下来就要进行解读。解读必须事先规定好格式，而应用层就是规定应用程序的数据格式。主要的协议有：HTTP.FTP,Telent等。</p>
+]]></content>
+      <categories>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+        <tag>TCP/IP</tag>
       </tags>
   </entry>
   <entry>
@@ -627,60 +681,6 @@
       <tags>
         <tag>计算机网络</tag>
         <tag>面向连接和无连接</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>文献阅读——Learning to Propagate Labels： Transductive Propagation Network for Few-shot Learning</title>
-    <url>/2021/03/23/Learning-to-propagate-labels/</url>
-    <content><![CDATA[<h3 id="Learning-to-Propagate-Labels-Transductive-Propagation-Network-for-Few-shot-Learning"><a href="#Learning-to-Propagate-Labels-Transductive-Propagation-Network-for-Few-shot-Learning" class="headerlink" title="Learning to Propagate Labels: Transductive Propagation Network for Few-shot Learning"></a>Learning to Propagate Labels: Transductive Propagation Network for Few-shot Learning</h3><h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>​    few-shot learning 通常引用元学习的方法解决，但仍然存在数据少的问题。本文提出了一种新的元学习框架——TPN，TPN通过学习采用数据中的流形结构的图构造模块，学习将标签从已标记的实例传播到未标记的实例。</p>
-<a id="more"></a>
-
-<h5 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h5><p>​    本文采用直推式推导解决低数据量的问题</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL2/1.png" alt="image-20210322095424581"></p>
-<p>​    首先使用深度神经网络将输入映射到嵌入空间。然后提出了一个图构造模块，利用支持集和查询集的结合来开发新类空间的流形结构。根据图的结构，应用迭代标签传播将标签从支持集传播到查询集，最终得到一个封闭形式的解。利用查询集的传播得分和基本真值标签，我们计算了与特征嵌入和图构造参数相关的交叉熵损失。最后，所有参数都可以使用反向传播进行端到端更新。</p>
-<h5 id="Main-Approach"><a href="#Main-Approach" class="headerlink" title="Main Approach"></a>Main Approach</h5><p><img src="http://jiajunjun.top/md_picture/FSL2/2.png" alt="image-20210322095651073"></p>
-<h6 id="Feature-Embedding"><a href="#Feature-Embedding" class="headerlink" title="Feature Embedding"></a>Feature Embedding</h6><p>​    通过CNN对输入样本进行特征提取生成Embedding编码</p>
-<h6 id="Graph-Construction"><a href="#Graph-Construction" class="headerlink" title="Graph Construction"></a>Graph Construction</h6><p><img src="http://jiajunjun.top/md_picture/FSL2/3.png" alt="image-20210322100144958"></p>
-<p>​    构建无向图，根据上述公式计算权重。</p>
-<h6 id="Label-Propagation"><a href="#Label-Propagation" class="headerlink" title="Label Propagation"></a>Label Propagation</h6><p>​    <img src="http://jiajunjun.top/md_picture/FSL2/4.png" alt="image-20210322100334591"></p>
-<p>​    S表示归一化权重，α∈（0，1）控制传播的信息量，通过上式进行标签传播。</p>
-<h6 id="Classfication-Loss-Generation"><a href="#Classfication-Loss-Generation" class="headerlink" title="Classfication Loss Generation"></a>Classfication Loss Generation</h6><p>​    计算交叉熵损失，反向传播更新参数。</p>
-<h5 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h5><p>数据集：</p>
-<p>​    采用miniImageNet 和 tieredImageNet</p>
-]]></content>
-      <categories>
-        <category>小样本学习</category>
-      </categories>
-      <tags>
-        <tag>Few-Shot Learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>文献阅读——BBN Bilateral-Branch Network with Cumulative Learning for Long-Tailed Visual Recognition</title>
-    <url>/2021/03/22/BBN%20Bilateral-Branch%20Network%20with%20Cumulative%20Learning%20for%20Long-Tailed%20Visual%20Recognition/</url>
-    <content><![CDATA[<h3 id="BBN-Bilateral-Branch-Network-with-Cumulative-Learning-for-Long-Tailed-Visual-Recognition"><a href="#BBN-Bilateral-Branch-Network-with-Cumulative-Learning-for-Long-Tailed-Visual-Recognition" class="headerlink" title="BBN: Bilateral-Branch Network with Cumulative Learning for Long-Tailed Visual Recognition"></a>BBN: Bilateral-Branch Network with Cumulative Learning for Long-Tailed Visual Recognition</h3><h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>​    处理长尾分布问题通常的措施是采用重平衡策略（重加权和重采样），这些重平衡方法能够有效促进深层网络的分类器学习，但同时会在一定程度上损害深度网络学习到的特征。<a id="more"></a>因此本文提出了一个双分支网络（BBN）同时处理表征学习和分类器学习。该模型具有累积学习策略，首先学习通用模式，然后逐步关注尾部数据。</p>
-<h5 id="Re-balancing-strategies"><a href="#Re-balancing-strategies" class="headerlink" title="Re-balancing strategies"></a>Re-balancing strategies</h5><p>​    将深度分类模型分为两个部分：特征提取和分类器。本文设计了一个两阶段的实验方式，分别学习深层模型的表征和分类器。第一阶段采用传统的CE（交叉熵损失）、RW(重加权)、RS（重采样）三种训练策略训练模型。第二阶段固定特征提取部分，按照第一阶段的训练策略训练分类器。结果如下图。</p>
-<p><img src="http://jiajunjun.top/md_picture/BBN/1.png" alt="image-20210322111031941"></p>
-<p>​    结果表明：固定表示学习，在垂直方向上使用重平衡策略有效。但在水平方向上，固定分类器后，使用重平衡策略的结果更差。表明学习深层特征的辨别能力更差。</p>
-<h5 id="Methodology"><a href="#Methodology" class="headerlink" title="Methodology"></a>Methodology</h5><p><img src="http://jiajunjun.top/md_picture/BBN/2.png" alt="image-20210322111314609"></p>
-<p>​    在数据采样阶段，传统学习分支使用正常的uniform sampler，而re-blancing分支使用reversed sampler。反向采样器中每个类的采样可能性与其样本大小的倒数成正比。采样可能性的计算如下式：</p>
-<p><img src="http://jiajunjun.top/md_picture/BBN/3.png" alt="image-20210322112154347"></p>
-<p>​    使用ResNet作为主干网络，除了最后一个剩余块，两个分支网络共享相同的权重。共享权重有两个好处:一方面，传统学习分支的良好学习表示可以有利于重新平衡分支的学习。另一方面，共享权重将大大降低推理阶段的计算复杂度。</p>
-<p>​    积累学习策略：通过控制两个分支产生的特征的权重和分类损失来转移双边分支之间的学习焦点。首先学习通用模式，然后逐渐关注尾部数据。在训练阶段，传统学习分支的特征乘以α，重平衡分支的特征乘以1-α，α根据训练时间自动生成。α随着训练时间的增加而逐渐减小。</p>
-<p><img src="http://jiajunjun.top/md_picture/BBN/4.png" alt="image-20210322144827580"></p>
-<h5 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h5><p>数据集：Long-tailed CIFAR-10 和 CIFAR-100</p>
-<p>​                iNaturalist 2017 and iNaturalist 2018.</p>
-<p><img src="http://jiajunjun.top/md_picture/BBN/5.png" alt="image-20210322145244397"></p>
-<p><img src="http://jiajunjun.top/md_picture/BBN/6.png" alt="image-20210322145305351"></p>
-<p><img src="http://jiajunjun.top/md_picture/BBN/7.png" alt="image-20210322145410182"></p>
-<p><img src="http://jiajunjun.top/md_picture/BBN/8.png" alt="image-20210322145439154"></p>
-]]></content>
-      <categories>
-        <category>长尾分布</category>
-      </categories>
-      <tags>
-        <tag>Few-Shot Learning</tag>
-        <tag>Long-Tailed</tag>
       </tags>
   </entry>
 </search>
