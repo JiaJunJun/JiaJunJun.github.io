@@ -59,7 +59,7 @@
       </tags>
   </entry>
   <entry>
-    <title>文献阅读——BBN Bilateral-Branch Network with Cumulative Learning for Long-Tailed Visual Recognition</title>
+    <title>文献阅读 BBN Bilateral Branch Network with Cumulative Learning for Long Tailed Visual Recognition</title>
     <url>/2021/03/22/BBN%20Bilateral-Branch%20Network%20with%20Cumulative%20Learning%20for%20Long-Tailed%20Visual%20Recognition/</url>
     <content><![CDATA[<h3 id="BBN-Bilateral-Branch-Network-with-Cumulative-Learning-for-Long-Tailed-Visual-Recognition"><a href="#BBN-Bilateral-Branch-Network-with-Cumulative-Learning-for-Long-Tailed-Visual-Recognition" class="headerlink" title="BBN: Bilateral-Branch Network with Cumulative Learning for Long-Tailed Visual Recognition"></a>BBN: Bilateral-Branch Network with Cumulative Learning for Long-Tailed Visual Recognition</h3><h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>​    处理长尾分布问题通常的措施是采用重平衡策略（重加权和重采样），这些重平衡方法能够有效促进深层网络的分类器学习，但同时会在一定程度上损害深度网络学习到的特征。<a id="more"></a>因此本文提出了一个双分支网络（BBN）同时处理表征学习和分类器学习。该模型具有累积学习策略，首先学习通用模式，然后逐步关注尾部数据。</p>
 <h5 id="Re-balancing-strategies"><a href="#Re-balancing-strategies" class="headerlink" title="Re-balancing strategies"></a>Re-balancing strategies</h5><p>​    将深度分类模型分为两个部分：特征提取和分类器。本文设计了一个两阶段的实验方式，分别学习深层模型的表征和分类器。第一阶段采用传统的CE（交叉熵损失）、RW(重加权)、RS（重采样）三种训练策略训练模型。第二阶段固定特征提取部分，按照第一阶段的训练策略训练分类器。结果如下图。</p>
@@ -681,6 +681,25 @@
       <tags>
         <tag>计算机网络</tag>
         <tag>面向连接和无连接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>sql文件导入MySQL</title>
+    <url>/2021/03/25/sql%E6%96%87%E4%BB%B6%E5%AF%BC%E5%85%A5MySQL/</url>
+    <content><![CDATA[<h3 id="sql文件导入MySQL"><a href="#sql文件导入MySQL" class="headerlink" title="sql文件导入MySQL"></a>sql文件导入MySQL</h3><p>1.打开MySQL 8.0 Command Client</p>
+<p>2.创建数据库：<code>creat database test;</code></p>
+<a id="more"></a>
+
+<p>3.查看数据库：<code>show databases;</code></p>
+<p>4.使用数据库：<code>use test;</code></p>
+<p>5.导入sql文件：<code>source sql 文件路径</code>（路径中使用“/“）</p>
+<p>6.查看表：<code>show tables;</code></p>
+]]></content>
+      <categories>
+        <category>开发环境</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
       </tags>
   </entry>
 </search>

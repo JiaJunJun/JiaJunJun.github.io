@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-03-24T11:49:44.641Z</updated>
+  <updated>2021-03-25T07:39:03.432Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>sql文件导入MySQL</title>
+    <link href="http://example.com/2021/03/25/sql%E6%96%87%E4%BB%B6%E5%AF%BC%E5%85%A5MySQL/"/>
+    <id>http://example.com/2021/03/25/sql%E6%96%87%E4%BB%B6%E5%AF%BC%E5%85%A5MySQL/</id>
+    <published>2021-03-25T07:34:17.501Z</published>
+    <updated>2021-03-25T07:39:03.432Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;sql文件导入MySQL&quot;&gt;&lt;a href=&quot;#sql文件导入MySQL&quot; class=&quot;headerlink&quot; title=&quot;sql文件导入MySQL&quot;&gt;&lt;/a&gt;sql文件导入MySQL&lt;/h3&gt;&lt;p&gt;1.打开MySQL 8.0 Command Client&lt;/p&gt;
+&lt;p&gt;2.创建数据库：&lt;code&gt;creat database test;&lt;/code&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="开发环境" scheme="http://example.com/categories/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    
+    
+    <category term="MySQL" scheme="http://example.com/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>文献阅读——Learning to Propagate Labels： Transductive Propagation Network for Few-shot Learning</title>
@@ -76,11 +96,11 @@
   </entry>
   
   <entry>
-    <title>文献阅读——BBN Bilateral-Branch Network with Cumulative Learning for Long-Tailed Visual Recognition</title>
+    <title>文献阅读 BBN Bilateral Branch Network with Cumulative Learning for Long Tailed Visual Recognition</title>
     <link href="http://example.com/2021/03/22/BBN%20Bilateral-Branch%20Network%20with%20Cumulative%20Learning%20for%20Long-Tailed%20Visual%20Recognition/"/>
     <id>http://example.com/2021/03/22/BBN%20Bilateral-Branch%20Network%20with%20Cumulative%20Learning%20for%20Long-Tailed%20Visual%20Recognition/</id>
     <published>2021-03-22T03:23:30.539Z</published>
-    <updated>2021-03-24T11:51:38.632Z</updated>
+    <updated>2021-03-24T11:59:33.725Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;BBN-Bilateral-Branch-Network-with-Cumulative-Learning-for-Long-Tailed-Visual-Recognition&quot;&gt;&lt;a href=&quot;#BBN-Bilateral-Branch-Network-with-Cumulative-Learning-for-Long-Tailed-Visual-Recognition&quot; class=&quot;headerlink&quot; title=&quot;BBN: Bilateral-Branch Network with Cumulative Learning for Long-Tailed Visual Recognition&quot;&gt;&lt;/a&gt;BBN: Bilateral-Branch Network with Cumulative Learning for Long-Tailed Visual Recognition&lt;/h3&gt;&lt;h5 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h5&gt;&lt;p&gt;​    处理长尾分布问题通常的措施是采用重平衡策略（重加权和重采样），这些重平衡方法能够有效促进深层网络的分类器学习，但同时会在一定程度上损害深度网络学习到的特征。</summary>
