@@ -120,49 +120,6 @@
       </tags>
   </entry>
   <entry>
-    <title>文献阅读：Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces</title>
-    <url>/2021/03/21/Few-Shot%20and%20Zero-Shot%20Multi-Label%20Learning%20for%20Structured%20Label%20Spaces/</url>
-    <content><![CDATA[<h3 id="Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces"><a href="#Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces" class="headerlink" title="Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces"></a>Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces</h3><h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>​    对于文本分类问题，多标签的少样本或者无样本的标签预测很少被探索。在本文中，执行了一个细粒度的评估来理解最新的方法如何在不常见的标签上执行。此外，当标签空间上存在已知结构时，开发了多标签文本分类的少样本和无样本方法。</p>
-<a id="more"></a>
-
-<h5 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h5><p>​    大规模多标签文本分类存在的两个问题：</p>
-<p>​    1.在大型文档中查找特定标签的相关信息很难；</p>
-<p>​    2.数据稀疏的问题，随着标签总数的增加，一些标签可能会频繁出现，但是大多数标签不会频繁出现。</p>
-<p>​    few-shot learning是指在训练数据集中每个标签只有几个例子（通常在1~5之间）可用的监督方法。</p>
-<p>​    zero-shot learning是指在测试时想要预测的标签在训练数据中没有可用的。</p>
-<p>​    本文提出并评估了一种神经网络结构，用于预测多标签集合中的少样本和零样本标签；针对频繁、少样本和零样本标签，通过使用扩展的广义零样本方法评估幂律数据集。</p>
-<h5 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h5><p><img src="http://jiajunjun.top/md_picture/FSL1/1.png" alt="图1"></p>
-<p>1.生成标签向量</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/2.png" alt="图2"></p>
-<p>2.为每一个标签生成特定的文本向量表示</p>
-<p>​    使用标签的注意力避免长文档中遇到的大海捞针的情况。首先通过一个前馈神经网络传递文本特征矩阵D:</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/3.png" alt="图3"></p>
-<p>​    生成label-wise注意力向量ai∈Rn-s+1，表示对于某个标签，每一个ngram的信息量。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/4.png" alt="图4"></p>
-<p>​    为每一个标签生成特定的文本向量表示ci∈Ru，D中所有行的加权平均。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/5.png" alt="图5"></p>
-<p>3..标签向量通过两层GCNN传递，包含关于标签空间的分层信息。</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/6.png" alt="图6"></p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/7.png" alt="图7"></p>
-<p>​    然后将平均描述向量与GCNN标签向量连接起来</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/8.png" alt="图8"></p>
-<p>​    为了比较最终的标签向量v3和它的文档向量ci，我们将文档向量转换成</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/9.png" alt="图9"></p>
-<p>​    预测</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/10.png" alt="图10"></p>
-<p>4.训练</p>
-<p>使用多标签二元交叉熵损失来训练模型</p>
-<p><img src="http://jiajunjun.top/md_picture/FSL1/11.png" alt="图11"></p>
-<p>参考文章：<a href="https://blog.csdn.net/Daffy10/article/details/109588275">https://blog.csdn.net/Daffy10/article/details/109588275</a></p>
-]]></content>
-      <categories>
-        <category>小样本学习</category>
-      </categories>
-      <tags>
-        <tag>Few-Shot Learning</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Few-Shot Learning</title>
     <url>/2021/03/22/Few-shot%20Learning/</url>
     <content><![CDATA[<h1 id="Few-shot-Learning"><a href="#Few-shot-Learning" class="headerlink" title="Few-shot Learning"></a>Few-shot Learning</h1><p>​    在我们所熟知的深度学习领域，可以通过大量的训练集训练模型进行分类和回归。但当有标注的数据很少的时候该如何解决？Few-shot learning则是解决该问题的一个领域，就是用很少的样本进行分类或回归。</p>
@@ -205,6 +162,49 @@
 <p>​    fine - tuning有三个技巧，一是初始化权重为M，二是正则化采用Entropy regularization，三是使用余弦距离和softmax分类器提高准确率。</p>
 <p><img src="http://jiajunjun.top/md_picture/FSL/18.png" alt="image-20210322204735204"></p>
 <p><img src="http://jiajunjun.top/md_picture/FSL/19.png" alt="image-20210322205108258"></p>
+]]></content>
+      <categories>
+        <category>小样本学习</category>
+      </categories>
+      <tags>
+        <tag>Few-Shot Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文献阅读：Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces</title>
+    <url>/2021/03/21/Few-Shot%20and%20Zero-Shot%20Multi-Label%20Learning%20for%20Structured%20Label%20Spaces/</url>
+    <content><![CDATA[<h3 id="Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces"><a href="#Few-Shot-and-Zero-Shot-Multi-Label-Learning-for-Structured-Label-Spaces" class="headerlink" title="Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces"></a>Few-Shot and Zero-Shot Multi-Label Learning for Structured Label Spaces</h3><h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>​    对于文本分类问题，多标签的少样本或者无样本的标签预测很少被探索。在本文中，执行了一个细粒度的评估来理解最新的方法如何在不常见的标签上执行。此外，当标签空间上存在已知结构时，开发了多标签文本分类的少样本和无样本方法。</p>
+<a id="more"></a>
+
+<h5 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h5><p>​    大规模多标签文本分类存在的两个问题：</p>
+<p>​    1.在大型文档中查找特定标签的相关信息很难；</p>
+<p>​    2.数据稀疏的问题，随着标签总数的增加，一些标签可能会频繁出现，但是大多数标签不会频繁出现。</p>
+<p>​    few-shot learning是指在训练数据集中每个标签只有几个例子（通常在1~5之间）可用的监督方法。</p>
+<p>​    zero-shot learning是指在测试时想要预测的标签在训练数据中没有可用的。</p>
+<p>​    本文提出并评估了一种神经网络结构，用于预测多标签集合中的少样本和零样本标签；针对频繁、少样本和零样本标签，通过使用扩展的广义零样本方法评估幂律数据集。</p>
+<h5 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h5><p><img src="http://jiajunjun.top/md_picture/FSL1/1.png" alt="图1"></p>
+<p>1.生成标签向量</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/2.png" alt="图2"></p>
+<p>2.为每一个标签生成特定的文本向量表示</p>
+<p>​    使用标签的注意力避免长文档中遇到的大海捞针的情况。首先通过一个前馈神经网络传递文本特征矩阵D:</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/3.png" alt="图3"></p>
+<p>​    生成label-wise注意力向量ai∈Rn-s+1，表示对于某个标签，每一个ngram的信息量。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/4.png" alt="图4"></p>
+<p>​    为每一个标签生成特定的文本向量表示ci∈Ru，D中所有行的加权平均。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/5.png" alt="图5"></p>
+<p>3..标签向量通过两层GCNN传递，包含关于标签空间的分层信息。</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/6.png" alt="图6"></p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/7.png" alt="图7"></p>
+<p>​    然后将平均描述向量与GCNN标签向量连接起来</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/8.png" alt="图8"></p>
+<p>​    为了比较最终的标签向量v3和它的文档向量ci，我们将文档向量转换成</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/9.png" alt="图9"></p>
+<p>​    预测</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/10.png" alt="图10"></p>
+<p>4.训练</p>
+<p>使用多标签二元交叉熵损失来训练模型</p>
+<p><img src="http://jiajunjun.top/md_picture/FSL1/11.png" alt="图11"></p>
+<p>参考文章：<a href="https://blog.csdn.net/Daffy10/article/details/109588275">https://blog.csdn.net/Daffy10/article/details/109588275</a></p>
 ]]></content>
       <categories>
         <category>小样本学习</category>
@@ -287,6 +287,29 @@
       <tags>
         <tag>计算机网络</tag>
         <tag>P2P</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为什么要开发TCP/IP协议</title>
+    <url>/2020/12/04/TCPIP/</url>
+    <content><![CDATA[<p>TCP/IP协议的作用是使计算机实现互联共享。</p>
+<a id="more"></a>
+
+<p>　　世界上有很多台计算机，多台计算机之间需要进行通信，因此Internet可以将不同地区的计算机相互连接。但是每台计算机都使用不同的操作系统，为了使这些互连的计算机之间能够进行通信，他们必须使用同样的“语言”。就像世界各地的人都使用不同的语言，当他们需要进行交流的时候就需要一个共同的语言以便沟通，这个共同的“语言”就是协议。只要使用相同的协议便可以实现通信。</p>
+<p>　　因此，TCP/IP(Transmission Control Protocol/Internet Protocol)是指能够在多个不同的网络间实现传输的协议簇。也就是说，TCP/IP 是互联网相关各类协议族的总称。</p>
+<p>　　TCP/IP五层模型为：<img src="http://jiajunjun.top/md_picture/Tcpip.png" alt="图2"></p>
+<p>　　物理层：该层负责比特流在节点之间的传输，即负责物理传输。</p>
+<p>　　数据链路层：控制网络层与物理层之间的通信，主要功能是保证物理线路上进行可靠的数据传递。</p>
+<p>　　网络层：决定如何将数据从发送方路由到接收方。网络层通过综合考虑发送优先权，网络拥塞程度，服务质量以及可选路由的花费等来决定从网络中的A节点到B节点的最佳途径。即建立主机到主机的通信。</p>
+<p>　　传输层：该层为两台主机上的应用程序提供端到端的通信。</p>
+<p>　　应用层：应用程序收到传输层的数据后，接下来就要进行解读。解读必须事先规定好格式，而应用层就是规定应用程序的数据格式。主要的协议有：HTTP.FTP,Telent等。</p>
+]]></content>
+      <categories>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+        <tag>TCP/IP</tag>
       </tags>
   </entry>
   <entry>
@@ -387,70 +410,6 @@
       </tags>
   </entry>
   <entry>
-    <title>在markdown中插入图片</title>
-    <url>/2020/12/02/markdown%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
-    <content><![CDATA[<h1 id="在markdown文件中插入图片"><a href="#在markdown文件中插入图片" class="headerlink" title="在markdown文件中插入图片"></a>在markdown文件中插入图片</h1><p>　　这里选择采用将图片上传到GitHub上的方法进行图片的插入。具体步骤如下：</p>
-<p>　　<a id="more"></a></p>
-<p>　　1.登录GitHub,创建一个新仓库用来存放图片，如下图所示：<div align=center><img src="http://jiajunjun.top/md_picture/test_pic1.png" alt="图1"></div></p>
-<p>　　2.在本地磁盘中新建一个存放图片的文件夹，然后把需要插入的图片放入该文件夹中。</p>
-<p>　　3.在该文件夹下打开Git Bash。</p>
-<p>　　4.配置自己的身份：依次输入 </p>
-<p>　　<code>git config --global user.name &quot;Your name&quot;</code> </p>
-<p>　　<code>git config --global user.email &quot;Your email&quot;</code></p>
-<p>　　5.创建代码仓库：</p>
-<p>　　<code>git init</code>：此时本地仓库就有一个.git的隐藏文件夹</p>
-<p>　　6.提交本地代码：</p>
-<p>　　<code>git add .</code> ：把所有文件添加到仓库</p>
-<p>　　<code>git commit -m &quot;xxx&quot;</code>：把文件提交到仓库，xxx可以输入本次提交的说明</p>
-<p>　　如下图所示：<br>　　<br>　　<div align=center><img src="http://jiajunjun.top/md_picture/test_pic2.png" alt="图2"></div></p>
-<p>　　7.把本地仓库关联到GitHub上的远程库：</p>
-<p>　　<code>git remote add origin git@github.com:your username/repositories name.git</code>：注意要将your username改成你自己的GitHub账户名，repositories name改成仓库名。</p>
-<p>　　8.把本地库的内容推送到远程：</p>
-<p>　　<code>git push -u origin master</code></p>
-<p>　　此时本地库和远程库的内容就已经一样了。</p>
-<p>　　9.打开在GitHub上创建的仓库，进入Settings，下拉找到GitHub Pages，将Source中的None改为master，点击save保存。如下图所示：<div align=center><img src="http://jiajunjun.top/md_picture/test_pic3.png" alt="图3"></div></p>
-<p>　　10.此时图片在网络上的地址为GitHub项目地址加图片名，例如我这里的图片地址为：<a href="https://jiajunjun.github.io/md_picture/pic1.png">https://jiajunjun.github.io/md_picture/pic1.png</a></p>
-<p>　　11.在markdown文件中插入图片：</p>
-<p>　　<code>![图片名称](https://jiajunjun.top/md_picture/pic1.png)</code></p>
-<p>　　如果还不能显示，将https://改为http://即可</p>
-<p>　　<div align=center><img src="http://jiajunjun.top/md_picture/pic1.png" alt="pic1"></div></p>
-<p>　　12.之后如果想要再插入新的图片时，可以在本地库中添加图片，然后在本地库的文件夹下打开Git Bash，然后依次输入：</p>
-<p>　　<code>git add .</code></p>
-<p>　　<code>git commit -m &quot;xxxx&quot;</code></p>
-<p>　　<code>git push origin master</code></p>
-<p>　　之后按上述方法在markdown文件中插入图片即可。</p>
-]]></content>
-      <categories>
-        <category>TIPS</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>为什么要开发TCP/IP协议</title>
-    <url>/2020/12/04/TCPIP/</url>
-    <content><![CDATA[<p>TCP/IP协议的作用是使计算机实现互联共享。</p>
-<a id="more"></a>
-
-<p>　　世界上有很多台计算机，多台计算机之间需要进行通信，因此Internet可以将不同地区的计算机相互连接。但是每台计算机都使用不同的操作系统，为了使这些互连的计算机之间能够进行通信，他们必须使用同样的“语言”。就像世界各地的人都使用不同的语言，当他们需要进行交流的时候就需要一个共同的语言以便沟通，这个共同的“语言”就是协议。只要使用相同的协议便可以实现通信。</p>
-<p>　　因此，TCP/IP(Transmission Control Protocol/Internet Protocol)是指能够在多个不同的网络间实现传输的协议簇。也就是说，TCP/IP 是互联网相关各类协议族的总称。</p>
-<p>　　TCP/IP五层模型为：<img src="http://jiajunjun.top/md_picture/Tcpip.png" alt="图2"></p>
-<p>　　物理层：该层负责比特流在节点之间的传输，即负责物理传输。</p>
-<p>　　数据链路层：控制网络层与物理层之间的通信，主要功能是保证物理线路上进行可靠的数据传递。</p>
-<p>　　网络层：决定如何将数据从发送方路由到接收方。网络层通过综合考虑发送优先权，网络拥塞程度，服务质量以及可选路由的花费等来决定从网络中的A节点到B节点的最佳途径。即建立主机到主机的通信。</p>
-<p>　　传输层：该层为两台主机上的应用程序提供端到端的通信。</p>
-<p>　　应用层：应用程序收到传输层的数据后，接下来就要进行解读。解读必须事先规定好格式，而应用层就是规定应用程序的数据格式。主要的协议有：HTTP.FTP,Telent等。</p>
-]]></content>
-      <categories>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-        <tag>TCP/IP</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>要提供可靠的传输要解决哪些问题，如何解决？</title>
     <url>/2020/12/17/%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93/</url>
     <content><![CDATA[<p>思考：</p>
@@ -499,69 +458,63 @@
       </tags>
   </entry>
   <entry>
-    <title>案例学习1：基于图像的水质识别</title>
-    <url>/2021/01/09/%E6%A1%88%E4%BE%8B%E5%AD%A6%E4%B9%A01%EF%BC%9A%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB/</url>
-    <content><![CDATA[<h1 id="案例背景"><a href="#案例背景" class="headerlink" title="案例背景"></a>案例背景</h1><p>已有数据集根据专家经验将水质分为5个类别，要求根据水质图片能够实现水质的分类。</p>
-<p>案例与教程来源：人邮教师学院大数据（python方向）教学能力提升训练营（第2期）</p>
+    <title>sql文件导入MySQL</title>
+    <url>/2021/03/25/sql%E6%96%87%E4%BB%B6%E5%AF%BC%E5%85%A5MySQL/</url>
+    <content><![CDATA[<h3 id="sql文件导入MySQL"><a href="#sql文件导入MySQL" class="headerlink" title="sql文件导入MySQL"></a>sql文件导入MySQL</h3><p>1.打开MySQL 8.0 Command Client</p>
+<p>2.创建数据库：<code>creat database test;</code></p>
 <a id="more"></a>
 
-<h1 id="求解思路"><a href="#求解思路" class="headerlink" title="求解思路"></a>求解思路</h1><ul>
-<li>读取图片数据</li>
-<li>截取图片中心区域</li>
-<li>提取颜色特征</li>
-<li>模型构建与评估</li>
-</ul>
-<h1 id="过程要点"><a href="#过程要点" class="headerlink" title="过程要点"></a>过程要点</h1><p><strong>图像的读取</strong></p>
-<p><code>from PIL import Image</code><br><code>path = &#39;...&#39;</code><br><code>img = Image.open(path)</code></p>
-<p>上述代码可以读取一张图片，若要读取文件夹内所有图片，则可以使用循环。path赋值为图片的公共路径，即所在的文件夹的路径，之后每幅图片用“path+img_names[i]”表示，其中img_names中保存所有图片的名称。通过使用正则化提取所有图片的名称，并添加到img_names列表中。</p>
-<p><strong>截取图片中心区域</strong></p>
-<p>使用<code>img.crop((左上点横坐标，左上点纵坐标，右下角横坐标，右下角纵坐标))</code>截取某一区域</p>
-<p><strong>读取图像的颜色特征</strong></p>
-<p>颜色特征采用颜色矩的方法，颜色矩包括各个颜色通道的一阶矩，二阶矩和三阶矩，因此一个RGB的图像共有9个特征分量。</p>
-<p><img src="http://jiajunjun.top/md_picture/renyoucase/color_moment.png" alt="图1"></p>
-<p><code>r, g, b = img.split()</code>(分成三个颜色通道）</p>
-<p><code>rd = np.asarray(r)</code><br><code>gd = np.asarray(g)</code><br><code>bd = np.asarray(b)</code>(取出各通道的像素值）</p>
-<p><code>rd.mean()</code>（一阶矩）</p>
-<p><code>rd.std()</code>(二阶矩)</p>
-<p><code>mid = np.mean((rd-rd.mean())**3)</code>  <code>np.sign(mid)*abs(mid)**(1/3)</code>（三阶矩的计算方法）</p>
-<p>其中需要使用np.sign(mid)用来表示mid的符号，取值为-1,0,1。否则开三次根的时候，若为负数会出错。</p>
-<p>完整代码：</p>
-<p><a href="https://github.com/JiaJunJun/case_study/tree/master/%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB">https://github.com/JiaJunJun/case_study/tree/master/%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB</a></p>
+<p>3.查看数据库：<code>show databases;</code></p>
+<p>4.使用数据库：<code>use test;</code></p>
+<p>5.导入sql文件：<code>source sql 文件路径</code>（路径中使用“/“）</p>
+<p>6.查看表：<code>show tables;</code></p>
 ]]></content>
       <categories>
-        <category>案例学习</category>
+        <category>开发环境</category>
       </categories>
       <tags>
-        <tag>计算机视觉</tag>
-        <tag>图像处理</tag>
-        <tag>机器学习</tag>
+        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
-    <title>案例实践1：手写数字识别</title>
-    <url>/2021/01/10/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/</url>
-    <content><![CDATA[<h1 id="实践过程遇到的问题"><a href="#实践过程遇到的问题" class="headerlink" title="实践过程遇到的问题"></a>实践过程遇到的问题</h1><p>1.教程中图片读取使用的是cv2。cv2和pillow.Image的区别如下：</p>
-<a id="more"></a>
-
-<ul>
-<li>打开：<code>cv2.imread()</code>（BGR） <code>Image.open()</code>（RGB)</li>
-<li>查看图片尺寸：<code>cv2.shape</code> <code>Image.size</code></li>
-<li>保存：<code>cv2.inwrite(path,img)</code> <code>Image.save(path)</code></li>
-</ul>
-<p>2.读取图片时需要注意一下图片的尺寸，由于输入模型要使用同样的尺寸，因此在本案例中需要对图片进行压缩以实现同样尺寸，使用cv2.resize。</p>
-<p>3.本例中对于RGB三个通道的区分意义不大，因为都是白纸黑字，只需要取其中一个通道的特征就好了。</p>
-<p>4.采用机器学习的决策树算法效果不好，可使用MLPClassfier，之后的学习中可采用CNN等其他神经网络。</p>
-<h1 id="个人代码"><a href="#个人代码" class="headerlink" title="个人代码"></a>个人代码</h1><p>my_data_process.py是看教程之前自己编写的数据处理程序，多是仿照上节课的案例进行实践，没有进行深入的思考，对于数据处理应当考虑不同案例的特殊性。例如RGB三通道的问题。</p>
-<p>my_main.py中只读取了测试数据和训练数据，由于找不到好的训练方法，故没有进一步编写。</p>
-<p>完整代码：<br><a href="https://github.com/JiaJunJun/case_study/tree/master/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB">https://github.com/JiaJunJun/case_study/tree/master/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB</a></p>
+    <title>在markdown中插入图片</title>
+    <url>/2020/12/02/markdown%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<h1 id="在markdown文件中插入图片"><a href="#在markdown文件中插入图片" class="headerlink" title="在markdown文件中插入图片"></a>在markdown文件中插入图片</h1><p>　　这里选择采用将图片上传到GitHub上的方法进行图片的插入。具体步骤如下：</p>
+<p>　　<a id="more"></a></p>
+<p>　　1.登录GitHub,创建一个新仓库用来存放图片，如下图所示：<div align=center><img src="http://jiajunjun.top/md_picture/test_pic1.png" alt="图1"></div></p>
+<p>　　2.在本地磁盘中新建一个存放图片的文件夹，然后把需要插入的图片放入该文件夹中。</p>
+<p>　　3.在该文件夹下打开Git Bash。</p>
+<p>　　4.配置自己的身份：依次输入 </p>
+<p>　　<code>git config --global user.name &quot;Your name&quot;</code> </p>
+<p>　　<code>git config --global user.email &quot;Your email&quot;</code></p>
+<p>　　5.创建代码仓库：</p>
+<p>　　<code>git init</code>：此时本地仓库就有一个.git的隐藏文件夹</p>
+<p>　　6.提交本地代码：</p>
+<p>　　<code>git add .</code> ：把所有文件添加到仓库</p>
+<p>　　<code>git commit -m &quot;xxx&quot;</code>：把文件提交到仓库，xxx可以输入本次提交的说明</p>
+<p>　　如下图所示：<br>　　<br>　　<div align=center><img src="http://jiajunjun.top/md_picture/test_pic2.png" alt="图2"></div></p>
+<p>　　7.把本地仓库关联到GitHub上的远程库：</p>
+<p>　　<code>git remote add origin git@github.com:your username/repositories name.git</code>：注意要将your username改成你自己的GitHub账户名，repositories name改成仓库名。</p>
+<p>　　8.把本地库的内容推送到远程：</p>
+<p>　　<code>git push -u origin master</code></p>
+<p>　　此时本地库和远程库的内容就已经一样了。</p>
+<p>　　9.打开在GitHub上创建的仓库，进入Settings，下拉找到GitHub Pages，将Source中的None改为master，点击save保存。如下图所示：<div align=center><img src="http://jiajunjun.top/md_picture/test_pic3.png" alt="图3"></div></p>
+<p>　　10.此时图片在网络上的地址为GitHub项目地址加图片名，例如我这里的图片地址为：<a href="https://jiajunjun.github.io/md_picture/pic1.png">https://jiajunjun.github.io/md_picture/pic1.png</a></p>
+<p>　　11.在markdown文件中插入图片：</p>
+<p>　　<code>![图片名称](https://jiajunjun.top/md_picture/pic1.png)</code></p>
+<p>　　如果还不能显示，将https://改为http://即可</p>
+<p>　　<div align=center><img src="http://jiajunjun.top/md_picture/pic1.png" alt="pic1"></div></p>
+<p>　　12.之后如果想要再插入新的图片时，可以在本地库中添加图片，然后在本地库的文件夹下打开Git Bash，然后依次输入：</p>
+<p>　　<code>git add .</code></p>
+<p>　　<code>git commit -m &quot;xxxx&quot;</code></p>
+<p>　　<code>git push origin master</code></p>
+<p>　　之后按上述方法在markdown文件中插入图片即可。</p>
 ]]></content>
       <categories>
-        <category>案例实践</category>
+        <category>TIPS</category>
       </categories>
       <tags>
-        <tag>计算机视觉</tag>
-        <tag>图像处理</tag>
-        <tag>机器学习</tag>
+        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -662,6 +615,72 @@
       </tags>
   </entry>
   <entry>
+    <title>案例学习1：基于图像的水质识别</title>
+    <url>/2021/01/09/%E6%A1%88%E4%BE%8B%E5%AD%A6%E4%B9%A01%EF%BC%9A%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="案例背景"><a href="#案例背景" class="headerlink" title="案例背景"></a>案例背景</h1><p>已有数据集根据专家经验将水质分为5个类别，要求根据水质图片能够实现水质的分类。</p>
+<p>案例与教程来源：人邮教师学院大数据（python方向）教学能力提升训练营（第2期）</p>
+<a id="more"></a>
+
+<h1 id="求解思路"><a href="#求解思路" class="headerlink" title="求解思路"></a>求解思路</h1><ul>
+<li>读取图片数据</li>
+<li>截取图片中心区域</li>
+<li>提取颜色特征</li>
+<li>模型构建与评估</li>
+</ul>
+<h1 id="过程要点"><a href="#过程要点" class="headerlink" title="过程要点"></a>过程要点</h1><p><strong>图像的读取</strong></p>
+<p><code>from PIL import Image</code><br><code>path = &#39;...&#39;</code><br><code>img = Image.open(path)</code></p>
+<p>上述代码可以读取一张图片，若要读取文件夹内所有图片，则可以使用循环。path赋值为图片的公共路径，即所在的文件夹的路径，之后每幅图片用“path+img_names[i]”表示，其中img_names中保存所有图片的名称。通过使用正则化提取所有图片的名称，并添加到img_names列表中。</p>
+<p><strong>截取图片中心区域</strong></p>
+<p>使用<code>img.crop((左上点横坐标，左上点纵坐标，右下角横坐标，右下角纵坐标))</code>截取某一区域</p>
+<p><strong>读取图像的颜色特征</strong></p>
+<p>颜色特征采用颜色矩的方法，颜色矩包括各个颜色通道的一阶矩，二阶矩和三阶矩，因此一个RGB的图像共有9个特征分量。</p>
+<p><img src="http://jiajunjun.top/md_picture/renyoucase/color_moment.png" alt="图1"></p>
+<p><code>r, g, b = img.split()</code>(分成三个颜色通道）</p>
+<p><code>rd = np.asarray(r)</code><br><code>gd = np.asarray(g)</code><br><code>bd = np.asarray(b)</code>(取出各通道的像素值）</p>
+<p><code>rd.mean()</code>（一阶矩）</p>
+<p><code>rd.std()</code>(二阶矩)</p>
+<p><code>mid = np.mean((rd-rd.mean())**3)</code>  <code>np.sign(mid)*abs(mid)**(1/3)</code>（三阶矩的计算方法）</p>
+<p>其中需要使用np.sign(mid)用来表示mid的符号，取值为-1,0,1。否则开三次根的时候，若为负数会出错。</p>
+<p>完整代码：</p>
+<p><a href="https://github.com/JiaJunJun/case_study/tree/master/%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB">https://github.com/JiaJunJun/case_study/tree/master/%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB</a></p>
+]]></content>
+      <categories>
+        <category>案例学习</category>
+      </categories>
+      <tags>
+        <tag>计算机视觉</tag>
+        <tag>图像处理</tag>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>案例实践1：手写数字识别</title>
+    <url>/2021/01/10/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="实践过程遇到的问题"><a href="#实践过程遇到的问题" class="headerlink" title="实践过程遇到的问题"></a>实践过程遇到的问题</h1><p>1.教程中图片读取使用的是cv2。cv2和pillow.Image的区别如下：</p>
+<a id="more"></a>
+
+<ul>
+<li>打开：<code>cv2.imread()</code>（BGR） <code>Image.open()</code>（RGB)</li>
+<li>查看图片尺寸：<code>cv2.shape</code> <code>Image.size</code></li>
+<li>保存：<code>cv2.inwrite(path,img)</code> <code>Image.save(path)</code></li>
+</ul>
+<p>2.读取图片时需要注意一下图片的尺寸，由于输入模型要使用同样的尺寸，因此在本案例中需要对图片进行压缩以实现同样尺寸，使用cv2.resize。</p>
+<p>3.本例中对于RGB三个通道的区分意义不大，因为都是白纸黑字，只需要取其中一个通道的特征就好了。</p>
+<p>4.采用机器学习的决策树算法效果不好，可使用MLPClassfier，之后的学习中可采用CNN等其他神经网络。</p>
+<h1 id="个人代码"><a href="#个人代码" class="headerlink" title="个人代码"></a>个人代码</h1><p>my_data_process.py是看教程之前自己编写的数据处理程序，多是仿照上节课的案例进行实践，没有进行深入的思考，对于数据处理应当考虑不同案例的特殊性。例如RGB三通道的问题。</p>
+<p>my_main.py中只读取了测试数据和训练数据，由于找不到好的训练方法，故没有进一步编写。</p>
+<p>完整代码：<br><a href="https://github.com/JiaJunJun/case_study/tree/master/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB">https://github.com/JiaJunJun/case_study/tree/master/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB</a></p>
+]]></content>
+      <categories>
+        <category>案例实践</category>
+      </categories>
+      <tags>
+        <tag>计算机视觉</tag>
+        <tag>图像处理</tag>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>从面向连接和无连接的角度分析，计算机网络为什么没有采用通信网络的方法和模式？</title>
     <url>/2020/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%97%A0%E8%BF%9E%E6%8E%A5/</url>
     <content><![CDATA[<ul>
@@ -681,25 +700,6 @@
       <tags>
         <tag>计算机网络</tag>
         <tag>面向连接和无连接</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>sql文件导入MySQL</title>
-    <url>/2021/03/25/sql%E6%96%87%E4%BB%B6%E5%AF%BC%E5%85%A5MySQL/</url>
-    <content><![CDATA[<h3 id="sql文件导入MySQL"><a href="#sql文件导入MySQL" class="headerlink" title="sql文件导入MySQL"></a>sql文件导入MySQL</h3><p>1.打开MySQL 8.0 Command Client</p>
-<p>2.创建数据库：<code>creat database test;</code></p>
-<a id="more"></a>
-
-<p>3.查看数据库：<code>show databases;</code></p>
-<p>4.使用数据库：<code>use test;</code></p>
-<p>5.导入sql文件：<code>source sql 文件路径</code>（路径中使用“/“）</p>
-<p>6.查看表：<code>show tables;</code></p>
-]]></content>
-      <categories>
-        <category>开发环境</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
       </tags>
   </entry>
 </search>
