@@ -240,6 +240,48 @@
       </tags>
   </entry>
   <entry>
+    <title>从网络体系架构的角度分析，P2P技术的本质是什么？</title>
+    <url>/2020/12/16/P2P%E7%BD%91%E7%BB%9C%E7%9A%84%E6%9C%AC%E8%B4%A8/</url>
+    <content><![CDATA[<p>　　P2P可以理解为对等计算或对等网络。国内一些媒体将P2P翻译成“点对点”或者“端对端”，学术界则统一称为对等网络（Peer-to-peer networking）或对等计算（Peer-to-peer computing），<a id="more"></a>其可以定义为：网络的参与者共享他们所拥有的一部分硬件资源（处理能力、存储能力、网络连接能力、打印机等），这些共享资源通过网络提供服务和内容，能被其它对等节点（Peer）直接访问而无需经过中间实体。在此网络中的参与者既是资源、服务和内容的提供者（Server），又是资源、服务和内容的获取者（Client）。</p>
+<p>　　目前主流的客户端/服务器（Client/Server）结构中，客户端和服务器之间的关系是主从关系。在C/S中，效率=服务器的数量/客户端的数量，随着客户端的数量的急速增长，效率越来越低。因此一种解决方法是将一部分客户端转变成服务器，这样效率就会增大。即若用户N1从服务器S下载10%的文件之后就可以作为服务器来供其他用户使用。因此，将C变成S就是P2P对等网络的本质。</p>
+]]></content>
+      <categories>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+        <tag>P2P</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python数据可视化</title>
+    <url>/2021/03/25/Python%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</url>
+    <content><![CDATA[<p>Python数据可视化</p>
+<p>Matplotlib:</p>
+<p>​    可以创建2D图表和一些基本的3D图表。Matplotlib中最基础模块是pyplot。基本绘图流程如下图：</p>
+<a id="more"></a>
+
+<p><img src="http://jiajunjun.top/md_picture/visualization/1.png" alt="image-20210325102645186"></p>
+<p>1.创建画布和子图</p>
+<p>2.添加画布内容</p>
+<p>3.保存与展示图形</p>
+<p>练习代码：<a href="https://github.com/JiaJunJun/Data_Visualization/tree/master/matplotlib_learning">https://github.com/JiaJunJun/Data_Visualization/tree/master/matplotlib_learning</a></p>
+<p>Pyecharts:</p>
+<p>​    Pyecharts分为v0.5.X和v1两个版本，它们之间互不兼容。</p>
+<p>​    绘图逻辑：1.选择图表类型；2.添加数据；3.设置全局变量；4.显示及保存图表。</p>
+<p><img src="http://jiajunjun.top/md_picture/visualization/2.png" alt="image-20210408154639401"></p>
+<p>练习代码：<a href="https://github.com/JiaJunJun/Data_Visualization/blob/master/learn_pyecharts.ipynb">https://github.com/JiaJunJun/Data_Visualization/blob/master/learn_pyecharts.ipynb</a></p>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>matplotlib</tag>
+        <tag>pyecharts</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>文献阅读：Optimization as a model for few-shot learning</title>
     <url>/2021/03/21/Optimization%20as%20a%20model%20for%20few-shot%20learning/</url>
     <content><![CDATA[<h5 id="Optimization-as-a-model-for-few-shot-learning"><a href="#Optimization-as-a-model-for-few-shot-learning" class="headerlink" title="Optimization as a model for few-shot learning"></a>Optimization as a model for few-shot learning</h5><h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>​    提出基于LSTM的元学习者模型来学习精确的优化算法，用于训练另一个在少样本的情况下的学习者神经网络分类器。该模型能够学习适当的参数更新，还可以学习学习者网络的一般初始化，以便快速收敛训练。</p>
@@ -273,20 +315,6 @@
       </categories>
       <tags>
         <tag>Few-Shot Learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>从网络体系架构的角度分析，P2P技术的本质是什么？</title>
-    <url>/2020/12/16/P2P%E7%BD%91%E7%BB%9C%E7%9A%84%E6%9C%AC%E8%B4%A8/</url>
-    <content><![CDATA[<p>　　P2P可以理解为对等计算或对等网络。国内一些媒体将P2P翻译成“点对点”或者“端对端”，学术界则统一称为对等网络（Peer-to-peer networking）或对等计算（Peer-to-peer computing），<a id="more"></a>其可以定义为：网络的参与者共享他们所拥有的一部分硬件资源（处理能力、存储能力、网络连接能力、打印机等），这些共享资源通过网络提供服务和内容，能被其它对等节点（Peer）直接访问而无需经过中间实体。在此网络中的参与者既是资源、服务和内容的提供者（Server），又是资源、服务和内容的获取者（Client）。</p>
-<p>　　目前主流的客户端/服务器（Client/Server）结构中，客户端和服务器之间的关系是主从关系。在C/S中，效率=服务器的数量/客户端的数量，随着客户端的数量的急速增长，效率越来越低。因此一种解决方法是将一部分客户端转变成服务器，这样效率就会增大。即若用户N1从服务器S下载10%的文件之后就可以作为服务器来供其他用户使用。因此，将C变成S就是P2P对等网络的本质。</p>
-]]></content>
-      <categories>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-        <tag>P2P</tag>
       </tags>
   </entry>
   <entry>
@@ -407,73 +435,6 @@
       </categories>
       <tags>
         <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>要提供可靠的传输要解决哪些问题，如何解决？</title>
-    <url>/2020/12/17/%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93/</url>
-    <content><![CDATA[<p>思考：</p>
-<ul>
-<li><p>TCP层实现可靠传输中面向连接和无连接各自的优点和缺点</p>
-</li>
-<li><p>什么是端到端的可靠传输</p>
-<a id="more"></a></li>
-<li><p>数据链路层和TCP层解决可靠传输的区别</p>
-<ul>
-<li>TCP层解决端到端的可靠传输，而DLL层解决一跳内的可靠传输。</li>
-</ul>
-</li>
-</ul>
-<p>　　计算机网络的可靠传输从核心网外移，在端系统解决。不可靠的传输可能会出现：1.传输错误的信息；2.重复信息；3.信息丢失；4.超时。针对上述问题，有以下解决方法：</p>
-<ul>
-<li>1.解决信息错误：</li>
-</ul>
-<p>　　解决信息错误包括两个部分：检错和纠错。</p>
-<p>　　检错：发送方除了发送所需的信息外，还需要额外发送一部分用来检错，例如奇偶校验法。在最后添加一位检错位（0或1），最终使得整条数据的1的个数为偶（或奇）。</p>
-<p>　　纠错：</p>
-<p>　　1.重传：依赖于发送方的配合，简单易于实现，但耗费时间长。</p>
-<p>　　2.前向纠错（FEC)：无时延，依赖复杂的编码技术，开销大。（前向纠错是一种差错控制方式，它是指信号在被送入传输信道之前预先按一定的算法进行编码处理，加入带有信号本身特征的冗码，在接收端按照相应算法对接收到的信号进行解码，从而找出在传输过程中产生的错误码并将其纠正的技术）</p>
-<p>　　3.第一种和第二种方法结合（混合技术）</p>
-<ul>
-<li>2.解决重复信息：</li>
-</ul>
-<p>　　为每组信息加上编号，信息重复则编号重复，编号重复的信息直接丢弃。</p>
-<ul>
-<li>3.解决信息丢失：</li>
-</ul>
-<p>　　有了编号后就可以通过编号的顺序判断数据的丢失情况。</p>
-<ul>
-<li>4.解决超时的问题：</li>
-</ul>
-<p>　　信息传输过程中需要等待对方的确认信息，互相等待会导致死锁。解决方法是使用定时器，若超过预定时间，将进行重传。此为停止等待协议，但该协议存在的问题是大部分的时间都用来等待，信道的利用率低，因此可以采用流水线机制，发送方不停地发数据，接收方的接受能力要与发送方的发送能力匹配，需要进行流量控制和拥塞控制。</p>
-<p>　　流量控制：滑动窗口，连续ARQ协议。</p>
-<p>　　拥塞控制：产生拥塞的原因是对资源的需求总和&gt;可用资源。拥塞控制方法有：慢开始和拥塞避免、快重传和快恢复。</p>
-]]></content>
-      <categories>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-        <tag>可靠传输</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>sql文件导入MySQL</title>
-    <url>/2021/03/25/sql%E6%96%87%E4%BB%B6%E5%AF%BC%E5%85%A5MySQL/</url>
-    <content><![CDATA[<h3 id="sql文件导入MySQL"><a href="#sql文件导入MySQL" class="headerlink" title="sql文件导入MySQL"></a>sql文件导入MySQL</h3><p>1.打开MySQL 8.0 Command Client</p>
-<p>2.创建数据库：<code>creat database test;</code></p>
-<a id="more"></a>
-
-<p>3.查看数据库：<code>show databases;</code></p>
-<p>4.使用数据库：<code>use test;</code></p>
-<p>5.导入sql文件：<code>source sql 文件路径</code>（路径中使用“/“）</p>
-<p>6.查看表：<code>show tables;</code></p>
-]]></content>
-      <categories>
-        <category>开发环境</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
@@ -615,6 +576,73 @@
       </tags>
   </entry>
   <entry>
+    <title>要提供可靠的传输要解决哪些问题，如何解决？</title>
+    <url>/2020/12/17/%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93/</url>
+    <content><![CDATA[<p>思考：</p>
+<ul>
+<li><p>TCP层实现可靠传输中面向连接和无连接各自的优点和缺点</p>
+</li>
+<li><p>什么是端到端的可靠传输</p>
+<a id="more"></a></li>
+<li><p>数据链路层和TCP层解决可靠传输的区别</p>
+<ul>
+<li>TCP层解决端到端的可靠传输，而DLL层解决一跳内的可靠传输。</li>
+</ul>
+</li>
+</ul>
+<p>　　计算机网络的可靠传输从核心网外移，在端系统解决。不可靠的传输可能会出现：1.传输错误的信息；2.重复信息；3.信息丢失；4.超时。针对上述问题，有以下解决方法：</p>
+<ul>
+<li>1.解决信息错误：</li>
+</ul>
+<p>　　解决信息错误包括两个部分：检错和纠错。</p>
+<p>　　检错：发送方除了发送所需的信息外，还需要额外发送一部分用来检错，例如奇偶校验法。在最后添加一位检错位（0或1），最终使得整条数据的1的个数为偶（或奇）。</p>
+<p>　　纠错：</p>
+<p>　　1.重传：依赖于发送方的配合，简单易于实现，但耗费时间长。</p>
+<p>　　2.前向纠错（FEC)：无时延，依赖复杂的编码技术，开销大。（前向纠错是一种差错控制方式，它是指信号在被送入传输信道之前预先按一定的算法进行编码处理，加入带有信号本身特征的冗码，在接收端按照相应算法对接收到的信号进行解码，从而找出在传输过程中产生的错误码并将其纠正的技术）</p>
+<p>　　3.第一种和第二种方法结合（混合技术）</p>
+<ul>
+<li>2.解决重复信息：</li>
+</ul>
+<p>　　为每组信息加上编号，信息重复则编号重复，编号重复的信息直接丢弃。</p>
+<ul>
+<li>3.解决信息丢失：</li>
+</ul>
+<p>　　有了编号后就可以通过编号的顺序判断数据的丢失情况。</p>
+<ul>
+<li>4.解决超时的问题：</li>
+</ul>
+<p>　　信息传输过程中需要等待对方的确认信息，互相等待会导致死锁。解决方法是使用定时器，若超过预定时间，将进行重传。此为停止等待协议，但该协议存在的问题是大部分的时间都用来等待，信道的利用率低，因此可以采用流水线机制，发送方不停地发数据，接收方的接受能力要与发送方的发送能力匹配，需要进行流量控制和拥塞控制。</p>
+<p>　　流量控制：滑动窗口，连续ARQ协议。</p>
+<p>　　拥塞控制：产生拥塞的原因是对资源的需求总和&gt;可用资源。拥塞控制方法有：慢开始和拥塞避免、快重传和快恢复。</p>
+]]></content>
+      <categories>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+        <tag>可靠传输</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>sql文件导入MySQL</title>
+    <url>/2021/03/25/sql%E6%96%87%E4%BB%B6%E5%AF%BC%E5%85%A5MySQL/</url>
+    <content><![CDATA[<h3 id="sql文件导入MySQL"><a href="#sql文件导入MySQL" class="headerlink" title="sql文件导入MySQL"></a>sql文件导入MySQL</h3><p>1.打开MySQL 8.0 Command Client</p>
+<p>2.创建数据库：<code>creat database test;</code></p>
+<a id="more"></a>
+
+<p>3.查看数据库：<code>show databases;</code></p>
+<p>4.使用数据库：<code>use test;</code></p>
+<p>5.导入sql文件：<code>source sql 文件路径</code>（路径中使用“/“）</p>
+<p>6.查看表：<code>show tables;</code></p>
+]]></content>
+      <categories>
+        <category>开发环境</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>案例学习1：基于图像的水质识别</title>
     <url>/2021/01/09/%E6%A1%88%E4%BE%8B%E5%AD%A6%E4%B9%A01%EF%BC%9A%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B0%B4%E8%B4%A8%E8%AF%86%E5%88%AB/</url>
     <content><![CDATA[<h1 id="案例背景"><a href="#案例背景" class="headerlink" title="案例背景"></a>案例背景</h1><p>已有数据集根据专家经验将水质分为5个类别，要求根据水质图片能够实现水质的分类。</p>
@@ -654,6 +682,28 @@
       </tags>
   </entry>
   <entry>
+    <title>从面向连接和无连接的角度分析，计算机网络为什么没有采用通信网络的方法和模式？</title>
+    <url>/2020/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%97%A0%E8%BF%9E%E6%8E%A5/</url>
+    <content><![CDATA[<ul>
+<li>面向连接：在通信时事先建立好一条虚拟通信线路</li>
+<li>无连接：不需事先建立线路，每个分组自主选择线路传输到目标地址<a id="more"></a>
+　　通信网络采用面向连接的方式，使用电路交换，由核心网链接各种终端和设备，而计算机网络的可靠传输从核心网外移，在核心网中只提供互连的作用，因此可靠传输如何实现是计算机网络需要考虑的问题。计算机网络没有采用面向连接的原因有：</li>
+</ul>
+<p>　　1.二者终端设备的性能差别大</p>
+<p>　　通信网络的终端不具备差错处理和计算能力，需要采用面向连接来保证通信的质量。而计算机网络的终端是只能的主机，如果传输过程中出现了差错，终端也有办法实现可靠传输。</p>
+<p>　　2.即使网络传输正确，端到端的数据处理也有可能出现错误。在传输层中使用TCP面向连接的协议用来保障可靠传输。网络层使用无连接的方法。</p>
+<p>　　3.计算机网络的需求更多，如果采用面向连接的方法所需成本较高。</p>
+<p>　　这也是201电话比之前电话便宜一半的原因。</p>
+]]></content>
+      <categories>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+        <tag>面向连接和无连接</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>案例实践1：手写数字识别</title>
     <url>/2021/01/10/%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%B7%B51%EF%BC%9A%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/</url>
     <content><![CDATA[<h1 id="实践过程遇到的问题"><a href="#实践过程遇到的问题" class="headerlink" title="实践过程遇到的问题"></a>实践过程遇到的问题</h1><p>1.教程中图片读取使用的是cv2。cv2和pillow.Image的区别如下：</p>
@@ -678,56 +728,6 @@
         <tag>计算机视觉</tag>
         <tag>图像处理</tag>
         <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>从面向连接和无连接的角度分析，计算机网络为什么没有采用通信网络的方法和模式？</title>
-    <url>/2020/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%97%A0%E8%BF%9E%E6%8E%A5/</url>
-    <content><![CDATA[<ul>
-<li>面向连接：在通信时事先建立好一条虚拟通信线路</li>
-<li>无连接：不需事先建立线路，每个分组自主选择线路传输到目标地址<a id="more"></a>
-　　通信网络采用面向连接的方式，使用电路交换，由核心网链接各种终端和设备，而计算机网络的可靠传输从核心网外移，在核心网中只提供互连的作用，因此可靠传输如何实现是计算机网络需要考虑的问题。计算机网络没有采用面向连接的原因有：</li>
-</ul>
-<p>　　1.二者终端设备的性能差别大</p>
-<p>　　通信网络的终端不具备差错处理和计算能力，需要采用面向连接来保证通信的质量。而计算机网络的终端是只能的主机，如果传输过程中出现了差错，终端也有办法实现可靠传输。</p>
-<p>　　2.即使网络传输正确，端到端的数据处理也有可能出现错误。在传输层中使用TCP面向连接的协议用来保障可靠传输。网络层使用无连接的方法。</p>
-<p>　　3.计算机网络的需求更多，如果采用面向连接的方法所需成本较高。</p>
-<p>　　这也是201电话比之前电话便宜一半的原因。</p>
-]]></content>
-      <categories>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-        <tag>面向连接和无连接</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python数据可视化</title>
-    <url>/2021/03/25/Python%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</url>
-    <content><![CDATA[<p>Python数据可视化</p>
-<p>Matplotlib:</p>
-<p>​    可以创建2D图表和一些基本的3D图表。Matplotlib中最基础模块是pyplot。基本绘图流程如下图：</p>
-<a id="more"></a>
-
-<p><img src="http://jiajunjun.top/md_picture/visualization/1.png" alt="image-20210325102645186"></p>
-<p>1.创建画布和子图</p>
-<p>2.添加画布内容</p>
-<p>3.保存与展示图形</p>
-<p>练习代码：<a href="https://github.com/JiaJunJun/Data_Visualization/tree/master/matplotlib_learning">https://github.com/JiaJunJun/Data_Visualization/tree/master/matplotlib_learning</a></p>
-<p>Pyecharts:</p>
-<p>​    Pyecharts分为v0.5.X和v1两个版本，它们之间互不兼容。</p>
-<p>​    绘图逻辑：1.选择图表类型；2.添加数据；3.设置全局变量；4.显示及保存图表。</p>
-<p><img src="http://jiajunjun.top/md_picture/visualization/2.png" alt="image-20210408154639401"></p>
-<p>练习代码：<a href="https://github.com/JiaJunJun/Data_Visualization/blob/master/learn_pyecharts.ipynb">https://github.com/JiaJunJun/Data_Visualization/blob/master/learn_pyecharts.ipynb</a></p>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>matplotlib</tag>
-        <tag>pyecharts</tag>
       </tags>
   </entry>
 </search>
