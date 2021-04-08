@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-03-25T07:39:03.432Z</updated>
+  <updated>2021-04-08T13:44:49.779Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python数据可视化</title>
+    <link href="http://example.com/2021/03/25/Python%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+    <id>http://example.com/2021/03/25/Python%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</id>
+    <published>2021-03-25T07:41:51.831Z</published>
+    <updated>2021-04-08T13:44:49.779Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Python数据可视化&lt;/p&gt;
+&lt;p&gt;Matplotlib:&lt;/p&gt;
+&lt;p&gt;​    可以创建2D图表和一些基本的3D图表。Matplotlib中最基础模块是pyplot。基本绘图流程如下图：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Python" scheme="http://example.com/categories/Python/"/>
+    
+    
+    <category term="python" scheme="http://example.com/tags/python/"/>
+    
+    <category term="matplotlib" scheme="http://example.com/tags/matplotlib/"/>
+    
+    <category term="pyecharts" scheme="http://example.com/tags/pyecharts/"/>
+    
+  </entry>
   
   <entry>
     <title>sql文件导入MySQL</title>

@@ -702,4 +702,32 @@
         <tag>面向连接和无连接</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Python数据可视化</title>
+    <url>/2021/03/25/Python%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</url>
+    <content><![CDATA[<p>Python数据可视化</p>
+<p>Matplotlib:</p>
+<p>​    可以创建2D图表和一些基本的3D图表。Matplotlib中最基础模块是pyplot。基本绘图流程如下图：</p>
+<a id="more"></a>
+
+<p><img src="http://jiajunjun.top/md_picture/visualization/1.png" alt="image-20210325102645186"></p>
+<p>1.创建画布和子图</p>
+<p>2.添加画布内容</p>
+<p>3.保存与展示图形</p>
+<p>练习代码：<a href="https://github.com/JiaJunJun/Data_Visualization/tree/master/matplotlib_learning">https://github.com/JiaJunJun/Data_Visualization/tree/master/matplotlib_learning</a></p>
+<p>Pyecharts:</p>
+<p>​    Pyecharts分为v0.5.X和v1两个版本，它们之间互不兼容。</p>
+<p>​    绘图逻辑：1.选择图表类型；2.添加数据；3.设置全局变量；4.显示及保存图表。</p>
+<p><img src="http://jiajunjun.top/md_picture/visualization/2.png" alt="image-20210408154639401"></p>
+<p>练习代码：<a href="https://github.com/JiaJunJun/Data_Visualization/blob/master/learn_pyecharts.ipynb">https://github.com/JiaJunJun/Data_Visualization/blob/master/learn_pyecharts.ipynb</a></p>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>matplotlib</tag>
+        <tag>pyecharts</tag>
+      </tags>
+  </entry>
 </search>
