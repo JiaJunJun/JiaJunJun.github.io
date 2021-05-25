@@ -730,4 +730,45 @@
         <tag>机器学习</tag>
       </tags>
   </entry>
+  <entry>
+    <title>文献阅读：Rethinking the Value of Labels for Improving Class-Imbalanced Learning</title>
+    <url>/2021/05/17/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%EF%BC%9ARethinking%20the%20Value%20of%20Labels%20for%20Improving/</url>
+    <content><![CDATA[<h2 id="Rethinking-the-Value-of-Labels-for-Improving-Class-Imbalanced-Learning"><a href="#Rethinking-the-Value-of-Labels-for-Improving-Class-Imbalanced-Learning" class="headerlink" title="Rethinking the Value of Labels for Improving Class-Imbalanced Learning"></a>Rethinking the Value of Labels for Improving Class-Imbalanced Learning</h2><h4 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h4><p>​    不平衡数据下，标签的价值：(1)不平衡的标签是有价值的，给定更所的未标记数据，原始标签与额外的数据一起利用，以半监督的方式减少标签偏差；（2）不平衡的标签并不总是有用的，用自监督的方式训练的分类器优于基线。<a id="more"></a></p>
+<h4 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h4><p>​    不平衡的标签是一把双刃剑，一方面，在标签的监督下学习算法通常比无监督算法产生更精确的分类器，标签具有积极的价值。另一方面，不平衡的标签在学习的过程中会出现标签偏差，决策边界被大多数类显著驱动，不平衡标签具有负面的影响。因此，如何最大限度的挖掘标签的价值，提高不平衡样本样本的学习？</p>
+<p>​    从积极的角度看，通过利用标签信息，类不平衡学习可以通过简单的伪标签策略显著改善，该策略以半监督的方式用额外的数据来减轻标签误差。不管有标记和无标记的数据是否不平衡，效果都还不错。</p>
+<p>​    从负面的角度看，如果给定的信息是在不使用标签的情况下学习的，得到的分类器比原始分类器具有更小的错误率。因此，再开始时放弃标签，首先以自监督的方式预先训练分类器。</p>
+<p>​    本文的主要工作：(1)从不平衡标签的两个方面系统地分析了不平衡学习，以新颖的半监督和自监督的方式验证和开发其价值；(2)从理论和实践上证明，使用未标记数据可以通过半监督策略极大地促进不平衡学习；(3)对于不平衡学习，不适用任何额外的数据引入了自监督预训练。</p>
+<h4 id="Imbalanced-Learning-with-Unlabeled-Data"><a href="#Imbalanced-Learning-with-Unlabeled-Data" class="headerlink" title="Imbalanced Learning with Unlabeled Data"></a>Imbalanced Learning with Unlabeled Data</h4><p>​    <strong>理论：</strong>对于一个二分类问题，数据生成分布是两个高斯分布的混合。其中，<br>$$<br>X|Y=+1 ~ N(μ₁，σ²)，X|Y=+1 ~ N(μ₂，σ²)，设μ₁&gt;μ₂。<br>$$<br>​    很容易验证其贝叶斯最优分类器为：<br>$$<br>f(x)=sign(x-(μ₁+μ₂)/2)<br>$$<br>​    如果x&gt;(μ₁+μ₂)/2，则将x分类为+1。</p>
+<p>​    首先基于不平衡数据集训练一个基础分类器f<del>B</del>,将该分类器用于给未标记的数据创建伪标签。用<img src="https://jiajunjun.top/md_picture/semi-self/image-20210517193040949.png" alt="image-20210517193040949">表示伪标签为+1的未标记数据集合，用<img src="https://jiajunjun.top/md_picture/semi-self/image-20210517193156854.png" alt="image-20210517193156854">表示为标签为-1的未标记数据集合。当标签为1时，用<img src="https://jiajunjun.top/md_picture/semi-self/image-20210517193245833.png" alt="image-20210517193245833">表示第i个为标签是正确的的，即，如果<img src="https://jiajunjun.top/md_picture/semi-self/image-20210517193352067.png" alt="image-20210517193352067">，表明<img src="https://jiajunjun.top/md_picture/semi-self/image-20210517193406746.png" alt="image-20210517193406746">，否则<img src="https://jiajunjun.top/md_picture/semi-self/image-20210517193427697.png" alt="image-20210517193427697">。通过pseudo-label给这些对应的没有标签的数据取平均得到<img src="https://jiajunjun.top/md_picture/semi-self/image-20210517195137315.png" alt="image-20210517195137315">，<img src="https://jiajunjun.top/md_picture/semi-self/image-20210517194532545.png" alt="image-20210517194532545">。假设 <img src="https://jiajunjun.top/md_picture/semi-self/image-20210517195234232.png" alt="image-20210517195234232"> 代表基础分类器对于两个类的准确度的gap。</p>
+<p>​    有如下定理：<img src="https://jiajunjun.top/md_picture/semi-self/image-20210517193742265.png" alt="image-20210517193742265"></p>
+<p>​    通过上述理论，可以得到如下两个结论：</p>
+<p>​    （1）训练数据的不平衡影响估计的准确性。数据越不平衡， <img src="https://jiajunjun.top/md_picture/semi-self/image-20210517195234232.png" alt="image-20210517195234232"> 越大，会影响估计值和期望值(μ₁+μ₂)/2之间的距离。</p>
+<p>​    （2）无标签的不平衡数据影响获得一个好的估计。对于还不错的基础分类器， <img src="https://www.zhihu.com/equation?tex=%5Ctilde%7Bn%7D_+%E5%92%8C%5Ctilde%7Bn%7D_-" alt="[公式]"> 可以看做是对于无标签数据集的不平衡性的近似。如果无标签数据很不平衡，那么数据少的一项会主导另外一项，从而影响最后的概率。</p>
+<p>​    <strong>半监督不平衡学习框架：</strong>为了利用无标签的数据缓解固有的不平衡，采用自训练框架，通过为未标记的数据生成伪标签执行半监督学习（SSL)。首先使用原始的不平衡数据生成中间分类器<img src="https://jiajunjun.top/md_picture/semi-self/image-20210517201013944.png" alt="image-20210517201013944">，然后使用该中间分类器为无标签数据生成伪标签。将数据和伪标签结合起来，通过最小化损失函数L(D<del>L</del>，θ) + ωL(D<del>U</del>，θ)来学习最终模型， ω是无标签的权重。</p>
+<p>​    <strong>实验设置：</strong>采用人工创建的长尾版本的CIFAR-10和SVHN进行实验，用ρ表示不平衡比。</p>
+<p>​    <strong>实验结果：</strong>各种设置中，类不平衡学习任务从额外的未标记数据中受益匪浅。获得的优异性能证明了不平衡标签的积极价值，因为它能够利用未标记的数据获得额外的好处。</p>
+<p><img src="https://jiajunjun.top/md_picture/semi-self/image-20210517202437815.png" alt="image-20210517202437815"></p>
+<p><img src="https://jiajunjun.top/md_picture/semi-self/image-20210517202632921.png" alt="image-20210517202632921"></p>
+<h4 id="Imbalanced-Learning-from-Self-Supervision"><a href="#Imbalanced-Learning-from-Self-Supervision" class="headerlink" title="Imbalanced Learning from Self-Supervision"></a>Imbalanced Learning from Self-Supervision</h4><p>​     <strong>理论：</strong>对于一个d维的二分类问题，数据生成分布是高斯分布的混合，主要类是负类。Y=+1时，<img src="https://jiajunjun.top/md_picture/semi-self/image-20210518160517820.png" alt="image-20210518160517820">；Y= -1时，<img src="https://jiajunjun.top/md_picture/semi-self/image-20210518160549796.png" alt="image-20210518160549796">，常数β&gt;3，即负样本方差较大。考虑线性的分类器<img src="https://jiajunjun.top/md_picture/semi-self/image-20210518161600729.png" alt="image-20210518161600729">，其中特征是标准训练中的原始输入X，在这种线性分类器的精度不能达到3/4。对于自监督学习，特征是<img src="https://jiajunjun.top/md_picture/semi-self/image-20210518161715135.png" alt="image-20210518161715135">，假设一个黑盒自监督任务，使得学习的表示为<img src="https://jiajunjun.top/md_picture/semi-self/image-20210518162010919.png" alt="image-20210518162010919">，其中K1,K2大于0，考虑用Z做线性分类器的输入，可以得到分类器<img src="https://jiajunjun.top/md_picture/semi-self/image-20210518162417123.png" alt="image-20210518162417123">。满足定理3。</p>
+<img src="https://jiajunjun.top/md_picture/semi-self/image-20210518162502458.png" alt="image-20210518162502458" style="zoom:150%;" />
+
+<p>​        通过上述理论，可以得到：</p>
+<p>​    （1）有很高的概率可以得到一个更好的分类器。这个分类器的出错率会随着数据维度d的增加呈指数型的减小。</p>
+<p>​    （2）训练数据的不平衡性会影响我们能够得到这样一个好的分类器的概率。当数据越多且数据余额平衡，就有更高的概率得到一个好的分类器。</p>
+<p>​    <strong>自监督不平衡学习框架：</strong>利用自监督克服内在的标签偏差，在学习的第一阶段，放弃标签信息，进行自监督预训练（SSP）。其目的是从不平衡的数据集中学习更好的初始化。在此阶段之后，可以使用任何标准的训练方法去训练得到最终的模型。</p>
+<p>​    <strong>实验设置：</strong>在CIFAR-10/100数据集上进行实验。</p>
+<p>​    <strong>实验结果：</strong>不管设置和基础训练技术如何，在学习的第一阶段加入我们的自我监督框架可以统一提升最终的表现。这突出了不平衡标签的负面的、“不必要的”观点在改进最先进的不平衡学习方法中也是有价值和有效的。</p>
+<p><img src="https://jiajunjun.top/md_picture/semi-self/image-20210518164437778.png" alt="image-20210518164437778"></p>
+<p><img src="https://jiajunjun.top/md_picture/semi-self/image-20210518164640928.png" alt="image-20210518164640928"></p>
+]]></content>
+      <categories>
+        <category>长尾分布</category>
+      </categories>
+      <tags>
+        <tag>Few-Shot Learning</tag>
+        <tag>Long-Tailed</tag>
+        <tag>semi-supervised</tag>
+        <tag>self-supervised</tag>
+      </tags>
+  </entry>
 </search>

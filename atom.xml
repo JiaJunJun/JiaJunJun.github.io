@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-04-08T13:44:49.779Z</updated>
+  <updated>2021-05-25T12:40:13.952Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>文献阅读：Rethinking the Value of Labels for Improving Class-Imbalanced Learning</title>
+    <link href="http://example.com/2021/05/17/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%EF%BC%9ARethinking%20the%20Value%20of%20Labels%20for%20Improving/"/>
+    <id>http://example.com/2021/05/17/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%EF%BC%9ARethinking%20the%20Value%20of%20Labels%20for%20Improving/</id>
+    <published>2021-05-17T01:36:20.692Z</published>
+    <updated>2021-05-25T12:40:13.952Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Rethinking-the-Value-of-Labels-for-Improving-Class-Imbalanced-Learning&quot;&gt;&lt;a href=&quot;#Rethinking-the-Value-of-Labels-for-Improving-Class-Imbalanced-Learning&quot; class=&quot;headerlink&quot; title=&quot;Rethinking the Value of Labels for Improving Class-Imbalanced Learning&quot;&gt;&lt;/a&gt;Rethinking the Value of Labels for Improving Class-Imbalanced Learning&lt;/h2&gt;&lt;h4 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h4&gt;&lt;p&gt;​    不平衡数据下，标签的价值：(1)不平衡的标签是有价值的，给定更所的未标记数据，原始标签与额外的数据一起利用，以半监督的方式减少标签偏差；（2）不平衡的标签并不总是有用的，用自监督的方式训练的分类器优于基线。</summary>
+    
+    
+    
+    <category term="长尾分布" scheme="http://example.com/categories/%E9%95%BF%E5%B0%BE%E5%88%86%E5%B8%83/"/>
+    
+    
+    <category term="Few-Shot Learning" scheme="http://example.com/tags/Few-Shot-Learning/"/>
+    
+    <category term="Long-Tailed" scheme="http://example.com/tags/Long-Tailed/"/>
+    
+    <category term="semi-supervised" scheme="http://example.com/tags/semi-supervised/"/>
+    
+    <category term="self-supervised" scheme="http://example.com/tags/self-supervised/"/>
+    
+  </entry>
   
   <entry>
     <title>Python数据可视化</title>
